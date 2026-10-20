@@ -1,8 +1,8 @@
 import {loadLocalDraft} from '../content-adapter.js';
 import {resolveReport,REPORT_BASE} from '../route-model.js';
-import {bindPassages} from './c02-passages.js';
-import {deriveC02Visuals} from './c02-research-visuals.js';
-import {createC02Layout} from './c02-layout.js';
+import {bindPassages} from './c02-passages.js?v=0.1.0-preview.2';
+import {deriveC02Visuals} from './c02-research-visuals.js?v=0.1.0-preview.2';
+import {createC02Layout} from './c02-layout.js?v=0.1.0-preview.2';
 const activeMounts=new WeakMap();
 const BASE='/investment-workbench-public-preview/workbench-review/',ASSET=BASE+'continuity/c02-assets/';
 const esc=x=>String(x).replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;');
@@ -52,8 +52,9 @@ export async function mountC02Content({doc=document,api,host,signal,loadDraft=lo
   for(const item of cards){
    const tile=doc.createElement('article'),[label,title,summary]=summaries[item.id];
    tile.className='c02-overview-card';tile.dataset.c02Card=item.id;
-   const visual=item.id==='support'?`<div class="c02-overview-previews" aria-hidden="true">${['design','service','conversion'].map(id=>`<img src="${ASSET}source-${id}.svg" alt="" width="640" height="360">`).join('')}<span>资料预览 · 下方展开</span></div>`:item.id==='evidence'?'<p class="c02-overview-metric">6.09% / 12.44%<small>修复收入占比 / 修复毛利占比</small></p>':'';
-   tile.innerHTML=`${item.id==='focus'?`<span class="c02-overview-kicker">${label}</span>`:''}<h3>${title}</h3><p>${summary}</p>${visual}<a href="#c02-reading-${item.id}">阅读${item.id==='focus'?'研究判断':title} ↓</a>`;
+   const detail=item.id==='focus'?'<p class="c02-overview-judgment"><b>当前判断</b>优势存在，现金回收仍待验证。</p>':'';
+   const text=item.id==='evidence'?'<p class="c02-overview-metric"><span>6.09%<small>修复收入占比</small></span><span>12.44%<small>修复毛利占比</small></span></p>':`<p>${summary}</p>`;
+   tile.innerHTML=`<span class="c02-overview-kicker">${label}${item.id==='evidence'?' · 2026H1':''}</span><h3>${title}</h3>${text}${detail}<a href="#c02-reading-${item.id}">${item.id==='focus'?'展开研究判断':item.id==='support'?'查看三条线索':item.id==='evidence'?'核对口径与图表':item.id==='limits'?'查看约束与原文':'带着问题继续阅读'} <span aria-hidden="true">↓</span></a>`;
    overview.append(tile);
   }
   const meta=section.querySelector('[data-c02-source]');meta.textContent=`中密控股 · 固定快照 2026-10-17 UTC · SHA ${manifest.sha256.slice(0,12)}…`;

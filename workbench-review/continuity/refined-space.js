@@ -1,13 +1,13 @@
 import {createSpacePage} from '../space.js';
 import {createThreeLoader} from './three-loader.js';
-import {isC02Study} from './c02-study.js';
-import {createC02ContentSession} from './c02-content-session.js';
+import {isC02Study} from './c02-study.js?v=0.1.0-preview.2';
+import {createC02ContentSession} from './c02-content-session.js?v=0.1.0-preview.2';
 const ensureThree=createThreeLoader(document,globalThis);
 const study=isC02Study(location.pathname,location.search);
 const studySession=study?createC02ContentSession():null;
 async function mountStudyContent(api,host,contentTicket,signal){
  if(!contentTicket?.current()||signal.aborted)return;
- const {mountC02Content}=await import('./c02-content.js');
+ const {mountC02Content}=await import('./c02-content.js?v=0.1.0-preview.2');
  if(contentTicket.current()&&!signal.aborted){
   const content=await mountC02Content({api,host,signal:contentTicket.signal});
   studySession.adopt(contentTicket,content);
@@ -20,7 +20,7 @@ async function loadStage({host,variant,signal,onUpdate}) {
     await ensureThree();
     if(signal.aborted)throw new DOMException('Cancelled','AbortError');
     const original=new URLSearchParams(location.search).get('finish')==='original';
-    const module=await import(original?'./original-framed-stage.js':study?'./c02-study-stage.js':'./refined-stage.js');
+    const module=await import(original?'./original-framed-stage.js':study?'./c02-study-stage.js?v=0.1.0-preview.2':'./refined-stage.js');
     api=await module.mountStage({root:host,variant,signal,onUpdate:api=>{onUpdate(api);studySession?.update();},contentMode:'localDraft'});
   }catch(error){
     // Public reading does not depend on Three, stage-module loading or WebGL startup.
@@ -36,7 +36,7 @@ async function loadStage({host,variant,signal,onUpdate}) {
   if(controls){controls.hidden=!api.getDiagnostics().animation.available||api.getDiagnostics().reducedMotion;button.onclick=()=>{const next=!api.getDiagnostics().animation.playing;api.setAnimationPlaying(next);button.setAttribute('aria-pressed',String(next));button.textContent=next?'暂停树冠微风':'播放树冠微风';};document.querySelector('[data-breeze-reset]').onclick=()=>{api.setAnimationTime(0);button.setAttribute('aria-pressed','false');button.textContent='播放树冠微风';};}
   return api;
 }
-if(study){document.body.classList.add('c02-study');const css=document.createElement('link');css.rel='stylesheet';css.href='/investment-workbench-public-preview/workbench-review/continuity/c02-content.css';document.head.append(css);}
+if(study){document.body.classList.add('c02-study');const css=document.createElement('link');css.rel='stylesheet';css.href='/investment-workbench-public-preview/workbench-review/continuity/c02-content.css?v=0.1.0-preview.2';document.head.append(css);}
 const kind=document.body.dataset.page;
 if(['refined-space','refined-model'].includes(kind)){
   const page=createSpacePage({root:document.querySelector('main'),slug:document.body.dataset.document,modelOnly:kind==='refined-model',loadStage});

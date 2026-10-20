@@ -1,10 +1,10 @@
-import {refineAssembly} from './c02-atelier-model.js';
+import {refineAssembly} from './c02-atelier-model.js?v=0.1.0-preview.2';
 import {responsiveFrustum} from './responsive-camera.js';
 import {applyRecoveredC02Camera} from '/investment-workbench-public-preview/cloud/current-20261015-right-workspace/content-flow-20261017/camera-contract.js';
 import {loadStageAsset} from '/investment-workbench-public-preview/cloud/current-20261015-right-workspace/stage-trials-20261017/asset-loader.js';
 import {validateStageAsset,inspectAsset,nodeContracts,prepareShadowFlags,findUnique,rawName} from '/investment-workbench-public-preview/cloud/current-20261015-right-workspace/stage-trials-20261017/stage-core.js';
-import {FINISH,createFinishLighting} from './c02-study-finish.js';
-import {createCameraController} from './c02-camera.js';
+import {FINISH,createFinishLighting} from './c02-study-finish.js?v=0.1.0-preview.2';
+import {createCameraController} from './c02-camera.js?v=0.1.0-preview.2';
 
 export async function mountStage({root:host,variant='c02-platform-b',onUpdate=()=>{},contentMode='syntheticDemo',signal}={}) {
 if(!['syntheticDemo','localDraft'].includes(contentMode))throw new Error('Unsupported stage content mode');

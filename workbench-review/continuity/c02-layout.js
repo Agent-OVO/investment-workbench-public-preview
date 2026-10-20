@@ -1,6 +1,6 @@
-import {projectCardToGlass,C02_PROJECTION_REVISION} from './c02-plane-projection.js';
+import {projectCardToGlass,C02_PROJECTION_REVISION} from './c02-plane-projection.js?v=0.1.0-preview.2';
 const spatialQuery='(min-width:1101px) and (min-height:801px) and (aspect-ratio > 3/2)';
-export const C02_OVERVIEW_MIN_WIDTH=Object.freeze({focus:240,support:380,limits:380,evidence:380,questions:380});
+export const C02_OVERVIEW_MIN_WIDTH=Object.freeze({focus:285,support:330,limits:330,evidence:330,questions:330});
 export const C02_READING_MIN_WIDTH=Object.freeze({focus:300,support:400,limits:400,evidence:400,questions:360});
 // Conservative lower bound on the smallest singular value of the homography Jacobian
 // over the ENTIRE source rectangle. Bounds are in CSS pixels, not device/GPU pixels.

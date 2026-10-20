@@ -1,0 +1,155 @@
+{
+  "version": "0.1.0-preview.2",
+  "baselineCommit": "ce0124664c87b43cc402a37b6c10ada06d391cb7",
+  "viewport": [
+    1672,
+    941
+  ],
+  "cameraExactlyEqual": true,
+  "camera": {
+    "cameraPreset": "overview",
+    "position": [
+      0,
+      3.4731903076171875,
+      14.001140594482422
+    ],
+    "target": [
+      0,
+      0.9,
+      0
+    ],
+    "presentation": {
+      "azimuth": 0,
+      "elevation": 0,
+      "distance": 1,
+      "yawDegrees": 0,
+      "pitchDegrees": 0
+    },
+    "limits": {
+      "yawDegrees": [
+        -4,
+        4
+      ],
+      "pitchDegrees": [
+        -2,
+        2
+      ],
+      "zoomEnabled": false,
+      "distanceRatio": [
+        1,
+        1
+      ]
+    },
+    "cameraDistance": 14.235632978750141,
+    "type": "perspective",
+    "quaternion": [
+      -0.09075299828938557,
+      0,
+      0,
+      0.9958734323705433
+    ],
+    "up": [
+      0,
+      1,
+      0
+    ],
+    "projection": [
+      2.9085200610240682,
+      0,
+      0,
+      0,
+      0,
+      5.557766333751133,
+      0,
+      0,
+      0,
+      0,
+      -1.000200020004981,
+      -1,
+      0,
+      0,
+      -0.2000200049810284,
+      0
+    ],
+    "fov": 20.4,
+    "near": 0.10000000149011612,
+    "far": 1000,
+    "source": {
+      "intrinsicsUnverified": false,
+      "source": "C02_original_camera_1672x941.json",
+      "rigSha256": "47c653a0a7e7075bcb7b1b668429912ea4c7f8c1023a0c13f2d43b1ceedbb148",
+      "originalProjection": [
+        [
+          2.6666665077209473,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          4.738221645355225,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          -1.0001999139785767,
+          -0.20002000033855438
+        ],
+        [
+          0,
+          0,
+          -1,
+          0
+        ]
+      ]
+    },
+    "fitPolicy": "C02 atlas pilot: authored camera position retained, target lowered to [0,0.9,0], desktop lens 20.4 degrees; compact overview preserves a 29-degree horizontal field with a minimum 20.4-degree vertical lens and DOM reading flow. This is a new composition, not an exact concept-camera recovery."
+  },
+  "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+  "hardwareGPUAccepted": false,
+  "physicalMobileDeviceTested": false,
+  "ownerVisualAccepted": false,
+  "sameGLBAssetHashes": [
+    "8f22f3fe4bc865f53cb63b6d60c735c7802a532c477198a30a3aaf7c50fb140d"
+  ],
+  "beforeAssembly": "c02-glass-brass-stone-v3-map-roughness",
+  "afterAssembly": "c02-reading-pavilions-v4",
+  "geometryAndMaterialsChangedAtRuntime": true,
+  "overviewBoundingBoxArea": {
+    "beforeCssPixelsSquared": 608134.0858477335,
+    "afterCssPixelsSquared": 406164.1756612491,
+    "reductionPercent": 33.2,
+    "note": "Sum of DOM bounding rectangles; not an opaque-pixel or GPU benchmark."
+  },
+  "layouts": {
+    "1672x941": {
+      "layout": "spatial",
+      "layoutReason": "",
+      "maxCornerError": "1.7685521454614044e-12"
+    },
+    "1440x900": {
+      "layout": "spatial",
+      "layoutReason": "",
+      "maxCornerError": "1.850687635408088e-12"
+    },
+    "390x844": {
+      "layout": "reading-flow",
+      "layoutReason": "viewport"
+    }
+  },
+  "sourceSha256": "36ede2208d9edcb82f28f4f0947a44f73e0875a2908058d3288e806855585a6c",
+  "checks": [
+    "Spatial index to full reading section, then original research heading via real clicks",
+    "Evidence, history and review navigation via real clicks",
+    "Full homepage and narrow reading inspected",
+    "C03/C04 standalone models render-ready",
+    "Versioned C02 module graph prevents reuse of the preceding release"
+  ],
+  "limits": [
+    "Windows Chromium used SwiftShader software rendering. No hardware GPU or physical phone acceptance.",
+    "Existing C03/C04 environment-blur warnings remain; screenshot readback warnings are non-fatal.",
+    "Legacy 595 offline checks were not rerun or presented as browser acceptance."
+  ]
+}

@@ -2,7 +2,7 @@
   "revision": "strata-warm-optical-20261019",
   "scope": "Default refinement stages; opt-in C02 pilot has its own new composition",
   "c02Pilot": {
-    "revision": "c02-glass-brass-stone-v3-map-roughness",
+    "revision": "c02-reading-pavilions-v4",
     "contentProjection": "c02-glass-front-homography-v1",
     "originalCameraPositionUnmodified": true,
     "originalCameraPoseUnmodified": false,

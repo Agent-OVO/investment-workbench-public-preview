@@ -1,5 +1,5 @@
 {
-  "version": "0.1.0-preview.1",
+  "version": "0.1.0-preview.2",
   "date": "2026-10-20",
   "candidate": "c02_spatial_overview_candidate_20261020",
   "sourceAuthority": "Agent-OVO/investment-research-spatial-frontend (private; authoritative source)",
@@ -10,12 +10,17 @@
   "pagesBase": "/investment-workbench-public-preview/",
   "artifactOnly": true,
   "changes": [
-    "Removed personal provenance paths and source-only metadata",
-    "Restricted bank edition and truthful two-file download scope",
-    "Replaced private C01 source link with public release details",
-    "Added component licence notices and source credits",
-    "Adapted root URLs and catalog route validation to GitHub Pages project path",
-    "Restored homepage gutters and improved C02 overview text separation after same-camera browser inspection; model bytes and camera unchanged"
+    "Four compact peripheral reading indexes and a distinct central research judgment; full document and research navigation retained",
+    "Smaller glass carriers, mild physical rotations, matching standoffs, four reconnected reading paths and an original machined-seal motif",
+    "Cooler mineral and glass materials, quieter brass and emissive edges; unchanged camera and input GLB bytes",
+    "Versioned C02 entry, dependency and CSS URLs after reproducing stale module reuse in the browser",
+    "Preserved reviewed public scope and component notices; no new external assets or market-history data"
   ],
-  "validation": "Actual local Chromium page and model rendering checked; see VISUAL_REVIEW.md. SwiftShader software rendering only; hardware GPU and owner visual acceptance remain unverified."
+  "validation": "Same-camera Windows Chromium comparison and focused real navigation checks; SwiftShader software rendering. No hardware GPU, real mobile device or owner visual acceptance claimed.",
+  "publicRef": "refs/tags/v0.1.0-preview.2",
+  "previousPublicCommit": "ce0124664c87b43cc402a37b6c10ada06d391cb7",
+  "privateInputTransmissionCommit": "2a6e0964a1fe736adf39f13886a6dc5efe23f346",
+  "sourceAdaptationArchiveSha256": "70f78f4531ef930baa7bb9deffb210b9e98fc6c05ad90dfdec37065970111851",
+  "sourceAdaptationArchiveScope": "Private archive in the independent task workspace; not published",
+  "rollback": "Create a new reviewed commit restoring the public snapshot at ce0124664c87b43cc402a37b6c10ada06d391cb7; retain Git history and let Pages rebuild."
 }
