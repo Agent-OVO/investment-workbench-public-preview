@@ -1,0 +1,57 @@
+.c01-reader-root{--reader-ink:#29342f;--reader-muted:#5b6059;--reader-paper:#f7f3e9;--reader-rule:#d7c4a6;--reader-accent:#745632;--reader-text-scale:1;color:var(--reader-ink);font-family:"Segoe UI","Microsoft YaHei",sans-serif}
+.c01-sheet{box-sizing:border-box;color:var(--reader-ink);position:fixed;inset:20px 20px 20px auto;margin:0;width:min(760px,58vw);max-width:calc(100vw - 32px);height:calc(100dvh - 40px);max-height:calc(100dvh - 40px);padding:0;border:1px solid var(--reader-rule);border-radius:16px;background:linear-gradient(115deg,#fffcf5 0%,var(--reader-paper) 78%,#ede6d8 100%);box-shadow:0 24px 70px #332b2330,0 0 0 5px #fffaf545;overflow:hidden}
+.c01-sheet:not([open]){display:none}
+.c01-sheet[open]{display:flex;flex-direction:column}
+.c01-sheet::backdrop{background:#30261a0d}
+.c01-evidence{width:min(650px,52vw);inset:36px 36px 36px auto;height:calc(100dvh - 72px);max-height:calc(100dvh - 72px)}
+.c01-evidence::backdrop{background:#30261a18}
+.c01-toolbar{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:16px 24px;border-bottom:1px solid var(--reader-rule);flex:none;background:#fffaf2}
+.c01-kicker,.c01-article-kicker{font-size:12px;letter-spacing:.12em;color:var(--reader-muted);line-height:1.5}
+.c01-reader-root button,.c01-reader-root select,.c01-reader-root summary{color:var(--reader-ink);font:inherit;font-size:14px;min-height:44px;cursor:pointer;touch-action:manipulation}
+.c01-reader-root button{border:1px solid var(--reader-rule);background:#fffcf5;border-radius:6px;padding:8px 14px;transition:background .15s ease}
+.c01-reader-root button:hover{background:#eee4d3}
+.c01-reader-root button:active{background:#e1d4bd}
+.c01-reader-root :focus-visible{outline:3px solid #7d623d;outline-offset:3px}
+.c01-reader-root select{border:1px solid var(--reader-rule);border-radius:5px;background:#fffcf5;max-width:100%;padding:6px}
+.c01-reader-controls{display:flex;flex-wrap:wrap;gap:12px;padding:12px 24px;border-bottom:1px solid #ddd0bc;flex:none}
+.c01-reader-controls label{display:flex;align-items:center;gap:8px;font-size:12px;flex-wrap:wrap}
+.c01-reader-controls label:first-child{flex:1;min-width:0}
+.c01-reader-controls label:first-child select{min-width:0;max-width:100%;flex:1}
+.c01-read-scroll,.c01-evidence-scroll{overflow:auto;overscroll-behavior:contain;scrollbar-gutter:stable;min-height:0;flex:1;scroll-padding:24px;outline-offset:-4px}
+.c01-article,.c01-evidence-scroll{padding:30px clamp(20px,3vw,42px) 48px;user-select:text;overflow-wrap:anywhere}
+.c01-article{font-size:calc(17px * var(--reader-text-scale));line-height:1.9}
+.c01-article h1{font-family:"Noto Serif SC","Songti SC",SimSun,serif;font-size:calc(32px * var(--reader-text-scale));line-height:1.45;font-weight:500;margin:16px 0 18px;text-wrap:balance;letter-spacing:.01em}
+.c01-article h2{font-family:"Songti SC",SimSun,serif;font-size:calc(21px * var(--reader-text-scale));line-height:1.5;font-weight:600;margin:0 0 18px}
+.c01-deck{color:var(--reader-muted);font-size:1em;line-height:1.7;margin:0 0 22px}
+.c01-identity{font-size:12px;line-height:1.8;letter-spacing:.03em;color:var(--reader-muted);padding:12px 0;border-block:1px solid #dcd1bf}
+.c01-note{font-size:13px;line-height:1.7;color:var(--reader-muted);margin:16px 0 20px}
+.c01-toc{border-block:1px solid #dcd1bf;margin:18px 0 32px;font-size:14px}
+.c01-toc summary,.c01-chart-values summary{display:list-item;padding:10px 0;box-sizing:border-box}
+.c01-toc nav{display:flex;flex-direction:column;gap:10px;padding:0 0 16px}
+.c01-toc a{color:var(--reader-accent);text-decoration-thickness:1px;text-underline-offset:4px;min-height:36px}
+.c01-chapter{margin:34px 0 42px;scroll-margin-top:24px}
+.c01-chapter p{margin:0 0 22px}
+.c01-figure{margin:28px 0 32px;padding:12px;background:#fffcf5;border:1px solid #ded3bf;border-radius:8px;box-shadow:0 6px 16px #7660430a}
+.c01-evidence-image{width:100%;height:auto;display:block;border-radius:4px}
+.c01-chart svg{width:100%;height:auto;display:block}
+.c01-figure figcaption{display:flex;flex-direction:column;gap:10px;margin-top:12px;font-size:12px;line-height:1.7;color:var(--reader-muted)}
+.c01-figure figcaption button{text-align:left;align-self:stretch}
+.c01-chart-values{font-size:13px;line-height:1.7;color:var(--reader-muted);margin-top:12px}
+.c01-chart-values table{border-collapse:collapse;width:100%;font-variant-numeric:tabular-nums;color:var(--reader-ink);font-size:14px}
+.c01-chart-values th,.c01-chart-values td{padding:8px;text-align:left;border-bottom:1px solid #dcd1bf}
+.c01-chart-values caption{text-align:left;padding:8px 0}
+.c01-evidence-index{padding-top:28px;border-top:1px solid var(--reader-rule)}
+.c01-evidence-index>div{display:flex;flex-direction:column;gap:10px}
+.c01-evidence-index button{text-align:left}
+.c01-empty,.c01-relation{font-size:14px;line-height:1.7;color:var(--reader-muted)}
+.c01-article-footer{font-size:13px;line-height:1.7;color:var(--reader-muted);margin-top:40px;border-top:1px solid #dcd1bf;padding-top:20px}
+.c01-evidence-scroll h2{font-family:"Songti SC",SimSun,serif;font-size:28px;line-height:1.5;font-weight:500;margin:16px 0 24px}
+.c01-provenance{margin:24px 0 0;font-size:14px;line-height:1.7}
+.c01-provenance>div{display:grid;grid-template-columns:80px minmax(0,1fr);gap:12px;padding:12px 0;border-bottom:1px solid #dcd1bf}
+.c01-provenance dt{color:var(--reader-muted)}
+.c01-provenance dd{margin:0;overflow-wrap:anywhere}
+.c01-missing-document{padding:24px;border:1px dashed #b9a486;border-radius:8px;display:flex;flex-direction:column;gap:16px;background:#fffaf3}
+.c01-missing-document strong{font-size:21px;font-family:SimSun,serif;font-weight:500}
+.c01-missing-document p{font-size:15px;line-height:1.8;margin:0}
+@media(max-width:800px){.c01-sheet,.c01-evidence{inset:8px 8px 8px auto;width:calc(100vw - 16px);max-width:calc(100vw - 16px);height:calc(100dvh - 16px);max-height:calc(100dvh - 16px);border-radius:10px}.c01-toolbar{padding:12px 16px}.c01-reader-controls{padding:10px 16px}.c01-toolbar .c01-kicker{letter-spacing:.03em;max-width:40%}.c01-article,.c01-evidence-scroll{padding:24px 20px 40px}.c01-article h1{font-size:calc(26px * var(--reader-text-scale))}}
+@media(prefers-reduced-motion:reduce){.c01-reader-root button{transition:none}}

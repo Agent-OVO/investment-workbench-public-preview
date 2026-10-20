@@ -1,0 +1,247 @@
+/*
+ * Local-only typography candidate. Loaded after the unchanged reader styles.
+ * Uses installed fonts only: no @font-face, remote request, or CSP change.
+ * Scope: the public report reader. Stage geometry, camera and article data stay intact.
+ */
+body.local-draft-root {
+  --reader-ink: #263630;
+  --reader-muted: #626c65;
+  --reader-paper: #fbfaf6;
+  --reader-rule: #dce2d7;
+  --reader-accent: #356251;
+  --type-ui: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei UI", "Microsoft YaHei", "Noto Sans CJK SC", sans-serif;
+  --type-title: "Noto Serif CJK SC", "Source Han Serif SC", "Noto Serif SC", "Songti SC", "STSong", "PingFang SC", "Microsoft YaHei", "Noto Sans CJK SC", sans-serif;
+  --reader-gutter: clamp(22px, 5vw, 64px);
+  margin: 0;
+  padding: clamp(12px, 3vw, 40px) 16px;
+  background: #e9eee7;
+  color: var(--reader-ink);
+  font-family: var(--type-ui);
+  font-synthesis: none;
+  font-kerning: normal;
+  line-height: 1.75;
+}
+
+.local-draft-root .local-paper {
+  max-width: 1040px;
+  border: 1px solid var(--reader-rule);
+  border-radius: 12px;
+  background: var(--reader-paper);
+  box-shadow: 0 12px 44px #203a2d0c;
+}
+
+/* Quiet chrome, with readable labels instead of tiny or widely spaced type. */
+.local-draft-root .c01-toolbar {
+  min-height: 56px;
+  padding: 10px var(--reader-gutter);
+  background: #f3f5ee;
+  border-bottom-color: var(--reader-rule);
+}
+.local-draft-root .c01-kicker {
+  max-width: none;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: .065em;
+  line-height: 1.6;
+}
+.local-draft-root :is(.local-boundary, .local-provenance, .local-toc, .local-footer, .local-raw, .local-download, .c01-reader-controls) {
+  padding-inline: var(--reader-gutter);
+}
+.local-draft-root .local-boundary { padding-block: 26px 22px; }
+.local-draft-root .local-state {
+  font-size: calc(18px * var(--reader-text-scale));
+  font-weight: 600;
+  letter-spacing: .015em;
+  color: var(--reader-ink);
+  line-height: 1.65;
+}
+.local-draft-root :is(.c01-note, .c01-empty) {
+  max-width: 66em;
+  margin-block: 12px;
+  line-height: 1.85;
+  color: var(--reader-muted);
+}
+.local-draft-root :is(button, select, input) {
+  font-family: var(--type-ui);
+  border-color: var(--reader-rule);
+  background: #fffefa;
+  border-radius: 6px;
+}
+.local-draft-root :is(button, select, input[type="search"]) { min-height: 44px; }
+.local-draft-root button:hover { background: #edf2e9; }
+.local-draft-root button:active { background: #e3ecdf; }
+.local-draft-root button:disabled { cursor: default; color: #626c65; opacity: .65; }
+.local-draft-root :focus-visible { outline-color: #356251; }
+.local-draft-root a {
+  color: var(--reader-accent);
+  text-decoration-thickness: 1px;
+  text-underline-offset: .22em;
+}
+.local-draft-root :is(.local-catalog-controls, .local-document-picker) { font-size: 15px; }
+.local-draft-root .local-catalog-controls label { gap: 8px; }
+.local-draft-root .c01-reader-controls {
+  padding-block: 14px;
+  border-color: var(--reader-rule);
+  background: #f7f8f2;
+}
+.local-draft-root .c01-reader-controls label { font-size: 14px; }
+.local-draft-root .local-provenance {
+  padding-block: 18px;
+  border-color: var(--reader-rule);
+  color: var(--reader-muted);
+  line-height: 1.85;
+}
+.local-draft-root .local-provenance summary { font-weight: 600; color: var(--reader-ink); }
+.local-draft-root .c01-provenance > div { gap: 18px; border-color: var(--reader-rule); }
+.local-draft-root .c01-provenance dd { color: var(--reader-ink); }
+.local-draft-root .local-toc {
+  margin-block: 0;
+  padding-block: 18px 24px;
+  border-color: var(--reader-rule);
+}
+.local-draft-root .local-toc summary { font-weight: 600; }
+.local-draft-root .c01-toc nav { gap: 2px; padding-bottom: 0; }
+.local-draft-root .c01-toc a { line-height: 1.75; text-decoration: none; }
+.local-draft-root .c01-toc a:hover { text-decoration: underline; }
+.local-draft-root .local-subheading { margin-left: 1.35em; color: var(--reader-muted); }
+
+/*
+ * Keep a 38em text measure even when the 3D preview expands its parent to 1440px.
+ * Width is allowed to shrink naturally at narrow viewports and at 200% text size.
+ */
+.local-draft-root .c01-article {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: calc(38em + 2 * var(--reader-gutter));
+  margin-inline: auto;
+  padding: 44px var(--reader-gutter) 56px;
+  font-family: var(--type-ui);
+  font-size: calc(18px * var(--reader-text-scale));
+  font-weight: 400;
+  line-height: 1.95;
+  letter-spacing: .012em;
+  line-break: strict;
+  word-break: normal;
+  overflow-wrap: anywhere;
+}
+.local-draft-root .c01-article h1 {
+  max-width: 25em;
+  margin: 0 0 24px;
+  font-family: var(--type-title);
+  font-size: calc(clamp(28px, 3.2vw, 36px) * var(--reader-text-scale));
+  font-weight: 400;
+  line-height: 1.48;
+  letter-spacing: .025em;
+  text-wrap: balance;
+}
+/* Only the current, hash-verified source-line-3 metadata paragraphs qualify.
+ * The content guard test rejects an ordinary first paragraph in this position. */
+.local-draft-root .c01-article > h1[data-source-lines="1-1"] + p[data-source-lines="3-3"] {
+  margin: 0 0 40px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--reader-rule);
+  font-size: .83em;
+  line-height: 1.85;
+  letter-spacing: .005em;
+  color: var(--reader-muted);
+}
+.local-draft-root .c01-article :is(h2, h3, h4, h5, h6) {
+  font-family: var(--type-ui);
+  font-weight: 600;
+  letter-spacing: .018em;
+  line-height: 1.65;
+  text-wrap: balance;
+}
+.local-draft-root .c01-article h2 {
+  margin: 0 0 24px;
+  font-size: 1.28em;
+}
+.local-draft-root .c01-article h3 {
+  margin: 32px 0 16px;
+  font-size: 1.08em;
+}
+.local-draft-root .c01-article :is(h4, h5, h6) { margin: 28px 0 14px; font-size: 1em; }
+.local-draft-root .c01-article :is(h1, h2, h3, h4, h5, h6) strong { font-weight: inherit; }
+.local-draft-root .c01-chapter { margin: 48px 0 0; }
+.local-draft-root .c01-chapter:first-of-type { margin-top: 0; }
+.local-draft-root .c01-article p { margin-block: 0 1.25em; }
+.local-draft-root .c01-article :is(ul, ol) { margin-block: 0 1.4em; padding-inline-start: 1.6em; }
+.local-draft-root .c01-article li { margin-bottom: .75em; padding-left: .15em; }
+.local-draft-root .c01-article li::marker { color: var(--reader-accent); }
+.local-draft-root .c01-article strong { font-weight: 700; color: #223f33; }
+.local-draft-root .c01-article code {
+  font-size: .88em;
+  padding: .08em .28em;
+  background: #eaf0e7;
+  border-radius: 3px;
+}
+.local-draft-root .c01-article pre {
+  max-width: 100%;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  font-size: .86em;
+  line-height: 1.85;
+}
+
+/* A restrained ledger. Numbers keep tabular figures; cell content never changes. */
+.local-draft-root .local-table-scroll {
+  margin-block: 28px 32px;
+  border: 1px solid var(--reader-rule);
+  border-radius: 4px;
+  background: #fffefa;
+  scrollbar-color: #a9b7a7 #f2f5ed;
+}
+.local-draft-root .local-table-scroll table {
+  font-family: var(--type-ui);
+  font-size: calc(15px * var(--reader-text-scale));
+  font-weight: 400;
+  line-height: 1.7;
+  letter-spacing: 0;
+  font-variant-numeric: lining-nums tabular-nums;
+}
+.local-draft-root .local-table-scroll caption {
+  padding: 14px 16px;
+  font-size: .88em;
+  color: var(--reader-muted);
+  background: #f7f8f2;
+  border-bottom: 1px solid var(--reader-rule);
+}
+.local-draft-root .local-table-scroll :is(th, td) {
+  padding: 13px 16px;
+  border-color: #e3e8de;
+  background: transparent;
+}
+.local-draft-root .local-table-scroll thead th {
+  background: #eef3e9;
+  color: #314d3f;
+  font-weight: 600;
+}
+.local-draft-root .local-table-scroll tbody th { font-weight: 500; color: #314d3f; }
+.local-draft-root .local-table-scroll tbody tr:nth-child(even) { background: #f8faf5; }
+.local-draft-root .local-table-scroll tbody tr:last-child > * { border-bottom: 0; }
+.local-draft-root .local-footer {
+  margin-top: 0;
+  padding-block: 24px;
+  border-color: var(--reader-rule);
+  line-height: 1.85;
+}
+.local-draft-root .local-raw { padding-block: 18px; }
+.local-draft-root .local-raw pre { background: #f3f6ef; border-color: var(--reader-rule); }
+.local-draft-root .local-download { padding-block: 24px; background: #f3f5ee; }
+
+@media (max-width: 600px) {
+  body.local-draft-root { --reader-gutter: 22px; padding: 8px; }
+  .local-draft-root .local-paper { border-radius: 8px; }
+  .local-draft-root .c01-toolbar { gap: 6px 16px; min-height: 44px; }
+  .local-draft-root .c01-kicker { letter-spacing: .045em; }
+  .local-draft-root .c01-article { padding-block: 32px 40px; font-size: calc(17px * var(--reader-text-scale)); line-height: 1.95; }
+  .local-draft-root .c01-article h1 { font-size: calc(28px * var(--reader-text-scale)); letter-spacing: .015em; line-height: 1.5; }
+  .local-draft-root .c01-article > h1[data-source-lines="1-1"] + p[data-source-lines="3-3"] { margin-bottom: 32px; }
+  .local-draft-root .c01-chapter { margin-top: 40px; }
+  .local-draft-root .c01-provenance > div { grid-template-columns: 1fr; gap: 4px; }
+  .local-draft-root .local-table-scroll :is(th, td) { padding: 11px 13px; }
+}
+
+@media (prefers-contrast: more) {
+  body.local-draft-root { --reader-muted: #405249; --reader-rule: #9fac9c; }
+}

@@ -1,0 +1,32 @@
+/* Independent scene documents fill the viewport before any Fullscreen API call. */
+.wb-scene-root {width:100%;height:100vh;height:100dvh;overflow:hidden;background:#becdd3}
+.wb-scene-root .wb-scene-page {width:100%;height:100%;min-height:0;margin:0;padding:0;overflow:hidden}
+.wb-scene-root .wb-scene-host {position:relative;display:block;width:100%;height:100%;min-height:0;border:0;overflow:hidden}
+.wb-scene-root .wb-scene-host #stage {position:absolute;inset:0;width:100%;height:100%;min-height:0;margin:0}
+.wb-scene-root .wb-scene-host canvas {display:block;width:100%;height:100%;touch-action:none}
+.wb-scene-toolbar {position:absolute;top:0;left:0;right:0;z-index:4;display:grid;grid-template-columns:auto minmax(0,1fr) auto;align-items:center;gap:16px;padding:10px 16px;background:#faf9f4ed;border-bottom:1px solid #c4cdbf;box-shadow:0 3px 18px #263a3412}
+.wb-scene-toolbar nav,.wb-scene-actions {display:flex;align-items:center;gap:8px;min-width:0}
+.wb-scene-toolbar a,.wb-scene-actions button {display:inline-flex;align-items:center;justify-content:center;min-height:42px;border:1px solid #bdc9b7;border-radius:4px;padding:7px 12px;background:#fffef8;color:var(--wb-ink);font:13px/1.4 var(--wb-sans);text-decoration:none;white-space:nowrap;cursor:pointer}
+.wb-scene-toolbar [data-workbench-back] {background:#eff3e9}
+.wb-scene-root .wb-scene-toolbar h1 {margin:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font:500 16px/1.5 var(--wb-sans);text-align:center}
+.wb-scene-toolbar h1 span {font-size:12px;font-weight:400;margin-left:8px;color:var(--wb-muted)}
+.wb-scene-root .wb-scene-host #status {position:absolute;left:16px;right:16px;bottom:12px;z-index:2;margin:0;padding:7px 12px;min-height:0;max-height:72px;overflow:auto;border:1px solid #c5cebd;border-radius:4px;background:#faf9f4e8;font-size:11px;pointer-events:none}
+.wb-scene-root .wb-scene-host #status.failed {background:#fff3e9;color:#70402b}
+.wb-scene-details {position:absolute;top:76px;left:16px;z-index:3;max-width:calc(100% - 32px);font-size:13px}
+.wb-scene-details>summary {width:max-content;max-width:100%;min-height:42px;padding:9px 14px;border:1px solid #bdc9b7;border-radius:4px;background:#faf9f4ef;cursor:pointer;list-style-position:inside}
+.wb-scene-panel {width:min(560px,calc(100vw - 32px));max-height:calc(100vh - 180px);max-height:calc(100dvh - 180px);overflow:auto;overscroll-behavior:contain;margin-top:8px;padding:18px;border:1px solid #bdc9b7;border-radius:5px;background:#faf9f4f7;box-shadow:0 12px 36px #263a3426}
+.wb-scene-panel .wb-spatial-heading {display:block;padding:0;margin:0 0 16px}
+.wb-scene-panel .wb-spatial-heading h2 {font-size:20px;margin:0 0 10px}
+.wb-scene-panel .wb-context-links {padding:0 0 12px;margin:0 0 16px;gap:8px 16px}
+.wb-scene-panel .wb-space-context {margin:16px 0 0;padding:0}
+.wb-scene-panel .wb-space-context h2 {font-size:18px}
+.wb-scene-panel .wb-space-context p,.wb-scene-panel .wb-topic-note {font-size:13px}
+.wb-scene-panel .wb-model-mode {font-size:13px;line-height:1.7;gap:8px 16px}
+.wb-scene-panel .wb-motion-controls {gap:8px}
+.wb-scene-panel .wb-anchor-status,.wb-scene-panel .diagnostics {padding:10px 0;background:transparent}
+.wb-scene-view {display:flex;justify-content:space-between;gap:16px;font-size:11px;color:var(--wb-muted)}
+.wb-scene-boundary {margin:12px 0 0;padding-top:12px;border-top:1px solid var(--wb-line);font-size:11px;color:var(--wb-muted)}
+.wb-scene-root .wb-scene-host:fullscreen {height:100vh;height:100dvh;min-height:0}
+.wb-scene-root .wb-scene-host:fullscreen #stage {height:100%;min-height:0}
+@media(max-width:760px){.wb-scene-toolbar{grid-template-columns:minmax(0,1fr) auto;gap:4px 8px;padding:8px}.wb-scene-toolbar h1{grid-column:1 / -1;grid-row:2}.wb-scene-toolbar nav,.wb-scene-actions{gap:4px}.wb-scene-toolbar a,.wb-scene-actions button{padding:6px 7px;font-size:12px}.wb-scene-root .wb-scene-toolbar h1{font-size:13px}.wb-scene-details{top:94px;left:8px;max-width:calc(100% - 16px)}.wb-scene-panel{width:min(560px,calc(100vw - 16px));max-height:calc(100dvh - 185px);padding:14px}.wb-scene-root .wb-scene-host #status{left:8px;right:8px;bottom:8px}}
+@media(max-height:450px){.wb-scene-panel{max-height:calc(100dvh - 155px)}.wb-scene-root .wb-scene-host #status{max-height:40px;font-size:10px}}

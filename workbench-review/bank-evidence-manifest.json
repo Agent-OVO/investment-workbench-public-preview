@@ -1,0 +1,24 @@
+{
+  "schema": "bank-public-downloads-v1",
+  "base": "/investment-workbench-public-preview/workbench-review/bank-evidence/",
+  "research_date": "2026-10-18",
+  "files": [
+    {
+      "filename": "README.txt",
+      "label": "公开范围与暂缺材料说明",
+      "media_type": "text/plain; charset=utf-8",
+      "bytes": 682,
+      "sha256": "dd806cda4fb17960a6f936babd085d771f45c238ee1584ef3d7faf75dfbaed85",
+      "date": "2026-10-18"
+    },
+    {
+      "filename": "source-urls.json",
+      "label": "六份财报来源索引",
+      "media_type": "application/json",
+      "bytes": 3262,
+      "sha256": "3912235850b9fc57168091a8139041dd127e154030a00ad20489db06a60dd0d0",
+      "date": "2026-10-18"
+    }
+  ],
+  "scope": "Public source index only; raw history, valuation chart, bulk data and old reproduction bundle withheld."
+}

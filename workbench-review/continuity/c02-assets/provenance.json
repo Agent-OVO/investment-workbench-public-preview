@@ -1,0 +1,216 @@
+{
+  "revision": "c02-research-atlas-20261019",
+  "tables": {
+    "repairs": {
+      "needle": "| 密封产品修复 | 0.678 / 86.71% | 0.859 / 84.58% | 1.044 / 85.44% | 0.424 / 84.80% | 0.500 / 80.80% |",
+      "values": [
+        0.678,
+        0.859,
+        1.044,
+        0.424,
+        0.5
+      ],
+      "labels": [
+        "2023",
+        "2024",
+        "2025",
+        "25H1",
+        "26H1"
+      ],
+      "unit": "收入 / 亿元",
+      "scope": "年度与半年分组，不连成同频趋势",
+      "line": 53
+    },
+    "bridge": {
+      "needle": "| 干气密封及控制系统 | 9,948.11 | 6,845.81 | -3,102.30 |",
+      "values": [
+        -3102.3,
+        -1194.96,
+        444.18
+      ],
+      "labels": [
+        "干气密封",
+        "辅助系统",
+        "修复"
+      ],
+      "unit": "毛利同比变化 / 万元",
+      "scope": "2026H1 对比 2025H1，三个选定产品；不是集团完整毛利桥",
+      "line": 82
+    },
+    "concentration": {
+      "needle": "H126修复占收入6.09%，却贡献毛利0.404亿元、占合并毛利12.44%。",
+      "values": [
+        6.09,
+        12.44
+      ],
+      "labels": [
+        "收入占比",
+        "毛利占比"
+      ],
+      "unit": "2026H1 / %",
+      "scope": "两个分母不同，不相加",
+      "line": 59
+    }
+  },
+  "excerpts": [
+    {
+      "id": "design",
+      "label": "设计与工况",
+      "title": "原始设计与现场验证",
+      "needle": "原始设计、现场验证与旧图纸复用减少替换时重新设计试错。",
+      "detail": "旧图纸复用，降低替换试错",
+      "source": "A25 p13 · IR0314 pp1–2",
+      "line": 106
+    },
+    {
+      "id": "service",
+      "label": "服务网络",
+      "title": "执行能力已有记录",
+      "needle": "H126有近40个办事处、10余个国内外维修中心，完成110次抢修",
+      "detail": "近40个办事处 · 10余维修中心",
+      "source": "H126 p20",
+      "line": 108
+    },
+    {
+      "id": "conversion",
+      "label": "实际案例",
+      "title": "首轮检修与替代维修",
+      "needle": "2024年中科炼化80万吨/年乙烯三机干气密封首轮大修完成",
+      "detail": "中科炼化 · 古雷石化 · 抚顺石化",
+      "source": "A24 p21 · A25 p21",
+      "line": 109
+    },
+    {
+      "id": "closure",
+      "label": "反向约束",
+      "title": "老旧产能退出",
+      "needle": "装置关闭会永久损失存量",
+      "detail": "装置关闭，客户可能永久流失",
+      "source": "IR0908 p2 · IR0213 p2",
+      "line": 114
+    },
+    {
+      "id": "replace",
+      "label": "替代效应",
+      "title": "维修可能替代新件",
+      "needle": "维修可能替代更贵的新密封",
+      "detail": "维修增长≠生命周期收入增长",
+      "source": "IR0908 p1",
+      "line": 115
+    },
+    {
+      "id": "cash",
+      "label": "待核验问题",
+      "title": "同批装机的后续净现金",
+      "needle": "最能改变判断的一项新增证据，是同一批新装机在投产后实际产生的累计售后净现金",
+      "detail": "扣除服务、应收与资本投入",
+      "source": "原稿研究问题 · 尚未获证",
+      "line": 13
+    }
+  ],
+  "scope": "同一份中密控股研究的五个阅读视角；连线仅组织阅读，不代表跨研究引用、公司关联或已证实因果。",
+  "sourceSha256": "36ede2208d9edcb82f28f4f0947a44f73e0875a2908058d3288e806855585a6c",
+  "assets": [
+    {
+      "file": "source-design.svg",
+      "title": "原始设计与现场验证",
+      "sourceSha256": "36ede2208d9edcb82f28f4f0947a44f73e0875a2908058d3288e806855585a6c",
+      "lines": [
+        106
+      ],
+      "scope": "重新排印已校验原稿节选，不是公告原页",
+      "kind": "original source-derived SVG, not issuer document screenshot",
+      "sha256": "9e44b07953b2a4f57d9f4d0022c6848fdf1b2037ddab40d798f28605acb7a181"
+    },
+    {
+      "file": "source-service.svg",
+      "title": "执行能力已有记录",
+      "sourceSha256": "36ede2208d9edcb82f28f4f0947a44f73e0875a2908058d3288e806855585a6c",
+      "lines": [
+        108
+      ],
+      "scope": "重新排印已校验原稿节选，不是公告原页",
+      "kind": "original source-derived SVG, not issuer document screenshot",
+      "sha256": "3aa28603e45d900f572cdfa09cd2ac0499cd1337291381c43fa0691ab1026aaa"
+    },
+    {
+      "file": "source-conversion.svg",
+      "title": "首轮检修与替代维修",
+      "sourceSha256": "36ede2208d9edcb82f28f4f0947a44f73e0875a2908058d3288e806855585a6c",
+      "lines": [
+        109
+      ],
+      "scope": "重新排印已校验原稿节选，不是公告原页",
+      "kind": "original source-derived SVG, not issuer document screenshot",
+      "sha256": "55040f8baa28dc9157b0c9211cd43254059c8fac2159f802f2416e4c75f64bda"
+    },
+    {
+      "file": "source-closure.svg",
+      "title": "老旧产能退出",
+      "sourceSha256": "36ede2208d9edcb82f28f4f0947a44f73e0875a2908058d3288e806855585a6c",
+      "lines": [
+        114
+      ],
+      "scope": "重新排印已校验原稿节选，不是公告原页",
+      "kind": "original source-derived SVG, not issuer document screenshot",
+      "sha256": "bbf8797efe7fa8a0655e7dfeb718aec00c485395b1f68be2b3f2efa8684f42a7"
+    },
+    {
+      "file": "source-replace.svg",
+      "title": "维修可能替代新件",
+      "sourceSha256": "36ede2208d9edcb82f28f4f0947a44f73e0875a2908058d3288e806855585a6c",
+      "lines": [
+        115
+      ],
+      "scope": "重新排印已校验原稿节选，不是公告原页",
+      "kind": "original source-derived SVG, not issuer document screenshot",
+      "sha256": "10a2f1c46e1967132fdf0e69f698c9063640eb4a4c34f4c2d6d626c5305f7cfa"
+    },
+    {
+      "file": "source-cash.svg",
+      "title": "同批装机的后续净现金",
+      "sourceSha256": "36ede2208d9edcb82f28f4f0947a44f73e0875a2908058d3288e806855585a6c",
+      "lines": [
+        13
+      ],
+      "scope": "重新排印已校验原稿节选，不是公告原页",
+      "kind": "original source-derived SVG, not issuer document screenshot",
+      "sha256": "82de0f9a72d093fb23cd3e6f0fded7741790801fdac90fb68667eb35da34abbf"
+    },
+    {
+      "file": "repairs.svg",
+      "title": "密封产品修复收入",
+      "sourceSha256": "36ede2208d9edcb82f28f4f0947a44f73e0875a2908058d3288e806855585a6c",
+      "lines": [
+        53
+      ],
+      "scope": "年度与半年分组，不连成同频趋势",
+      "kind": "original source-derived SVG, not issuer document screenshot",
+      "sha256": "3a86928ff33544b386697d936c919ff4717e9d964d8350a02dd0d0afdbd3f27d"
+    },
+    {
+      "file": "bridge.svg",
+      "title": "选定产品毛利同比变化",
+      "sourceSha256": "36ede2208d9edcb82f28f4f0947a44f73e0875a2908058d3288e806855585a6c",
+      "lines": [
+        82,
+        84,
+        87
+      ],
+      "scope": "2026H1 对比 2025H1，三个选定产品；不是集团完整毛利桥",
+      "kind": "original source-derived SVG, not issuer document screenshot",
+      "sha256": "f98d5ff0d132b53a3b2e2e0e94c630ad0b5b66669ebe001470562fa1c31f7bc1"
+    },
+    {
+      "file": "contribution.svg",
+      "title": "修复业务收入与毛利占比",
+      "sourceSha256": "36ede2208d9edcb82f28f4f0947a44f73e0875a2908058d3288e806855585a6c",
+      "lines": [
+        59
+      ],
+      "scope": "两个分母不同，不相加",
+      "kind": "original source-derived SVG, not issuer document screenshot",
+      "sha256": "ffed94236fe697297206c9f0500d7ffc70f85310f69687815815a10efd943c45"
+    }
+  ]
+}

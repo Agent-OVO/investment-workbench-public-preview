@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="referrer" content="no-referrer">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; connect-src 'self' blob:; img-src blob: 'self'; font-src 'none'; media-src 'none'; object-src 'none'; frame-src 'none'; worker-src 'none'; base-uri 'none'; form-action 'none'">
+  <title>中密控股 · 本地只读公开研究稿</title>
+  <link rel="stylesheet" href="/investment-workbench-public-preview/cloud/current-20261015-right-workspace/reader/reader.css">
+  <link rel="stylesheet" href="/investment-workbench-public-preview/cloud/current-20261015-right-workspace/content-flow-20261017/public-draft-20261018/local-draft.css">
+  <script type="module" src="/investment-workbench-public-preview/cloud/current-20261015-right-workspace/content-flow-20261017/public-draft-20261018/main.js"></script>
+  <link rel="stylesheet" href="/investment-workbench-public-preview/typography-review/typography-candidate.css">
+</head>
+<body class="c01-reader-root local-draft-root" data-local-draft>
+  <a class="local-skip" href="#local-document">跳到研究全文</a>
+  <div class="local-paper">
+    <header class="c01-toolbar">
+      <span class="c01-kicker">DEEP READING / 公开研究稿</span>
+      <a href="#local-document">进入公开研究全文</a>
+    </header>
+    <section class="local-boundary" aria-label="稿件身份与阅读边界">
+      <p class="local-state" data-publication-state>本地只读公开研究稿，未保存云端研究库</p>
+      <p class="c01-note">独立私有验收站，仅本人登录后可访问；未接入云端研究库。八份公开报告均为既有研究的固定文本快照，日期、公开事实、算术与假设按原文展示。</p>
+      <div class="local-catalog-controls" role="search" aria-label="筛选本地公开报告目录">
+        <label for="public-catalog-search">检索报告<input id="public-catalog-search" type="search" data-catalog-search placeholder="公司、代码、标题或主题" aria-describedby="public-catalog-help" autocomplete="off"></label>
+        <label for="public-catalog-topic">主题<select id="public-catalog-topic" data-catalog-topic><option value="">全部主题</option></select></label>
+        <button type="button" data-catalog-clear disabled>清除筛选</button>
+      </div>
+      <p class="c01-note" id="public-catalog-help">仅检索本页八份报告的公开目录信息，不联网搜索；更改筛选不会中断当前阅读。</p>
+      <p class="c01-note" data-catalog-status role="status" aria-live="polite"></p>
+      <div class="local-document-picker">
+        <label for="public-document-select">本地公开稿</label>
+        <select id="public-document-select" data-document-select disabled aria-label="选择已审本地公开稿">
+          <option value="documents/sinoseal-public-research.md">中密控股 · 存量售后与现价经济性</option>
+          <option value="documents/yuntianhua-public-research.md">云天化 · 磷肥净价差与资源投资</option>
+          <option value="documents/sungrow-public-research.md">阳光电源 · 现金质量与现价隐含假设</option>
+          <option value="documents/yizumi-public-research.md">伊之密 · 订单现金与资本回报</option>
+          <option value="documents/honghua-public-research.md">宏华数科 · 耗材复购与股东现金</option>
+          <option value="documents/shaangu-public-research.md">陕鼓动力 · 设备气体工程与股东回报</option>
+          <option value="documents/crsc-public-research.md">中国通号 · 替换订单与普通股现金回报</option>
+          <option value="documents/zoomlion-public-research.md">中联重科 · 海外周期与普通股现金</option>
+        </select>
+        <button type="button" data-document-retry hidden>重试当前原稿</button>
+      </div>
+      <p class="c01-note">仅已校验正文与原文公开链接，文中提及的本地复算附件尚未关联。本地文件引用与源 SHA-256 不代表云端研究库记录。</p>
+      <p class="c01-note" data-load-status role="status" aria-live="polite">正在读取并校验本地原稿…</p>
+    </section>
+    <div data-loading>
+      <p class="local-loading">正文完成 SHA-256 核对后显示；不会载入演示替代内容。</p>
+      <noscript><p class="local-loading">本入口需要 JavaScript 校验并排版正文。可通过下方本地 Markdown 链接直接读取完整原稿。</p></noscript>
+    </div>
+    <main data-ready hidden>
+      <section class="local-space-actions" aria-label="公开稿空间预览操作">
+        <button type="button" data-open-space>打开空间预览</button>
+        <p data-space-feedback role="status" aria-live="polite">正文默认可读；只有主动打开空间预览才加载本地三维场景。</p>
+      </section>
+      <section class="local-space-shell" data-space-shell hidden aria-label="同一公开稿的空间预览">
+        <header class="local-space-toolbar"><strong>本地公开稿 · 空间预览</strong><button type="button" data-close-space>返回原阅读位置</button></header>
+        <p class="local-space-status" data-space-status role="status" aria-live="polite"></p>
+        <div class="local-space-host" data-space-host>
+          <div class="stage-tools"><span id="trial-title"></span><button type="button" id="reset">重置视角</button><button type="button" id="retry">重新加载场景</button><span id="angle"></span></div>
+          <p id="status" role="status"></p>
+          <div id="stage"><canvas id="trial-canvas" tabindex="0" aria-label="空间视角微调：方向键与 Home；完整稿件见下方正文"></canvas><div id="stage-bindings" aria-label="中央原文阅读入口"></div></div>
+          <p data-anchor-status class="local-space-status"></p>
+          <div hidden><div id="variants"></div><button type="button" id="motion"></button><button type="button" id="motion-reset"></button><span id="motion-time"></span><span id="variant-note"></span></div>
+          <details class="diagnostics"><summary>本地场景诊断（非生产验收）</summary><pre id="diagnostic-output"></pre></details>
+        </div>
+        <section class="local-space-fallback" data-space-fallback tabindex="-1" aria-label="完整原文预览与阅读入口">
+          <h2 data-preview-title></h2><p data-preview-date></p><p data-preview-excerpt></p><p data-preview-source></p>
+          <p>本稿未登记研究关联，外围槽位未绑定内容。场景装饰不表示研究关系；原文来源不计作已登记证据。</p>
+          <button type="button" data-space-read>阅读全文</button>
+        </section>
+      </section>
+      <div class="c01-reader-controls">
+        <label>文字大小 <select data-reader-scale aria-label="正文文字大小"><option value="100">100%</option><option value="125">125%</option><option value="150">150%</option><option value="200">200%</option></select></label>
+        <a data-source-jump>查看原文来源链接</a>
+      </div>
+      <details class="local-provenance" data-reader-provenance open>
+        <summary>日期、来源与限制</summary>
+        <dl class="c01-provenance" data-metadata></dl>
+        <ul data-limits></ul>
+        <p class="c01-empty">云端身份与保存修订：未提供。登记关系：未登记。原稿所提附件未关联。云天化另附独立公开资料派生辅助图，仅在对应原稿校验通过后显示；原稿及下载不包含辅助图。</p>
+      </details>
+      <details class="c01-toc local-toc" data-reader-toc open>
+        <summary data-toc-count>文章目录</summary>
+        <nav data-toc aria-label="公开研究稿目录"></nav>
+      </details>
+      <aside data-public-chart hidden aria-label="独立于原稿的公开资料派生辅助图"></aside>
+      <article class="c01-article" id="local-document" data-article tabindex="-1" aria-label="公开研究稿完整正文"></article>
+      <footer class="c01-article-footer local-footer">全文结束 · 上文保留原稿全部章节与数值表。来源链接只表示原文引用，未经本候选验证为可用附件。</footer>
+      <details class="local-raw" data-reader-raw>
+        <summary>完整 Markdown 原文（可选择复制）</summary>
+        <pre data-raw tabindex="0" aria-label="完整 Markdown 原文"></pre>
+      </details>
+    </main>
+    <footer class="local-download">
+      <a data-document-download href="/investment-workbench-public-preview/cloud/current-20261015-right-workspace/content-flow-20261017/public-draft-20261018/documents/sinoseal-public-research.md" download="中密控股_存量售后与现价经济性深研.md">下载本地 Markdown 原稿</a>
+      <p class="c01-note">仅下载本候选随附文本；不代表 PDF 原件或云端保存成果。没有自动保存、上传或后台请求研究服务。</p>
+    </footer>
+  </div>
+</body>
+</html>

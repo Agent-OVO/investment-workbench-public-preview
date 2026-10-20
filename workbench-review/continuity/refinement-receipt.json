@@ -1,0 +1,30 @@
+{
+  "revision": "strata-warm-optical-20261019",
+  "scope": "Default refinement stages; opt-in C02 pilot has its own new composition",
+  "c02Pilot": {
+    "revision": "c02-glass-brass-stone-v3-map-roughness",
+    "contentProjection": "c02-glass-front-homography-v1",
+    "originalCameraPositionUnmodified": true,
+    "originalCameraPoseUnmodified": false,
+    "target": [
+      0,
+      0.9,
+      0
+    ],
+    "desktopFov": 20.4,
+    "originalGLBBytesUnmodified": true,
+    "legacyAssemblyHiddenAtRuntime": true,
+    "proceduralReplacement": true,
+    "visualAccepted": false,
+    "hardwareGPUAccepted": false
+  },
+  "originalStageSha256": "84771908a1e5ae1b175f95765eb25f8ffb96e637441fdfa4d2d4beebbaaa897b",
+  "derivedStageSha256": "93bbc545eec665f15f81eb59081d7f2980b7a611f9723b9c17fc4bb1027da031",
+  "originalModelsUnmodified": true,
+  "originalCameraAssetsUnmodified": true,
+  "originalCameraPoseUnmodified": true,
+  "portraitProjectionAdapted": true,
+  "protectedSurfacesGuardedAtRuntime": true,
+  "visualAccepted": false,
+  "gpuAccepted": false
+}

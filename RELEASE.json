@@ -1,0 +1,21 @@
+{
+  "version": "0.1.0-preview.1",
+  "date": "2026-10-20",
+  "candidate": "c02_spatial_overview_candidate_20261020",
+  "sourceAuthority": "Agent-OVO/investment-research-spatial-frontend (private; authoritative source)",
+  "handoffSha256": "444da1e6bebd2ead2427d13379624b0af1b4a7b79fb5441d468d3ab3f3cba410",
+  "originalSourceInventorySha256": "823c3fc9345f1a081dba9f34688fc0506a9bb30d22aef2e5a172fe8124db044c",
+  "sourceIdentityNote": "Original inventory describes the candidate before public adaptation, not the bytes in this repository. Runtime hashes are in PUBLIC_RUNTIME_MANIFEST.json.",
+  "build": "Node.js 24.12.0; isolated source adaptation; node continuity/archive-manifest.mjs --write; node continuity/build.mjs; static Pages base-path adaptation",
+  "pagesBase": "/investment-workbench-public-preview/",
+  "artifactOnly": true,
+  "changes": [
+    "Removed personal provenance paths and source-only metadata",
+    "Restricted bank edition and truthful two-file download scope",
+    "Replaced private C01 source link with public release details",
+    "Added component licence notices and source credits",
+    "Adapted root URLs and catalog route validation to GitHub Pages project path",
+    "Restored homepage gutters and improved C02 overview text separation after same-camera browser inspection; model bytes and camera unchanged"
+  ],
+  "validation": "Actual local Chromium page and model rendering checked; see VISUAL_REVIEW.md. SwiftShader software rendering only; hardware GPU and owner visual acceptance remain unverified."
+}

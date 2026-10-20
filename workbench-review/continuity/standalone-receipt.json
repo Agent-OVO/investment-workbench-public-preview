@@ -1,0 +1,26 @@
+{
+  "revision": "standalone-scene-shell-20261019",
+  "parentSitesCommit": "5ba5c354f4192782ee3fea5d8a4a811545ed1384",
+  "routes": [
+    "/investment-workbench-public-preview/workbench-review/space/sinoseal/",
+    "/investment-workbench-public-preview/workbench-review/space/yuntianhua/",
+    "/investment-workbench-public-preview/workbench-review/space/sungrow/",
+    "/investment-workbench-public-preview/workbench-review/space/yizumi/",
+    "/investment-workbench-public-preview/workbench-review/space/honghua/",
+    "/investment-workbench-public-preview/workbench-review/space/shaangu/",
+    "/investment-workbench-public-preview/workbench-review/space/crsc/",
+    "/investment-workbench-public-preview/workbench-review/space/zoomlion/",
+    "/investment-workbench-public-preview/workbench-review/space/airtransport/",
+    "/investment-workbench-public-preview/workbench-review/space/banks/",
+    "/investment-workbench-public-preview/workbench-review/space/baiyunfollowup/",
+    "/investment-workbench-public-preview/workbench-review/models/c02/",
+    "/investment-workbench-public-preview/workbench-review/models/c03/",
+    "/investment-workbench-public-preview/workbench-review/models/c04/"
+  ],
+  "defaultFullViewport": true,
+  "requiresFullscreenAPI": false,
+  "originalRuntimeAndModelsUnmodified": true,
+  "c01Complete": false,
+  "browserVisualAcceptance": false,
+  "gpuAcceptance": false
+}

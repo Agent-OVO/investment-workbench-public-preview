@@ -1,0 +1,1 @@
+.comparison{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}.comparison figure{margin:0}.comparison img{width:100%;height:auto;display:block;border:1px solid #cbd5c7}.comparison figcaption{padding:12px 0}.evidence-note{padding:20px;background:#edf2e9}.mobile-evidence img{max-width:390px}@media(max-width:800px){.comparison{grid-template-columns:1fr}}

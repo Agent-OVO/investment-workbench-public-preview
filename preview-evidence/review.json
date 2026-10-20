@@ -1,0 +1,1007 @@
+{
+  "date": "2026-10-20",
+  "browser": "Chromium 156.0.8078.4 headless, Windows",
+  "webglRenderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+  "hardwareGpuAcceptance": false,
+  "scope": "Actual browser rendering, DOM observations and selected real clicks; not visual acceptance by the owner.",
+  "routeObservations": [
+    {
+      "title": "主页 · 研究工作台",
+      "viewport": [
+        1672,
+        941
+      ],
+      "bodyWidth": 1672,
+      "reportReady": false,
+      "textLength": 667,
+      "failedImages": [],
+      "stage": null,
+      "alerts": [],
+      "path": "workbench-review/"
+    },
+    {
+      "title": "证据 · 研究工作台",
+      "viewport": [
+        1672,
+        941
+      ],
+      "bodyWidth": 1672,
+      "reportReady": false,
+      "textLength": 3933,
+      "failedImages": [],
+      "stage": null,
+      "alerts": [],
+      "path": "workbench-review/evidence/"
+    },
+    {
+      "title": "历史版本 · 研究工作台",
+      "viewport": [
+        1672,
+        941
+      ],
+      "bodyWidth": 1672,
+      "reportReady": false,
+      "textLength": 864,
+      "failedImages": [],
+      "stage": null,
+      "alerts": [],
+      "path": "workbench-review/history/"
+    },
+    {
+      "title": "宏华修订前归档 · 研究工作台",
+      "viewport": [
+        1672,
+        941
+      ],
+      "bodyWidth": 1672,
+      "reportReady": false,
+      "textLength": 12031,
+      "failedImages": [],
+      "stage": null,
+      "alerts": [],
+      "path": "workbench-review/history/honghua-before/"
+    },
+    {
+      "title": "模型档案 · 研究工作台",
+      "viewport": [
+        1672,
+        941
+      ],
+      "bodyWidth": 1672,
+      "reportReady": false,
+      "textLength": 400,
+      "failedImages": [],
+      "stage": null,
+      "alerts": [],
+      "path": "workbench-review/models/"
+    },
+    {
+      "title": "C01 第一轮构图 · 研究工作台",
+      "viewport": [
+        1672,
+        941
+      ],
+      "bodyWidth": 1672,
+      "reportReady": false,
+      "textLength": 401,
+      "failedImages": [],
+      "stage": null,
+      "alerts": [],
+      "path": "workbench-review/models/c01/"
+    },
+    {
+      "title": "C02 双台 B · 独立场景",
+      "viewport": [
+        1672,
+        941
+      ],
+      "bodyWidth": 1672,
+      "reportReady": false,
+      "textLength": 68,
+      "failedImages": [],
+      "stage": {
+        "status": "ready",
+        "renderReady": true,
+        "variant": "c02-platform-b",
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "loadedAssets": [
+          {
+            "id": "c02-platform-b",
+            "sha256": "8f22f3fe4bc865f53cb63b6d60c735c7802a532c477198a30a3aaf7c50fb140d"
+          }
+        ],
+        "errors": []
+      },
+      "alerts": [],
+      "path": "workbench-review/models/c02/"
+    },
+    {
+      "title": "C03 树形对照 · 独立场景",
+      "viewport": [
+        1672,
+        941
+      ],
+      "bodyWidth": 1672,
+      "reportReady": false,
+      "textLength": 68,
+      "failedImages": [],
+      "stage": {
+        "status": "ready",
+        "renderReady": true,
+        "variant": "c03-trees-75",
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "loadedAssets": [
+          {
+            "id": "c03-trees-75",
+            "sha256": "6d898ee8e51a857198411217fb944d2ddefd53ebbe51e19227f4cd78585a74ad"
+          }
+        ],
+        "errors": []
+      },
+      "alerts": [],
+      "path": "workbench-review/models/c03/"
+    },
+    {
+      "title": "C04 连冠静态候选 · 独立场景",
+      "viewport": [
+        1672,
+        941
+      ],
+      "bodyWidth": 1672,
+      "reportReady": false,
+      "textLength": 70,
+      "failedImages": [],
+      "stage": {
+        "status": "ready",
+        "renderReady": true,
+        "variant": "c04-whole-canopy",
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "loadedAssets": [
+          {
+            "id": "c04-whole-canopy",
+            "sha256": "99abf270e35ae1c84814330728041fe8277be6d5abd6fe713241d1d9347b7fac"
+          }
+        ],
+        "errors": []
+      },
+      "alerts": [],
+      "path": "workbench-review/models/c04/"
+    },
+    {
+      "title": "研究库 · 研究工作台",
+      "viewport": [
+        1672,
+        941
+      ],
+      "bodyWidth": 1672,
+      "reportReady": false,
+      "textLength": 1037,
+      "failedImages": [],
+      "stage": null,
+      "alerts": [],
+      "path": "workbench-review/research/"
+    },
+    {
+      "title": "航空与机场 · 完整研究 · 研究工作台",
+      "viewport": [
+        1672,
+        941
+      ],
+      "bodyWidth": 1672,
+      "reportReady": true,
+      "textLength": 14944,
+      "failedImages": [],
+      "stage": null,
+      "alerts": [],
+      "path": "workbench-review/research/airtransport/"
+    },
+    {
+      "title": "白云机场第二轮补充 · 完整研究 · 研究工作台",
+      "viewport": [
+        1672,
+        941
+      ],
+      "bodyWidth": 1672,
+      "reportReady": true,
+      "textLength": 4536,
+      "failedImages": [],
+      "stage": null,
+      "alerts": [],
+      "path": "workbench-review/research/baiyunfollowup/"
+    },
+    {
+      "title": "六家银行 · 完整研究 · 研究工作台",
+      "viewport": [
+        1672,
+        941
+      ],
+      "bodyWidth": 1672,
+      "reportReady": true,
+      "textLength": 14198,
+      "failedImages": [],
+      "stage": null,
+      "alerts": [],
+      "path": "workbench-review/research/banks/"
+    },
+    {
+      "title": "中国通号 · 完整研究 · 研究工作台",
+      "viewport": [
+        1672,
+        941
+      ],
+      "bodyWidth": 1672,
+      "reportReady": true,
+      "textLength": 19087,
+      "failedImages": [],
+      "stage": null,
+      "alerts": [],
+      "path": "workbench-review/research/crsc/"
+    },
+    {
+      "title": "宏华数科 · 完整研究 · 研究工作台",
+      "viewport": [
+        1672,
+        941
+      ],
+      "bodyWidth": 1672,
+      "reportReady": true,
+      "textLength": 12919,
+      "failedImages": [],
+      "stage": null,
+      "alerts": [],
+      "path": "workbench-review/research/honghua/"
+    },
+    {
+      "title": "陕鼓动力 · 完整研究 · 研究工作台",
+      "viewport": [
+        1672,
+        941
+      ],
+      "bodyWidth": 1672,
+      "reportReady": true,
+      "textLength": 15463,
+      "failedImages": [],
+      "stage": null,
+      "alerts": [],
+      "path": "workbench-review/research/shaangu/"
+    },
+    {
+      "title": "中密控股 · 完整研究 · 研究工作台",
+      "viewport": [
+        1672,
+        941
+      ],
+      "bodyWidth": 1672,
+      "reportReady": true,
+      "textLength": 16930,
+      "failedImages": [],
+      "stage": null,
+      "alerts": [],
+      "path": "workbench-review/research/sinoseal/"
+    },
+    {
+      "title": "阳光电源 · 完整研究 · 研究工作台",
+      "viewport": [
+        1672,
+        941
+      ],
+      "bodyWidth": 1672,
+      "reportReady": true,
+      "textLength": 11865,
+      "failedImages": [],
+      "stage": null,
+      "alerts": [],
+      "path": "workbench-review/research/sungrow/"
+    },
+    {
+      "title": "伊之密 · 完整研究 · 研究工作台",
+      "viewport": [
+        1672,
+        941
+      ],
+      "bodyWidth": 1672,
+      "reportReady": true,
+      "textLength": 12155,
+      "failedImages": [],
+      "stage": null,
+      "alerts": [],
+      "path": "workbench-review/research/yizumi/"
+    },
+    {
+      "title": "云天化 · 完整研究 · 研究工作台",
+      "viewport": [
+        1672,
+        941
+      ],
+      "bodyWidth": 1672,
+      "reportReady": true,
+      "textLength": 11810,
+      "failedImages": [],
+      "stage": null,
+      "alerts": [],
+      "path": "workbench-review/research/yuntianhua/"
+    },
+    {
+      "title": "中联重科 · 完整研究 · 研究工作台",
+      "viewport": [
+        1672,
+        941
+      ],
+      "bodyWidth": 1672,
+      "reportReady": true,
+      "textLength": 16317,
+      "failedImages": [],
+      "stage": null,
+      "alerts": [],
+      "path": "workbench-review/research/zoomlion/"
+    },
+    {
+      "title": "研究复盘 · 研究工作台",
+      "viewport": [
+        1672,
+        941
+      ],
+      "bodyWidth": 1672,
+      "reportReady": false,
+      "textLength": 1147,
+      "failedImages": [],
+      "stage": null,
+      "alerts": [],
+      "path": "workbench-review/review/"
+    },
+    {
+      "title": "空间 · 研究工作台",
+      "viewport": [
+        1672,
+        941
+      ],
+      "bodyWidth": 1672,
+      "reportReady": false,
+      "textLength": 969,
+      "failedImages": [],
+      "stage": null,
+      "alerts": [],
+      "path": "workbench-review/space/"
+    },
+    {
+      "title": "航空与机场 空间阅读 · 独立场景",
+      "viewport": [
+        1672,
+        941
+      ],
+      "bodyWidth": 1672,
+      "reportReady": false,
+      "textLength": 97,
+      "failedImages": [],
+      "stage": {
+        "status": "ready",
+        "renderReady": true,
+        "variant": "c02-platform-b",
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "loadedAssets": [
+          {
+            "id": "c02-platform-b",
+            "sha256": "8f22f3fe4bc865f53cb63b6d60c735c7802a532c477198a30a3aaf7c50fb140d"
+          }
+        ],
+        "errors": []
+      },
+      "alerts": [],
+      "path": "workbench-review/space/airtransport/"
+    },
+    {
+      "title": "白云机场第二轮补充 空间阅读 · 独立场景",
+      "viewport": [
+        1672,
+        941
+      ],
+      "bodyWidth": 1672,
+      "reportReady": false,
+      "textLength": 105,
+      "failedImages": [],
+      "stage": {
+        "status": "ready",
+        "renderReady": true,
+        "variant": "c02-platform-b",
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "loadedAssets": [
+          {
+            "id": "c02-platform-b",
+            "sha256": "8f22f3fe4bc865f53cb63b6d60c735c7802a532c477198a30a3aaf7c50fb140d"
+          }
+        ],
+        "errors": []
+      },
+      "alerts": [],
+      "path": "workbench-review/space/baiyunfollowup/"
+    },
+    {
+      "title": "六家银行 空间阅读 · 独立场景",
+      "viewport": [
+        1672,
+        941
+      ],
+      "bodyWidth": 1672,
+      "reportReady": false,
+      "textLength": 95,
+      "failedImages": [],
+      "stage": {
+        "status": "ready",
+        "renderReady": true,
+        "variant": "c02-platform-b",
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "loadedAssets": [
+          {
+            "id": "c02-platform-b",
+            "sha256": "8f22f3fe4bc865f53cb63b6d60c735c7802a532c477198a30a3aaf7c50fb140d"
+          }
+        ],
+        "errors": []
+      },
+      "alerts": [],
+      "path": "workbench-review/space/banks/"
+    },
+    {
+      "title": "中国通号 空间阅读 · 独立场景",
+      "viewport": [
+        1672,
+        941
+      ],
+      "bodyWidth": 1672,
+      "reportReady": false,
+      "textLength": 95,
+      "failedImages": [],
+      "stage": {
+        "status": "ready",
+        "renderReady": true,
+        "variant": "c02-platform-b",
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "loadedAssets": [
+          {
+            "id": "c02-platform-b",
+            "sha256": "8f22f3fe4bc865f53cb63b6d60c735c7802a532c477198a30a3aaf7c50fb140d"
+          }
+        ],
+        "errors": []
+      },
+      "alerts": [],
+      "path": "workbench-review/space/crsc/"
+    },
+    {
+      "title": "宏华数科 空间阅读 · 独立场景",
+      "viewport": [
+        1672,
+        941
+      ],
+      "bodyWidth": 1672,
+      "reportReady": false,
+      "textLength": 95,
+      "failedImages": [],
+      "stage": {
+        "status": "ready",
+        "renderReady": true,
+        "variant": "c02-platform-b",
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "loadedAssets": [
+          {
+            "id": "c02-platform-b",
+            "sha256": "8f22f3fe4bc865f53cb63b6d60c735c7802a532c477198a30a3aaf7c50fb140d"
+          }
+        ],
+        "errors": []
+      },
+      "alerts": [],
+      "path": "workbench-review/space/honghua/"
+    },
+    {
+      "title": "陕鼓动力 空间阅读 · 独立场景",
+      "viewport": [
+        1672,
+        941
+      ],
+      "bodyWidth": 1672,
+      "reportReady": false,
+      "textLength": 95,
+      "failedImages": [],
+      "stage": {
+        "status": "ready",
+        "renderReady": true,
+        "variant": "c02-platform-b",
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "loadedAssets": [
+          {
+            "id": "c02-platform-b",
+            "sha256": "8f22f3fe4bc865f53cb63b6d60c735c7802a532c477198a30a3aaf7c50fb140d"
+          }
+        ],
+        "errors": []
+      },
+      "alerts": [],
+      "path": "workbench-review/space/shaangu/"
+    },
+    {
+      "title": "中密控股 空间阅读 · 独立场景",
+      "viewport": [
+        1672,
+        941
+      ],
+      "bodyWidth": 1672,
+      "reportReady": false,
+      "textLength": 95,
+      "failedImages": [],
+      "stage": {
+        "status": "ready",
+        "renderReady": true,
+        "variant": "c02-platform-b",
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "loadedAssets": [
+          {
+            "id": "c02-platform-b",
+            "sha256": "8f22f3fe4bc865f53cb63b6d60c735c7802a532c477198a30a3aaf7c50fb140d"
+          }
+        ],
+        "errors": []
+      },
+      "alerts": [],
+      "path": "workbench-review/space/sinoseal/"
+    },
+    {
+      "title": "阳光电源 空间阅读 · 独立场景",
+      "viewport": [
+        1672,
+        941
+      ],
+      "bodyWidth": 1672,
+      "reportReady": false,
+      "textLength": 95,
+      "failedImages": [],
+      "stage": {
+        "status": "ready",
+        "renderReady": true,
+        "variant": "c02-platform-b",
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "loadedAssets": [
+          {
+            "id": "c02-platform-b",
+            "sha256": "8f22f3fe4bc865f53cb63b6d60c735c7802a532c477198a30a3aaf7c50fb140d"
+          }
+        ],
+        "errors": []
+      },
+      "alerts": [],
+      "path": "workbench-review/space/sungrow/"
+    },
+    {
+      "title": "伊之密 空间阅读 · 独立场景",
+      "viewport": [
+        1672,
+        941
+      ],
+      "bodyWidth": 1672,
+      "reportReady": false,
+      "textLength": 93,
+      "failedImages": [],
+      "stage": {
+        "status": "ready",
+        "renderReady": true,
+        "variant": "c02-platform-b",
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "loadedAssets": [
+          {
+            "id": "c02-platform-b",
+            "sha256": "8f22f3fe4bc865f53cb63b6d60c735c7802a532c477198a30a3aaf7c50fb140d"
+          }
+        ],
+        "errors": []
+      },
+      "alerts": [],
+      "path": "workbench-review/space/yizumi/"
+    },
+    {
+      "title": "云天化 空间阅读 · 独立场景",
+      "viewport": [
+        1672,
+        941
+      ],
+      "bodyWidth": 1672,
+      "reportReady": false,
+      "textLength": 93,
+      "failedImages": [],
+      "stage": {
+        "status": "ready",
+        "renderReady": true,
+        "variant": "c02-platform-b",
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "loadedAssets": [
+          {
+            "id": "c02-platform-b",
+            "sha256": "8f22f3fe4bc865f53cb63b6d60c735c7802a532c477198a30a3aaf7c50fb140d"
+          }
+        ],
+        "errors": []
+      },
+      "alerts": [],
+      "path": "workbench-review/space/yuntianhua/"
+    },
+    {
+      "title": "中联重科 空间阅读 · 独立场景",
+      "viewport": [
+        1672,
+        941
+      ],
+      "bodyWidth": 1672,
+      "reportReady": false,
+      "textLength": 95,
+      "failedImages": [],
+      "stage": {
+        "status": "ready",
+        "renderReady": true,
+        "variant": "c02-platform-b",
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "loadedAssets": [
+          {
+            "id": "c02-platform-b",
+            "sha256": "8f22f3fe4bc865f53cb63b6d60c735c7802a532c477198a30a3aaf7c50fb140d"
+          }
+        ],
+        "errors": []
+      },
+      "alerts": [],
+      "path": "workbench-review/space/zoomlion/"
+    }
+  ],
+  "matchedC02": {
+    "sameCamera": true,
+    "camera": {
+      "cameraPreset": "overview",
+      "position": [
+        0,
+        3.4731903076171875,
+        14.001140594482422
+      ],
+      "target": [
+        0,
+        0.9,
+        0
+      ],
+      "presentation": {
+        "azimuth": 0,
+        "elevation": 0,
+        "distance": 1,
+        "yawDegrees": 0,
+        "pitchDegrees": 0
+      },
+      "limits": {
+        "yawDegrees": [
+          -4,
+          4
+        ],
+        "pitchDegrees": [
+          -2,
+          2
+        ],
+        "zoomEnabled": false,
+        "distanceRatio": [
+          1,
+          1
+        ]
+      },
+      "cameraDistance": 14.235632978750141,
+      "type": "perspective",
+      "quaternion": [
+        -0.09075299828938557,
+        0,
+        0,
+        0.9958734323705433
+      ],
+      "up": [
+        0,
+        1,
+        0
+      ],
+      "projection": [
+        2.9085200610240682,
+        0,
+        0,
+        0,
+        0,
+        5.557766333751133,
+        0,
+        0,
+        0,
+        0,
+        -1.000200020004981,
+        -1,
+        0,
+        0,
+        -0.2000200049810284,
+        0
+      ],
+      "fov": 20.4,
+      "near": 0.10000000149011612,
+      "far": 1000,
+      "source": {
+        "intrinsicsUnverified": false,
+        "source": "C02_original_camera_1672x941.json",
+        "rigSha256": "47c653a0a7e7075bcb7b1b668429912ea4c7f8c1023a0c13f2d43b1ceedbb148",
+        "originalProjection": [
+          [
+            2.6666665077209473,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            4.738221645355225,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            -1.0001999139785767,
+            -0.20002000033855438
+          ],
+          [
+            0,
+            0,
+            -1,
+            0
+          ]
+        ]
+      },
+      "fitPolicy": "C02 atlas pilot: authored camera position retained, target lowered to [0,0.9,0], desktop lens 20.4 degrees; compact overview preserves a 29-degree horizontal field with a minimum 20.4-degree vertical lens and DOM reading flow. This is a new composition, not an exact concept-camera recovery."
+    },
+    "sameModelBytes": true,
+    "modelSha256": "8f22f3fe4bc865f53cb63b6d60c735c7802a532c477198a30a3aaf7c50fb140d",
+    "viewport": [
+      1672,
+      941
+    ]
+  },
+  "visualChanges": [
+    "Homepage content gutters restored",
+    "C02 overview index-card background separates text from terrain and foreground; full document below remains intact"
+  ],
+  "limits": [
+    "SwiftShader software renderer; no hardware GPU or mobile-device performance claim",
+    "ReadPixels performance warnings during screenshots",
+    "C03/C04 model pages are standalone art studies with blank content carriers",
+    "Fresh Marble001 upstream ZIP download returned 403; embedded provenance was checked against pinned licensed texture bytes"
+  ],
+  "catalog-search": {
+    "visibleCards": [
+      "多公司专题 · 6 家公司\n首轮研究\n六家银行\n\n首轮研究\n\n银行\n多公司专题\n信用成本\n普通股回报\n2026-10-18\n阅读全文 ↗"
+    ],
+    "status": "显示 1 / 11 份公开稿",
+    "path": "workbench-review/research/?q=%E9%93%B6%E8%A1%8C"
+  },
+  "bank-click": {
+    "title": "六家银行 · 完整研究 · 研究工作台",
+    "viewport": [
+      1672,
+      941
+    ],
+    "bodyWidth": 1672,
+    "reportReady": true,
+    "reportStatus": "公开节选校验通过 · 30,663 字节 · 当前公开版已载入",
+    "renderedArticleChars": 11623,
+    "textLength": 14203,
+    "failedImages": [],
+    "stage": null,
+    "alerts": [],
+    "path": "workbench-review/research/banks/?q=%E9%93%B6%E8%A1%8C&catalog=1"
+  },
+  "real-space-jump": {
+    "title": "六家银行 空间阅读 · 独立场景",
+    "viewport": [
+      1672,
+      941
+    ],
+    "bodyWidth": 1672,
+    "reportReady": false,
+    "textLength": 95,
+    "failedImages": [],
+    "stage": {
+      "status": "ready",
+      "renderReady": true,
+      "variant": "c02-platform-b",
+      "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+      "loadedAssets": [
+        {
+          "id": "c02-platform-b",
+          "sha256": "8f22f3fe4bc865f53cb63b6d60c735c7802a532c477198a30a3aaf7c50fb140d"
+        }
+      ],
+      "errors": []
+    },
+    "alerts": [],
+    "path": "workbench-review/space/banks/?return=local-banks-line-1"
+  },
+  "real-report-return": {
+    "status": "公开节选校验通过 · 30,663 字节 · 当前公开版已载入",
+    "selects": [
+      {
+        "id": "",
+        "name": "",
+        "options": [
+          {
+            "value": "100",
+            "text": "100%"
+          },
+          {
+            "value": "125",
+            "text": "125%"
+          },
+          {
+            "value": "150",
+            "text": "150%"
+          },
+          {
+            "value": "200",
+            "text": "200%"
+          }
+        ]
+      },
+      {
+        "id": "",
+        "name": "",
+        "options": [
+          {
+            "value": "601128",
+            "text": "常熟银行 · 601128"
+          },
+          {
+            "value": "601658",
+            "text": "邮储银行 · 601658"
+          },
+          {
+            "value": "600908",
+            "text": "无锡银行 · 600908"
+          },
+          {
+            "value": "601528",
+            "text": "瑞丰银行 · 601528"
+          },
+          {
+            "value": "002839",
+            "text": "张家港行 · 002839"
+          },
+          {
+            "value": "601916",
+            "text": "浙商银行 · 601916"
+          }
+        ]
+      },
+      {
+        "id": "",
+        "name": "",
+        "options": [
+          {
+            "value": "amount",
+            "text": "金额（亿元）"
+          },
+          {
+            "value": "contribution",
+            "text": "对上年净利息贡献（百分点）"
+          }
+        ]
+      }
+    ],
+    "path": "workbench-review/research/banks/#local-banks-line-1"
+  },
+  "bank-interaction": {
+    "selected": "601658",
+    "unit": "contribution",
+    "summary": "邮储银行：净利息收入由 1,390.58 亿元变为 1,471.47 亿元，合计变化 +80.89 亿元（同比 +5.82%）。",
+    "downloadName": "banks-public-excerpt-20261020.md"
+  },
+  "failure-report": {
+    "title": "六家银行 · 完整研究 · 研究工作台",
+    "viewport": [
+      1672,
+      941
+    ],
+    "bodyWidth": 1672,
+    "reportReady": false,
+    "reportStatus": "公开稿未载入，未显示正文。请检查本候选的本地原稿与路径；不会改用演示或云端内容。 下方完整静态正文仍可阅读。 诊断：LOCAL_DOCUMENT_HTTP_503",
+    "renderedArticleChars": 0,
+    "textLength": 12866,
+    "failedImages": [],
+    "stage": null,
+    "alerts": [
+      "公开稿未载入，未显示正文。请检查本候选的本地原稿与路径；不会改用演示或云端内容。 下方完整静态正文仍可阅读。 诊断：LOCAL_DOCUMENT_HTTP_503"
+    ],
+    "path": "workbench-review/research/banks/"
+  },
+  "failure-model": {
+    "title": "C02 双台 B · 独立场景",
+    "viewport": [
+      1672,
+      941
+    ],
+    "bodyWidth": 1672,
+    "reportReady": false,
+    "textLength": 1039,
+    "failedImages": [],
+    "stage": {
+      "status": "disposed",
+      "renderReady": false,
+      "variant": null,
+      "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+      "loadedAssets": [],
+      "errors": [
+        {
+          "phase": "asset",
+          "variant": "c02-platform-b",
+          "message": "Error: c02-platform-b: HTTP 503"
+        }
+      ]
+    },
+    "overview": {
+      "layout": "reading-flow",
+      "layoutReason": "scene-unavailable"
+    },
+    "alerts": [
+      "3D 显示失败 · 已保留可读研究、原稿与来源入口"
+    ],
+    "path": "workbench-review/models/c02/?visual=c02-light-study"
+  },
+  "home-mobile": {
+    "title": "主页 · 研究工作台",
+    "viewport": [
+      390,
+      844
+    ],
+    "bodyWidth": 390,
+    "reportReady": false,
+    "textLength": 659,
+    "failedImages": [],
+    "stage": null,
+    "alerts": [],
+    "path": "workbench-review/"
+  },
+  "c02-mobile": {
+    "title": "C02 双台 B · 独立场景",
+    "viewport": [
+      390,
+      844
+    ],
+    "bodyWidth": 390,
+    "reportReady": false,
+    "textLength": 80,
+    "failedImages": [],
+    "stage": {
+      "status": "ready",
+      "renderReady": true,
+      "variant": "c02-platform-b",
+      "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+      "loadedAssets": [
+        {
+          "id": "c02-platform-b",
+          "sha256": "8f22f3fe4bc865f53cb63b6d60c735c7802a532c477198a30a3aaf7c50fb140d"
+        }
+      ],
+      "errors": []
+    },
+    "alerts": [],
+    "path": "workbench-review/models/c02/?visual=c02-light-study"
+  },
+  "banks-mobile": {
+    "title": "六家银行 · 完整研究 · 研究工作台",
+    "viewport": [
+      390,
+      844
+    ],
+    "bodyWidth": 390,
+    "reportReady": true,
+    "reportStatus": "公开节选校验通过 · 30,663 字节 · 当前公开版已载入",
+    "renderedArticleChars": 11623,
+    "textLength": 14191,
+    "failedImages": [],
+    "stage": null,
+    "alerts": [],
+    "path": "workbench-review/research/banks/"
+  }
+}

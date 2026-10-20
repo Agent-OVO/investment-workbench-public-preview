@@ -1,0 +1,46 @@
+/* Independent DOM chart: scoped to the aside, leaving report text and images intact. */
+.bank-interactive{--bank-positive:#2e6654;--bank-negative:#9a4835;--bank-line:#d5ded2;margin:2rem clamp(16px,4vw,64px);padding:clamp(18px,3vw,34px);border:1px solid var(--bank-line);border-radius:12px;background:#f7faf3;color:#263a34;font-family:var(--wb-sans,sans-serif);line-height:1.7;font-size:15px;min-width:0}
+.bank-interactive *{box-sizing:border-box}
+.bank-interactive .bank-chart-title{margin:0 0 .3rem;font-size:1.5rem;line-height:1.5;font-weight:600}
+.bank-chart-intro{margin:.2rem 0 1rem;color:#586b5b;font-size:.9em}
+.bank-chart-boundary{padding:.8rem 1rem;border-left:3px solid #a4b492;background:#ecf1e6;font-size:.9em}
+.bank-chart-controls{display:flex;align-items:end;gap:1rem;flex-wrap:wrap;margin:1.4rem 0}
+.bank-chart-controls label{display:flex;flex:1 1 220px;flex-direction:column;gap:.4rem;min-width:0;font-weight:600;font-size:.9em}
+.bank-chart-controls select{width:100%;min-height:48px;padding:.6rem .8rem;border:1px solid #9eae9a;border-radius:6px;background:#fffefa;color:#263a34;font:inherit;white-space:normal}
+.bank-chart-summary{font-size:1em;font-weight:600;margin:1.4rem 0 .5rem;overflow-wrap:anywhere}
+.bank-chart-feedback{font-size:.88em;color:#8d3f2f;min-height:1em;margin:.3rem 0}
+.bank-chart-plot{padding:.8rem 0 .4rem}
+.bank-chart-axis{display:flex;justify-content:space-between;gap:.5rem;margin-left:11.5rem;margin-right:12rem;color:#536452;font-size:.75em;font-variant-numeric:tabular-nums}
+.bank-chart-axis span{flex:1}.bank-chart-axis span:nth-child(2){text-align:center}.bank-chart-axis span:last-child{text-align:right}
+.bank-chart-bars{display:grid;gap:.5rem}
+.bank-chart-bar-button{display:grid;grid-template-columns:10.5rem minmax(70px,1fr) 11rem;gap:1rem;align-items:center;min-height:54px;width:100%;padding:.55rem .65rem;border:1px solid transparent;border-radius:6px;background:#fffefa;color:#263a34;font:inherit;text-align:left;cursor:pointer;touch-action:manipulation}
+.bank-chart-bar-button:hover{background:#f1f5eb}
+.bank-chart-bar-button[aria-pressed=true]{border-color:#7b9274;background:#eef4e8}
+.bank-interactive :is(button,select,a,summary,[tabindex]):focus-visible{outline:3px solid #365e4c;outline-offset:3px}
+.bank-chart-item-name{font-size:.88em;line-height:1.5}
+.bank-chart-item-value{text-align:right;font-size:.81em;font-variant-numeric:tabular-nums;overflow-wrap:anywhere}
+.bank-chart-track{position:relative;display:block;height:22px;background:linear-gradient(to right,#eef0e8 49.8%,#80907d 49.8%,#80907d 50.2%,#eef0e8 50.2%);border-radius:3px;overflow:hidden}
+.bank-chart-fill{position:absolute;top:3px;height:16px;background:var(--bank-positive);border:1px solid #245342;border-radius:2px}
+.bank-chart-bar-button[data-direction=negative] .bank-chart-fill{background:repeating-linear-gradient(135deg,#9a4835,#9a4835 4px,#ae6554 4px,#ae6554 6px);border-color:#793725}
+.bank-chart-bar-button[data-direction=zero] .bank-chart-fill{background:#7a8577;border:0}
+.bank-chart-help,.bank-chart-precision{font-size:.82em;color:#576853;line-height:1.7;margin:.8rem 0}
+.bank-chart-detail{border:1px solid #d2deca;border-radius:6px;padding:1rem;background:#fffefa;min-height:6em;font-size:.9em;overflow-wrap:anywhere}
+.bank-chart-table-wrap{width:100%;max-width:100%;overflow:auto;overscroll-behavior-inline:contain;margin:1.2rem 0}
+.bank-chart-table{width:100%;min-width:580px;border-collapse:collapse;font-size:.83em;font-variant-numeric:tabular-nums;line-height:1.6;background:#fffefa}
+.bank-chart-table caption{text-align:left;font-weight:600;font-size:1.05em;padding:0 0 .8rem;color:#263a34}
+.bank-chart-table th,.bank-chart-table td{padding:.65rem .75rem;border-bottom:1px solid var(--bank-line);vertical-align:top}
+.bank-chart-table th{text-align:left;font-weight:600}
+.bank-chart-table thead{background:#eaf0e3}
+.bank-chart-table td:nth-child(2),.bank-chart-table td:nth-child(3){text-align:right;white-space:nowrap}
+.bank-chart-total{background:#edf2e7;font-weight:600}
+.bank-chart-source{font-size:.85em;overflow-wrap:anywhere}.bank-chart-source a{display:inline-block;min-height:44px;padding:.5rem 0;text-underline-offset:3px;color:#285945}
+.bank-chart-provenance{margin-top:1.2rem;padding:1rem 0 0;border-top:1px solid var(--bank-line);font-size:.82em;overflow-wrap:anywhere}
+.bank-chart-provenance summary{cursor:pointer;min-height:44px;padding:.5rem 0;font-weight:600}
+.bank-chart-provenance-body p{margin:.8rem 0;overflow-wrap:anywhere}
+.bank-chart-provenance-body ul{padding-left:1.3rem}
+.bank-chart-provenance-body li{margin:.5rem 0}
+.bank-chart-input-table{min-width:400px}
+@media(max-width:800px){.bank-chart-axis{margin-left:0;margin-right:0}.bank-chart-bar-button{grid-template-columns:minmax(0,1fr) auto;gap:.4rem .8rem;padding:.7rem}.bank-chart-item-name{grid-column:1;grid-row:1}.bank-chart-item-value{grid-column:2;grid-row:1;max-width:12rem}.bank-chart-track{grid-column:1/-1;grid-row:2;height:24px}.bank-chart-fill{height:18px}.bank-chart-detail{min-height:0}}
+@media(max-width:480px){.bank-interactive{margin:1.4rem 12px;padding:16px;font-size:14px}.bank-chart-controls{gap:.8rem}.bank-chart-controls label{flex-basis:100%}.bank-chart-item-name{max-width:8.5rem}.bank-chart-item-value{max-width:10rem;font-size:.78em}.bank-chart-axis{font-size:.7em}.bank-chart-detail{padding:.8rem}}
+@media(forced-colors:active){.bank-chart-fill{background:Highlight;border:1px solid Highlight}.bank-chart-bar-button[data-direction=negative] .bank-chart-fill{background:CanvasText;border-color:CanvasText}.bank-chart-track{border:1px solid CanvasText}.bank-chart-bar-button[aria-pressed=true]{outline:2px solid Highlight}.bank-chart-table th,.bank-chart-table td{border-color:CanvasText}}
+@media(prefers-reduced-motion:reduce){.bank-interactive *{scroll-behavior:auto!important;transition:none!important}}
