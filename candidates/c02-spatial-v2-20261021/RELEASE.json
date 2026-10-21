@@ -1,0 +1,75 @@
+{
+  "candidate": "c02-spatial-v2-20261021",
+  "status": "public review candidate; independent static/CPU review completed; owner and browser/GPU visual acceptance pending",
+  "prepared_date_utc": "2026-10-21",
+  "shared_public_baseline_commit": "3d4fd3eba1256cb0801ea006ce3892eb0ad2f3f3",
+  "entry": "/investment-workbench-public-preview/candidates/c02-spatial-v2-20261021/?visual=c02-spatial-v2",
+  "scope": "Candidate namespace only. No existing V1, preview.2, default entry, shared public dependency or source GLB bytes changed. Tests and internal receipts are not in the publication set.",
+  "source_snapshot_sha256": "36ede2208d9edcb82f28f4f0947a44f73e0875a2908058d3288e806855585a6c",
+  "c02_model_sha256": "8f22f3fe4bc865f53cb63b6d60c735c7802a532c477198a30a3aaf7c50fb140d",
+  "presentation": {
+    "text_default": "flat DOM with no CSS transform, coincident with camera-facing world-space reading geometry",
+    "text_comparison_modes": [
+      "flat",
+      "affine",
+      "perspective"
+    ],
+    "camera_yaw_degrees": [
+      -4,
+      4
+    ],
+    "camera_pitch_degrees": [
+      -2,
+      2
+    ],
+    "camera_zoom": [
+      0.94,
+      1.06
+    ],
+    "autoplay": false,
+    "desktop_fit": "Field of view fits the actual stage aspect; no fixed wide-viewport aspect rejection",
+    "compact_key_text_minimum_css_px": 12,
+    "removed_unfinished_optional_feature": "Orthographic camera comparison removed after CPU bounds check; the only exposed camera is perspective. Three text-composition diagnostics remain."
+  },
+  "validation": {
+    "static_cpu_checks": "Input lifecycle fixtures, actual GLB geometry assembly, source hashes/anchors and projection bounds passed. These checks are not browser or GPU acceptance.",
+    "cpu_perspective_viewports": [
+      [
+        2048,
+        1096
+      ],
+      [
+        1920,
+        1080
+      ],
+      [
+        1672,
+        941
+      ],
+      [
+        1366,
+        768
+      ],
+      [
+        1280,
+        800
+      ],
+      [
+        1440,
+        900
+      ],
+      [
+        1672,
+        1061
+      ]
+    ],
+    "native_font_budget": "Offline Noto CJK text metrics and explicit CSS box budgets cover all seven listed viewports. Final browser CSS cascade and user-device fonts are unverified.",
+    "browser_dom_layout_accepted": false,
+    "user_device_glyph_breakage_confirmed_fixed": false,
+    "browser_3d_visual_accepted": false,
+    "gpu_performance_accepted": false,
+    "mobile_accepted": false,
+    "known_cloud_browser_limit": "Existing cloud browser reported WebGL Disabled. No browser/GPU security setting was changed and denied URLs were not retried.",
+    "independent_review": "Static/CPU source, scope, input/lifecycle and projection review completed; not browser visual or GPU acceptance."
+  }
+}

@@ -1,0 +1,5 @@
+The new local intrinsic-albedo material derivative, procedural material graph, and original scripts are offered under CC0-1.0. The inherited grey-mineral albedo is CC0-1.0 as documented in INHERITED_LICENSE.txt. No concept-reference pixels, scene lights, reflections, AO, or baked directional highlights enter the new albedo. Other inherited component notices remain unchanged. User-supplied concept images are comparison references and not relicensed.
+
+
+Public candidate path mapping (2026-10-21; original component grants above remain unchanged):
+The inherited dependencies/LICENSE_assembly.txt reference resolves here to C02-assembly-CC0.txt. The historical shared_generated_far_vista_origin.json is not redistributed; C02_SOURCE_PROVENANCE.public.json is an explicitly redacted summary, not the original record. Read C02_SOURCE_DISCLOSURE.txt for the generated-landscape exclusions and evidence limits. These mappings do not enlarge any licence.
