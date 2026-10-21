@@ -1,0 +1,5 @@
+CC0 1.0 Universal (CC0-1.0)
+To the extent possible under law, the creator waives copyright and related rights in the newly generated original geometry and Python source in this package.
+License reference: https://creativecommons.org/publicdomain/zero/1.0/
+No third-party models, textures, HDRIs, fonts or reference-image pixels are included. This license does not relicense the user's reference concept images, Blender software or glTF tools.
+The asset is provided as-is, without warranty. Visual art only; no factual research data or business logic.

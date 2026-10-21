@@ -1,0 +1,37 @@
+{
+  "candidate": "spatial-multispace-v3-20261021",
+  "status": "isolated review candidate; public browser and WebGL acceptance pending",
+  "basePublicCommit": "4c7060dc81b077de35a3d016f4dee0c45ad00f31",
+  "replaces": [],
+  "routes": {
+    "overview": "?report=sinoseal",
+    "relations": "study/?report=sinoseal",
+    "time": "history/?report=honghua",
+    "reader": "reader/?report=sinoseal",
+    "review": "review/?report=sinoseal"
+  },
+  "implemented": {
+    "C01": "selected-research overview, evidence previews, optional catalogue and real history entry",
+    "C02": "asymmetric same-document support, native charts, counter-evidence and questions; other unmapped research is explicitly empty",
+    "C03": "actual one/two-snapshot queue and selected-version detail; no fabricated dates, confidence or quality progression",
+    "C04": "independent complete original-reader folio with chapter navigation, sources, exact original images, native derived charts and isolated position memory; further 3D carrier art not complete",
+    "R10": "Explicit generate/copy/open-ChatGPT handoff using public research/version/source and selected question only. No automatic sending, prefill, review-note inclusion or research write-back.",
+    "modelBoundary": "Outer glass and frames use independent world Euler angles, not camera-quaternion tracking. Native reading ink remains screen-facing and is not represented as strictly coplanar perspective text. Visual integration still unaccepted.",
+    "boundedInteraction": "C01/C02/C03: true perspective camera yaw ±4°, pitch ±2°, zoom 0.94–1.06, focus/reset; explicit handle only. Stable world anchors drive native DOM center/depth projection. No inertia, no transformed-DOM feedback, no geometry rebuild per input frame. Failures disable controls; view memory is isolated by candidate/page/research/snapshot; normal reading return restores its own pose, new identities start at home."
+  },
+  "validation": {
+    "syntax": "passed",
+    "sourceHashAndContextFixtures": "passed",
+    "nativeModelConstruction": "passed geometry/numerical checks only",
+    "actualBrowserDOM": "pending",
+    "fontLoadingInBrowser": "pending",
+    "WebGLVisual": "not accepted",
+    "phoneGPU": "not accepted",
+    "GPUPerformance": "not accepted",
+    "boundedInteraction": "passed real Three camera/projection math, native-event fixtures and explicitly mocked-renderer integration; no actual browser/GPU acceptance"
+  },
+  "publicDataBoundary": "Existing 11 public snapshots and one withdrawn Honghua archive only. No concept images, user screenshots, private research, positions, transactions, watchlists, private paths, credentials or new raw third-party datasets.",
+  "reviewStoragePrefix": "spatial-multispace-v3-20261021:review:v1:",
+  "readerPositionPrefix": "spatial-multispace-v3-20261021:reader-position:v1:",
+  "viewPositionPrefix": "spatial-multispace-v3-20261021:view:v1:"
+}

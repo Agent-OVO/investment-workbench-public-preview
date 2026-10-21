@@ -1,0 +1,566 @@
+{
+  "candidate": "spatial-multispace-v3-20261021",
+  "status": "isolated candidate; public browser and WebGL acceptance pending",
+  "algorithm": "SHA-256",
+  "basePublicCommit": "4c7060dc81b077de35a3d016f4dee0c45ad00f31",
+  "scope": "Only candidate files are new. Shared baseline inventory is read-only and may include inherited dependencies not directly used by every route. No default/V1/V2/shared replacements. Hash checks do not imply browser/GPU visual acceptance.",
+  "files": [
+    {
+      "path": "README.md",
+      "bytes": 5680,
+      "sha256": "a56068e5201bcceadc55d9b10949df15ecf74617c2a432ff49878fd8720692a2"
+    },
+    {
+      "path": "RELEASE.json",
+      "bytes": 2915,
+      "sha256": "07b8d56bbfd224de4e07439f0fb54abc04398fc96cf3e9ac1e3f443e44cc31d9"
+    },
+    {
+      "path": "THIRD_PARTY_NOTICES.md",
+      "bytes": 2323,
+      "sha256": "9549182a27e81d3fd4c309c4bc7535db66e5bb3078d6706a74d71e1fb93ed69f"
+    },
+    {
+      "path": "assets/atelier-sans.woff2",
+      "bytes": 457784,
+      "sha256": "fc6a5a83da492d2313757ce42b0c8bd6e3882201f4aa561d52090a52015cf5b4"
+    },
+    {
+      "path": "assets/atelier-serif.woff2",
+      "bytes": 630352,
+      "sha256": "854b0035492eb7569484cfcda690f31ad04e354c3305dd515d81c5233de5e2f4"
+    },
+    {
+      "path": "assets/fictional-alpine-vista.png",
+      "bytes": 2655410,
+      "sha256": "58e8c95df0b9f4c8e1dee269a2d2ba9b5abe97d10f6d1e79d6d77fc0009885f2"
+    },
+    {
+      "path": "assets/grey-mineral.png",
+      "bytes": 1434619,
+      "sha256": "37df6a480979603ca7e1c9fd33825ddcbcda8b1b56d7ab0d2548ea8a4b37ddb7"
+    },
+    {
+      "path": "history/index.html",
+      "bytes": 4247,
+      "sha256": "4b473d7ee2ddfb5e71d8fc79ebf58dcc60e3f63037988f044f047e1ae9307247"
+    },
+    {
+      "path": "index.html",
+      "bytes": 4302,
+      "sha256": "93c551d3b4339d9c2f365a9ab883b4b4115a04ef7ee79fb9f4316a7e9a772fb1"
+    },
+    {
+      "path": "licenses/C02-assembly-CC0.txt",
+      "bytes": 551,
+      "sha256": "c4a0d16cc3498320d1f5436acc0e23ed1d2611b04e6bd1c5af883aad61ed2785"
+    },
+    {
+      "path": "licenses/C02_SOURCE_DISCLOSURE.txt",
+      "bytes": 3277,
+      "sha256": "953d2e53916ea39ee8c8deed35e4fa7fcf69bbaabc5ea716ab4cd2e55b1063cf"
+    },
+    {
+      "path": "licenses/C02_SOURCE_PROVENANCE.public.json",
+      "bytes": 3753,
+      "sha256": "9e873204d585e3095ad4a22236cfd6366bfc43b2428dc1ab28d58ad5bb6ef9c9"
+    },
+    {
+      "path": "licenses/DERIVED_TEXTURES.json",
+      "bytes": 844,
+      "sha256": "4696adfabbaab0f45253627c6afc0c1ec858c22ae1c793d7ba8196254a6d11ae"
+    },
+    {
+      "path": "licenses/FONT_DERIVATION.json",
+      "bytes": 1163,
+      "sha256": "820f93aa07eed3c68b112f23fe4e9aa1ad9a648c5595e707a3469f931c059dd9"
+    },
+    {
+      "path": "licenses/Noto-CJK-copyright.txt",
+      "bytes": 14712,
+      "sha256": "849f4ea9c214fa4ac3593b770c699f387534b11ce671264c1b10d85bdcb5997b"
+    },
+    {
+      "path": "licenses/p04-INHERITED_LICENSE.txt",
+      "bytes": 3034,
+      "sha256": "8d6a98f52e0aa3947b80c9747be90ad72d527ffbe97659b8ba230525211ba0e6"
+    },
+    {
+      "path": "licenses/p04-LICENSE.txt",
+      "bytes": 950,
+      "sha256": "55f7f6dc3a31aef9e7760d8c1584e0082b76798c627a548618a83bd28ea04731"
+    },
+    {
+      "path": "reader/index.html",
+      "bytes": 5483,
+      "sha256": "e7d22f2a8e19ecc93489e6b800544c5cdcde0c09d16a37dd9ca5a739c070fa77"
+    },
+    {
+      "path": "research-history-data.js",
+      "bytes": 11414,
+      "sha256": "0426dbd2b4cddce8f9512ea2baaf7be1a011a76012abf605b9ff8fad740de835"
+    },
+    {
+      "path": "review/index.html",
+      "bytes": 5972,
+      "sha256": "c4dd182af942b4647be979d891fe51212ffafd5aed5476575e4f98fa9f44ec4c"
+    },
+    {
+      "path": "runtime/charts.js",
+      "bytes": 1570,
+      "sha256": "dcaff45951c0422dfc7c303c4110543ed2be07dfb3296f9490b05f1b6a6a1e64"
+    },
+    {
+      "path": "runtime/document-space.css",
+      "bytes": 11132,
+      "sha256": "31bb1cce4a6ccddfdaa2aa4d190de8bd8f6ae6c98622a11dcf6ba603f5718710"
+    },
+    {
+      "path": "runtime/document-space.js",
+      "bytes": 1176,
+      "sha256": "fc71b90b83a472da959ab2a1a8f9f09ce36d37cbff59b0404808e418ff99a0b3"
+    },
+    {
+      "path": "runtime/history-review.css",
+      "bytes": 1240,
+      "sha256": "ed9730c58cebee19253c8a1f7ca839c468784e90876b36985fcb961e083283b2"
+    },
+    {
+      "path": "runtime/history.js",
+      "bytes": 5949,
+      "sha256": "4bea2a87c6978a3bceb92a53426b8deec747a3d330a2c62e8fd7e6c6659630bb"
+    },
+    {
+      "path": "runtime/multispace-data.js",
+      "bytes": 1875,
+      "sha256": "12b0e53b22d0bbcc272b155b0c59e5b9865bc7f18ae6adec291c6ef28bf3db98"
+    },
+    {
+      "path": "runtime/multispace.js",
+      "bytes": 15101,
+      "sha256": "6f57608eef7f71e5337fe3bc88a460ab30af394b4cc007bdcf27501cc70433fa"
+    },
+    {
+      "path": "runtime/reader.js",
+      "bytes": 9235,
+      "sha256": "c46630d1fbc7894da0a10293c007d8260899abbe7cb1850714ec1e27a9da0875"
+    },
+    {
+      "path": "runtime/research-context.js",
+      "bytes": 3987,
+      "sha256": "f34a30c7202f9dde503bdce80677d7835ce916e21c5487fe648caf7a3144343f"
+    },
+    {
+      "path": "runtime/research-handoff.js",
+      "bytes": 4062,
+      "sha256": "2a369a7e71bd7bbafaa673ffa2f07e9b2464e5653ac1dbc9dae34b236517f7ba"
+    },
+    {
+      "path": "runtime/review-backup.js",
+      "bytes": 7779,
+      "sha256": "0422c3ac8be214e578786dd979d66b5c9fa4cba07ad3ef7a4506d4f9d1b539c2"
+    },
+    {
+      "path": "runtime/review-storage.js",
+      "bytes": 4155,
+      "sha256": "ad697d95a735d6e871d5843d31216ae386d50b090cf49f9585933848ea2db1eb"
+    },
+    {
+      "path": "runtime/review.js",
+      "bytes": 9296,
+      "sha256": "7a5d70ae8de88989ab8c22fac1deee6bb504d812d0c50453203f6b08c3790ab1"
+    },
+    {
+      "path": "runtime/space.css",
+      "bytes": 19614,
+      "sha256": "0291c6e47077991d540a2176a779f693e41886144ca187d0c2d3538c4e21d52a"
+    },
+    {
+      "path": "runtime/spatial-controls.js",
+      "bytes": 13912,
+      "sha256": "6e2888c73d7202aab4b69b4acce1dd2351c3cba544509840fc436034107b03b9"
+    },
+    {
+      "path": "runtime/spatial-model.js",
+      "bytes": 19404,
+      "sha256": "615c3cd6685f45e23cfc492dc66309a0f59c6885fb4a2126bf89eae0a21630cf"
+    },
+    {
+      "path": "runtime/spatial-projection.js",
+      "bytes": 659,
+      "sha256": "c14240cb67b576dd39384a350cb2fbd4f82724b57b4d10c56ed4dff5acc24d4c"
+    },
+    {
+      "path": "runtime/spatial-view-memory.js",
+      "bytes": 1044,
+      "sha256": "496ef82d05d7603e58a805295b6abc52d8f00185c63e90455e7d76c295c83f37"
+    },
+    {
+      "path": "study/index.html",
+      "bytes": 4291,
+      "sha256": "4f1b5fe45eb7409afc8a605f5db75e35f169401d917e372328088d4e699eef52"
+    }
+  ],
+  "shared_public_dependencies": [
+    {
+      "path": "LICENSE",
+      "bytes": 285,
+      "sha256": "c45b25b0c02d8ea78fb087b66284a036ae13446a0dcec952b59ca9642d012609"
+    },
+    {
+      "path": "THIRD_PARTY_NOTICES.md",
+      "bytes": 2677,
+      "sha256": "c419027f5cb4399bfe8071d4c814927ebfec6ec795c48b3301ef39600037ac9d"
+    },
+    {
+      "path": "art/stage-runtime-20261017/p04/C02_bilateral_materialB_FULL_OPTIONAL.glb",
+      "bytes": 11930424,
+      "sha256": "8f22f3fe4bc865f53cb63b6d60c735c7802a532c477198a30a3aaf7c50fb140d"
+    },
+    {
+      "path": "cloud/current-20261015-right-workspace/assets/art-rebuild/runtime/BufferGeometryUtils.js",
+      "bytes": 31052,
+      "sha256": "5575b6e398f371fa6e63cc1e5cd20234cfdcefff41c66bf66ccd76e840250e54"
+    },
+    {
+      "path": "cloud/current-20261015-right-workspace/assets/art-rebuild/runtime/GLTFLoader.js",
+      "bytes": 100372,
+      "sha256": "13c7e98c628d0866c61c794386783630d9d4129f2012c448b019972a9ad93d37"
+    },
+    {
+      "path": "cloud/current-20261015-right-workspace/content-flow-20261017/C02_original_camera_1672x941.json",
+      "bytes": 23335,
+      "sha256": "208cd8aef1d89888a766df86a23b007e8495278920ba40a3878356c7d6532f6f"
+    },
+    {
+      "path": "cloud/current-20261015-right-workspace/content-flow-20261017/camera-contract.js",
+      "bytes": 882,
+      "sha256": "d83ad5d0b66d9085afb68b32afa44c4cb8a772a63b1c675d13a2c2c29cbb1db6"
+    },
+    {
+      "path": "cloud/current-20261015-right-workspace/content-flow-20261017/public-draft-20261018/document-catalog.js",
+      "bytes": 2915,
+      "sha256": "dd5366db7f7c70ad00878e9e9eee04c22b866980f910cb1a2a649057d40bebf6"
+    },
+    {
+      "path": "cloud/current-20261015-right-workspace/content-flow-20261017/public-draft-20261018/document-manifest.js",
+      "bytes": 17719,
+      "sha256": "56d62a859901b683e86c17bba0bb2a865807ed021295b8660968e800e4e47283"
+    },
+    {
+      "path": "cloud/current-20261015-right-workspace/content-flow-20261017/public-draft-20261018/document-reader.js",
+      "bytes": 7369,
+      "sha256": "a67a328ec70c6a61642682c4f99940e9216e2d01b7869df500a57f503782b673"
+    },
+    {
+      "path": "cloud/current-20261015-right-workspace/content-flow-20261017/public-draft-20261018/documents/crsc-public-research.md",
+      "bytes": 42672,
+      "sha256": "818304f06dbbe3bd5924e86f824d3f2fb3f69ce8d0fbe7e3f7b011b0a825514b"
+    },
+    {
+      "path": "cloud/current-20261015-right-workspace/content-flow-20261017/public-draft-20261018/documents/honghua-public-research.md",
+      "bytes": 30553,
+      "sha256": "30643b36d5f7565f1e109da59e0a273b566bfd39b650f12101f8c42ae43bf775"
+    },
+    {
+      "path": "cloud/current-20261015-right-workspace/content-flow-20261017/public-draft-20261018/documents/shaangu-public-research.md",
+      "bytes": 37571,
+      "sha256": "b96b4d0ccf9b7502544f3b31ae7067c63ac67d6265c3d9fe2398f174bcfbba33"
+    },
+    {
+      "path": "cloud/current-20261015-right-workspace/content-flow-20261017/public-draft-20261018/documents/sinoseal-public-research.md",
+      "bytes": 37759,
+      "sha256": "36ede2208d9edcb82f28f4f0947a44f73e0875a2908058d3288e806855585a6c"
+    },
+    {
+      "path": "cloud/current-20261015-right-workspace/content-flow-20261017/public-draft-20261018/documents/sungrow-public-research.md",
+      "bytes": 31677,
+      "sha256": "56010814431556710ec040f69db4dc5294733988a9c7cc10cfb054eaa565f414"
+    },
+    {
+      "path": "cloud/current-20261015-right-workspace/content-flow-20261017/public-draft-20261018/documents/yizumi-public-research.md",
+      "bytes": 28861,
+      "sha256": "ddacac6aa2dc3c85cd3803548e1bf8ecae812bc7c32e30cc7eacd12637772952"
+    },
+    {
+      "path": "cloud/current-20261015-right-workspace/content-flow-20261017/public-draft-20261018/documents/yuntianhua-public-research.md",
+      "bytes": 26730,
+      "sha256": "4ac458a96081ba7813d54baf823a30ffdef5c2810b90ecef2c8c12e636cc7f08"
+    },
+    {
+      "path": "cloud/current-20261015-right-workspace/content-flow-20261017/public-draft-20261018/documents/zoomlion-public-research.md",
+      "bytes": 38916,
+      "sha256": "9506722499b20b59e2fcbf0e9f2fea58b93cf079c85bece80235a298727b9ca9"
+    },
+    {
+      "path": "cloud/current-20261015-right-workspace/content-flow-20261017/public-draft-20261018/main.js",
+      "bytes": 199,
+      "sha256": "5226d0dcd3a812d08802a1e161a797bec6bed037d477c15cf106a0170fd28212"
+    },
+    {
+      "path": "cloud/current-20261015-right-workspace/content-flow-20261017/public-draft-20261018/markdown.js",
+      "bytes": 11288,
+      "sha256": "dbe93b6c6f82d7d4926d32aa9bb01e92f5ba17e6a569bddf17653fe246614f41"
+    },
+    {
+      "path": "cloud/current-20261015-right-workspace/content-flow-20261017/public-draft-20261018/public-chart.js",
+      "bytes": 7842,
+      "sha256": "f3e769f01d25a514aff73856f18e7676d37210d0787a62859b1543b807b7f92e"
+    },
+    {
+      "path": "cloud/current-20261015-right-workspace/content-flow-20261017/public-draft-20261018/reader.js",
+      "bytes": 8704,
+      "sha256": "86f05d80de9498d1e9b8076c4d4f7967c162584064edf4e1fca3f292cebeceda"
+    },
+    {
+      "path": "cloud/current-20261015-right-workspace/content-flow-20261017/public-draft-20261018/space-preview.js",
+      "bytes": 11572,
+      "sha256": "536f51df18afc561a489c33f131a5d66b6405afb3bcc977ad1cf1f6409501827"
+    },
+    {
+      "path": "cloud/current-20261015-right-workspace/content-flow-20261017/stage.js",
+      "bytes": 21579,
+      "sha256": "84771908a1e5ae1b175f95765eb25f8ffb96e637441fdfa4d2d4beebbaaa897b"
+    },
+    {
+      "path": "cloud/current-20261015-right-workspace/scene-trials/trial-core.js",
+      "bytes": 5793,
+      "sha256": "971342020a863f0a9789fd246f5da2d5554efdfc18c6a54bb3163532482d12bc"
+    },
+    {
+      "path": "cloud/current-20261015-right-workspace/scene/c01-round1/camera.js",
+      "bytes": 7750,
+      "sha256": "0fba1057ce9b0421e23123d4176802e6eeeb18c13adb3fa8ccad7464bbb69062"
+    },
+    {
+      "path": "cloud/current-20261015-right-workspace/scene/c01-round1/finish.js",
+      "bytes": 4075,
+      "sha256": "aeb2741e35762347a27b3117d98dd3957ef299dabd6a26659b18ce13e87fc5ba"
+    },
+    {
+      "path": "cloud/current-20261015-right-workspace/stage-trials-20261017/asset-loader.js",
+      "bytes": 2497,
+      "sha256": "ec3ad0b6fc8d8287f136941682d8cb0b00d72bb43811ea8cc2b9a815b23cacbc"
+    },
+    {
+      "path": "cloud/current-20261015-right-workspace/stage-trials-20261017/asset-manifest.json",
+      "bytes": 355747,
+      "sha256": "e34c9b8cc582e1a3d8636bdd78aaa00a8f52e28e7d934106d566dafa83815661"
+    },
+    {
+      "path": "cloud/current-20261015-right-workspace/stage-trials-20261017/stage-core.js",
+      "bytes": 2907,
+      "sha256": "09e43ccf53560c7b6277884557ca74f61b4e859bc18803a2bf21f9b3606080aa"
+    },
+    {
+      "path": "cloud/current-20261015-right-workspace/vendor/three.min.js",
+      "bytes": 608081,
+      "sha256": "8a5f7249903b54d30f79f708699d2fed2d6a1d0741a4cd41377d1f01bb5a2271"
+    },
+    {
+      "path": "licenses/DejaVu-copyright.txt",
+      "bytes": 3859,
+      "sha256": "63d3ba759d12804c5b31a9d5940d855c1820d1f5999e6b0872eb1c7ff045fbc9"
+    },
+    {
+      "path": "licenses/Three-r149-MIT.txt",
+      "bytes": 1082,
+      "sha256": "9abf328478da50386ee32972727a04918c3a2973d15d3758fd8c181d374a4dd4"
+    },
+    {
+      "path": "workbench-review/bank-chart-data.js",
+      "bytes": 12040,
+      "sha256": "23b371bba09d8f635a17ef455db30745119c7406bbd6dced4bccbc3b4bfc67d3"
+    },
+    {
+      "path": "workbench-review/bank-evidence/README.txt",
+      "bytes": 682,
+      "sha256": "dd806cda4fb17960a6f936babd085d771f45c238ee1584ef3d7faf75dfbaed85"
+    },
+    {
+      "path": "workbench-review/bank-evidence/source-urls.json",
+      "bytes": 3262,
+      "sha256": "3912235850b9fc57168091a8139041dd127e154030a00ad20489db06a60dd0d0"
+    },
+    {
+      "path": "workbench-review/bank-interactive.js",
+      "bytes": 17251,
+      "sha256": "aaeea2dad4dbebd9a9f978926230ab93d3322bcb5b2e78d46d0025a8133e0e1c"
+    },
+    {
+      "path": "workbench-review/content-adapter.js",
+      "bytes": 1681,
+      "sha256": "e29c17521f6bc28fcf75755b7eeeab4c21db3433eccfe13caabe65a044eddb38"
+    },
+    {
+      "path": "workbench-review/continuity/c02-assets/bridge.svg",
+      "bytes": 1335,
+      "sha256": "f98d5ff0d132b53a3b2e2e0e94c630ad0b5b66669ebe001470562fa1c31f7bc1"
+    },
+    {
+      "path": "workbench-review/continuity/c02-assets/contribution.svg",
+      "bytes": 1794,
+      "sha256": "ffed94236fe697297206c9f0500d7ffc70f85310f69687815815a10efd943c45"
+    },
+    {
+      "path": "workbench-review/continuity/c02-assets/repairs.svg",
+      "bytes": 2007,
+      "sha256": "3a86928ff33544b386697d936c919ff4717e9d964d8350a02dd0d0afdbd3f27d"
+    },
+    {
+      "path": "workbench-review/continuity/c02-assets/source-conversion.svg",
+      "bytes": 1075,
+      "sha256": "55040f8baa28dc9157b0c9211cd43254059c8fac2159f802f2416e4c75f64bda"
+    },
+    {
+      "path": "workbench-review/continuity/c02-assets/source-design.svg",
+      "bytes": 1074,
+      "sha256": "9e44b07953b2a4f57d9f4d0022c6848fdf1b2037ddab40d798f28605acb7a181"
+    },
+    {
+      "path": "workbench-review/continuity/c02-assets/source-service.svg",
+      "bytes": 1053,
+      "sha256": "3aa28603e45d900f572cdfa09cd2ac0499cd1337291381c43fa0691ab1026aaa"
+    },
+    {
+      "path": "workbench-review/continuity/c02-content-session.js",
+      "bytes": 983,
+      "sha256": "56a3a816b79ed9cec56345d90c3190209acee7831899e2a6982aefc57800c77c"
+    },
+    {
+      "path": "workbench-review/continuity/c02-passages.js",
+      "bytes": 2268,
+      "sha256": "c09e85850ed8ffd0a17f11c85db7a6bfffd27d5f88d1a712aaf7611be1e2cbe6"
+    },
+    {
+      "path": "workbench-review/continuity/c02-plane-projection.js",
+      "bytes": 3184,
+      "sha256": "774b8563367ce661b08d92e77bd057b1680dc405814e6d0ef4c7b50dd5f5d432"
+    },
+    {
+      "path": "workbench-review/continuity/c02-research-visuals.js",
+      "bytes": 3331,
+      "sha256": "8fcdaf0573ddf10205e03e455d13a09c3418f17379b19daa0ab2c873ecf89255"
+    },
+    {
+      "path": "workbench-review/continuity/continuity.css",
+      "bytes": 6064,
+      "sha256": "58dddbd94f79be63c9cb56a05b04ff96bd4e266df5002b99b99f55e790c58306"
+    },
+    {
+      "path": "workbench-review/continuity/original-framed-stage.js",
+      "bytes": 22568,
+      "sha256": "837be02971e396c65a272259a0599a1a0b6783a73d457e6954a3da2d8f8bac8f"
+    },
+    {
+      "path": "workbench-review/continuity/refine.js",
+      "bytes": 7722,
+      "sha256": "7c40b06d6fdd838e32d7dc3c1f3043ffeb39864babf539d694b6c2f440f3e24a"
+    },
+    {
+      "path": "workbench-review/continuity/refined-finish.js",
+      "bytes": 4075,
+      "sha256": "e2dca9e4fcca8a498dcdfcfd8fe7e847b0eec2dbf17666ee05937f89f39e9b3f"
+    },
+    {
+      "path": "workbench-review/continuity/refined-stage.js",
+      "bytes": 23146,
+      "sha256": "e43648fa96eb94d3c760dc5a51337be487d0138bb28f7e5ebbd2aaaf090dcead"
+    },
+    {
+      "path": "workbench-review/continuity/reports/honghua-before-correction.md",
+      "bytes": 29774,
+      "sha256": "99b17836f113b2c4d6af876b7d945078de0975d5247fb9fdc6dc2b533894d310"
+    },
+    {
+      "path": "workbench-review/continuity/responsive-camera.js",
+      "bytes": 672,
+      "sha256": "3646af82231055573357ae0923fc84cc9f63844598d21b6f96b96e655c06989e"
+    },
+    {
+      "path": "workbench-review/continuity/standalone.css",
+      "bytes": 4281,
+      "sha256": "018dc9ec9d99c89ef9e7f4df452b342f499805e5de277258948a9c45a482c2d4"
+    },
+    {
+      "path": "workbench-review/continuity/three-loader.js",
+      "bytes": 980,
+      "sha256": "d536c4ef79f1c7899116c20dce7cc054d3dc7bae7a9801cc9169d7d476a37a58"
+    },
+    {
+      "path": "workbench-review/evidence/index.html",
+      "bytes": 68080,
+      "sha256": "482f2e43ec750bdf39e1026101edf47c738ed317c39717aea96d3396da34de0c"
+    },
+    {
+      "path": "workbench-review/index.html",
+      "bytes": 5918,
+      "sha256": "2d9343e10646c092a6da5d6c549ecbdec725310fe2638f9e07a29be371cf0a49"
+    },
+    {
+      "path": "workbench-review/research/airtransport/figures/juneyao_equity_bridge.png",
+      "bytes": 193121,
+      "sha256": "1d0d4abc754479b4cafc0741f75b674f69df56bc79fce657b748998b951c57de"
+    },
+    {
+      "path": "workbench-review/research/airtransport/figures/shenzhen_profit_quality.png",
+      "bytes": 231629,
+      "sha256": "46738b33cb5b3db1adbf1c7424d52bd01735645f53be6b1e8761320477de36cc"
+    },
+    {
+      "path": "workbench-review/research/airtransport/report.md",
+      "bytes": 37731,
+      "sha256": "6321a13738632a127b3f19d41ab9ffac172efe90112387b84f90b5258538e4d5"
+    },
+    {
+      "path": "workbench-review/research/baiyunfollowup/figures/q2_profit_bridge.png",
+      "bytes": 194088,
+      "sha256": "402a567bf5f1858ef42904d78d2419671a4e471320745a0a5ec086402abdf0ae"
+    },
+    {
+      "path": "workbench-review/research/baiyunfollowup/report.md",
+      "bytes": 10658,
+      "sha256": "472b68c908e8bb1bbd74607876f0ce255badbe4b88e42a79485cff48df27253c"
+    },
+    {
+      "path": "workbench-review/research/banks/charts/银行盈利机制_2026H1.png",
+      "bytes": 268474,
+      "sha256": "e82ab0dc515ac5851b498a6c1e80a2478cbc362aa85a9772f9d1e206cd73f386"
+    },
+    {
+      "path": "workbench-review/research/banks/report.md",
+      "bytes": 30663,
+      "sha256": "7132d90e5147038f4d1e5f5752102c1a964f67b35138bbfb3caaa715ee347a62"
+    },
+    {
+      "path": "workbench-review/research/index.html",
+      "bytes": 11048,
+      "sha256": "d2a877a35af729b98f937026e71880453f60de27688224cc7474999be5d245dd"
+    },
+    {
+      "path": "workbench-review/route-model.js",
+      "bytes": 2242,
+      "sha256": "21cf3240a50e2f7ccb022dd830df1ed95fade20324de81581c98a20b81c5f6e4"
+    },
+    {
+      "path": "workbench-review/topic-images.js",
+      "bytes": 6789,
+      "sha256": "5cdf458c1f47c8c237a341bd7edc7e86a7616b0f31e495830ea1be97f2e3a573"
+    },
+    {
+      "path": "workbench-review/topic-manifest.js",
+      "bytes": 11097,
+      "sha256": "8134d418215dbc4b669f8c9b11aa1727a63b545ea2db38df2a19f87d6a21dd18"
+    },
+    {
+      "path": "workbench-review/topic-reader.js",
+      "bytes": 10799,
+      "sha256": "fed0c87014494aea0edb1c142ee2343c15cff7abba1924482cac030d62bfd0d3"
+    },
+    {
+      "path": "workbench-review/workbench.css",
+      "bytes": 12593,
+      "sha256": "3fb1ab3733c21ce10064130dd10bd2fb7082388c5c45a6b5bb95318b5bf3d7c6"
+    }
+  ]
+}
