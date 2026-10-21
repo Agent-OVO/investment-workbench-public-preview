@@ -1,22 +1,22 @@
 {
   "candidate": "c02-spatial-v2-20261021",
-  "status": "public review candidate; independent static/CPU review completed; owner and browser/GPU visual acceptance pending",
+  "status": "public V2 review candidate with isolated research-context repair; browser/GPU acceptance pending",
   "algorithm": "SHA-256",
   "excludes": [
     "CANDIDATE_MANIFEST.json"
   ],
   "base_repository_commit": "3d4fd3eba1256cb0801ea006ce3892eb0ad2f3f3",
-  "scope": "Only the files enumerated below belong to this isolated candidate publication set. Private review, tests, validation receipts and source reference images are excluded and not located in this directory. Existing shared public dependencies are reused unchanged, not recopied. No existing V1, preview.2 or default entry is replaced. Fingerprints describe reviewed bytes, not immutability of future main-branch updates.",
+  "scope": "Only enumerated files belong to this isolated V2 candidate. Existing shared public content, CSS, Markdown/image readers and other dependencies remain unchanged. Candidate review logic is locally isolated; no private research or local notes included. Default/V1/shared pages are not replaced. Fingerprints describe reviewed bytes, not future main-branch immutability.",
   "files": [
     {
       "path": "README.md",
-      "bytes": 3946,
-      "sha256": "9a7294791a174164596d1489b5561229e01ecdd01ea48c704b67551cf851e755"
+      "bytes": 7433,
+      "sha256": "639ba1062c86e98f9f868d312fd66bf009416dc11ceded58170da23b7af66989"
     },
     {
       "path": "RELEASE.json",
-      "bytes": 3025,
-      "sha256": "a18eab48a13321b96158544686eb459fc11d03db2f2784eaf8eb30a46cf781c6"
+      "bytes": 4804,
+      "sha256": "16636d8b71d59c041ceb0047d25420db13943f3927df6fc73af52e9b0933cef0"
     },
     {
       "path": "THIRD_PARTY_NOTICES.md",
@@ -24,9 +24,14 @@
       "sha256": "35af6662a667d82f14940770479cd0bbd8c94ba4b1e2f45e54be4f0c544b2b8d"
     },
     {
+      "path": "history/index.html",
+      "bytes": 3474,
+      "sha256": "ef50cbb6073c574fa11b5029e8414fc7cb2aaecda44a9fb34a883bdffb304310"
+    },
+    {
       "path": "index.html",
-      "bytes": 5738,
-      "sha256": "e81bb5629bfdb8eb8ecc17de298fd67561143bb8ab0b2235f529e74f6d8cdd20"
+      "bytes": 5587,
+      "sha256": "8add0071a763c42424009465037abfad23c092fba7c9fde84ab14f5c88370318"
     },
     {
       "path": "licenses/C02-assembly-CC0.txt",
@@ -54,6 +59,21 @@
       "sha256": "55f7f6dc3a31aef9e7760d8c1584e0082b76798c627a548618a83bd28ea04731"
     },
     {
+      "path": "reader/index.html",
+      "bytes": 3498,
+      "sha256": "b3f54a6eca5bb1fbc878e699932ec4f47e4b41bd5c8b85c6ddd24798097195bb"
+    },
+    {
+      "path": "research-history-data.js",
+      "bytes": 11413,
+      "sha256": "3fbc86ba1d5d2ae5e101a19257b500dfde19ea5263cec355310e89fe93514d27"
+    },
+    {
+      "path": "review/index.html",
+      "bytes": 5866,
+      "sha256": "11e60d906d05bccab5dd9fc3091cef4f489064ffd0890b257d90977c8c5f8e22"
+    },
+    {
       "path": "runtime/c02-atelier-model.js",
       "bytes": 12944,
       "sha256": "3ecfe2bd60174cd9c7f167a02e4fc082cec8318cf36a258c6549de8701421d85"
@@ -65,8 +85,8 @@
     },
     {
       "path": "runtime/c02-content.js",
-      "bytes": 16783,
-      "sha256": "1eb597fd15cca4fc2edd5f13e7aa0ce3953c873fed2b664044828fce2a16e0f2"
+      "bytes": 17025,
+      "sha256": "7c374ea0c341b313e9bdeb17a73723689cf3040b04d57eb0c08e45e638b64da1"
     },
     {
       "path": "runtime/c02-controls.js",
@@ -104,9 +124,44 @@
       "sha256": "2be65a38271878e28fca91f126837fdeac4d5eb886ee32f3466c9f5d3005c060"
     },
     {
+      "path": "runtime/history-review.css",
+      "bytes": 1240,
+      "sha256": "ed9730c58cebee19253c8a1f7ca839c468784e90876b36985fcb961e083283b2"
+    },
+    {
+      "path": "runtime/history.js",
+      "bytes": 2745,
+      "sha256": "1476b264d15757758fc8bc91558933b5e3e449e87b38b10c0336b78a982fd931"
+    },
+    {
+      "path": "runtime/reader.js",
+      "bytes": 7104,
+      "sha256": "b729e3240002f78c33242367bcc93c900db82a1e3a55bd5c267e275486f62818"
+    },
+    {
       "path": "runtime/refined-space.js",
       "bytes": 4019,
       "sha256": "6c065aba8cb0ace9c1a155441bd707049f15376e9d4c26ce5006d0e1bfbbd072"
+    },
+    {
+      "path": "runtime/research-context.js",
+      "bytes": 2643,
+      "sha256": "f57f489453680d31a267fe8dd8a9689f603e0a80a997f22bde3c0c254a69a710"
+    },
+    {
+      "path": "runtime/review-backup.js",
+      "bytes": 7772,
+      "sha256": "9b3cf97e742b7437ffccc0d6d4a00a48c05bea1330682c00068a193ee48090a9"
+    },
+    {
+      "path": "runtime/review-storage.js",
+      "bytes": 4148,
+      "sha256": "123212224ad820e88e0f061d41967d71511c84b802602e604b6f3cf41bfaf42b"
+    },
+    {
+      "path": "runtime/review.js",
+      "bytes": 9293,
+      "sha256": "33c44896297f58e294eb3b29b395f3e8e2a52b4f15d3c571731e86c091ecd411"
     },
     {
       "path": "runtime/space.js",
@@ -432,7 +487,109 @@
       "bytes": 12593,
       "sha256": "3fb1ab3733c21ce10064130dd10bd2fb7082388c5c45a6b5bb95318b5bf3d7c6",
       "git_blob_sha1": "f57e4a81e1de773550faf6d1399b4e92d5e48f1f"
+    },
+    {
+      "path": "cloud/current-20261015-right-workspace/content-flow-20261017/public-draft-20261018/documents/yuntianhua-public-research.md",
+      "bytes": 26730,
+      "sha256": "4ac458a96081ba7813d54baf823a30ffdef5c2810b90ecef2c8c12e636cc7f08",
+      "git_blob_sha1": "ed0d2ab414636f2296457071f0132621cbd25e7a"
+    },
+    {
+      "path": "cloud/current-20261015-right-workspace/content-flow-20261017/public-draft-20261018/documents/sungrow-public-research.md",
+      "bytes": 31677,
+      "sha256": "56010814431556710ec040f69db4dc5294733988a9c7cc10cfb054eaa565f414",
+      "git_blob_sha1": "7e530f4bd6077ccd462b8458bf7e31093917ae38"
+    },
+    {
+      "path": "cloud/current-20261015-right-workspace/content-flow-20261017/public-draft-20261018/documents/yizumi-public-research.md",
+      "bytes": 28861,
+      "sha256": "ddacac6aa2dc3c85cd3803548e1bf8ecae812bc7c32e30cc7eacd12637772952",
+      "git_blob_sha1": "64d9a3d4e066e83bf8fa5d4ad4a15fe07a6b664f"
+    },
+    {
+      "path": "cloud/current-20261015-right-workspace/content-flow-20261017/public-draft-20261018/documents/honghua-public-research.md",
+      "bytes": 30553,
+      "sha256": "30643b36d5f7565f1e109da59e0a273b566bfd39b650f12101f8c42ae43bf775",
+      "git_blob_sha1": "2d5a234199a029f87e35630793253e3ee73f0c9e"
+    },
+    {
+      "path": "cloud/current-20261015-right-workspace/content-flow-20261017/public-draft-20261018/documents/shaangu-public-research.md",
+      "bytes": 37571,
+      "sha256": "b96b4d0ccf9b7502544f3b31ae7067c63ac67d6265c3d9fe2398f174bcfbba33",
+      "git_blob_sha1": "fe78399bb868d206b0142d34b076e01fd315d2cc"
+    },
+    {
+      "path": "cloud/current-20261015-right-workspace/content-flow-20261017/public-draft-20261018/documents/crsc-public-research.md",
+      "bytes": 42672,
+      "sha256": "818304f06dbbe3bd5924e86f824d3f2fb3f69ce8d0fbe7e3f7b011b0a825514b",
+      "git_blob_sha1": "41c16d4312a2112a641001be7a6436eec0cd4771"
+    },
+    {
+      "path": "cloud/current-20261015-right-workspace/content-flow-20261017/public-draft-20261018/documents/zoomlion-public-research.md",
+      "bytes": 38916,
+      "sha256": "9506722499b20b59e2fcbf0e9f2fea58b93cf079c85bece80235a298727b9ca9",
+      "git_blob_sha1": "98c81949c0215a59458f056f2134924cb598753e"
+    },
+    {
+      "path": "workbench-review/research/airtransport/report.md",
+      "bytes": 37731,
+      "sha256": "6321a13738632a127b3f19d41ab9ffac172efe90112387b84f90b5258538e4d5",
+      "git_blob_sha1": "f51bf01ac80b37982cce192498b55e717fa82d2c"
+    },
+    {
+      "path": "workbench-review/research/banks/report.md",
+      "bytes": 30663,
+      "sha256": "7132d90e5147038f4d1e5f5752102c1a964f67b35138bbfb3caaa715ee347a62",
+      "git_blob_sha1": "fcc6242aae1fbe0442f74e97dec913d1eda7932e"
+    },
+    {
+      "path": "workbench-review/research/baiyunfollowup/report.md",
+      "bytes": 10658,
+      "sha256": "472b68c908e8bb1bbd74607876f0ce255badbe4b88e42a79485cff48df27253c",
+      "git_blob_sha1": "01d08038a4d6004922e8497f2795b028b56cb44c"
+    },
+    {
+      "path": "workbench-review/continuity/reports/honghua-before-correction.md",
+      "bytes": 29774,
+      "sha256": "99b17836f113b2c4d6af876b7d945078de0975d5247fb9fdc6dc2b533894d310",
+      "git_blob_sha1": "91dd839dbfcbb4a73cb2aae0553818d3445f0c03"
+    },
+    {
+      "path": "workbench-review/bank-evidence/README.txt",
+      "bytes": 682,
+      "sha256": "dd806cda4fb17960a6f936babd085d771f45c238ee1584ef3d7faf75dfbaed85",
+      "git_blob_sha1": "66740696b8f0f9c92cf107ba722637f46fb6af6f"
+    },
+    {
+      "path": "workbench-review/bank-evidence/source-urls.json",
+      "bytes": 3262,
+      "sha256": "3912235850b9fc57168091a8139041dd127e154030a00ad20489db06a60dd0d0",
+      "git_blob_sha1": "8736d160dc80b94473c6d6cf4ecdbe3bfab74330"
+    },
+    {
+      "path": "workbench-review/research/airtransport/figures/juneyao_equity_bridge.png",
+      "bytes": 193121,
+      "sha256": "1d0d4abc754479b4cafc0741f75b674f69df56bc79fce657b748998b951c57de",
+      "git_blob_sha1": "7ee3d1ca0ad15077fbcfc9c8942c77af16906413"
+    },
+    {
+      "path": "workbench-review/research/airtransport/figures/shenzhen_profit_quality.png",
+      "bytes": 231629,
+      "sha256": "46738b33cb5b3db1adbf1c7424d52bd01735645f53be6b1e8761320477de36cc",
+      "git_blob_sha1": "cd7ec334f6d608674c8726f8548ac545529bf2fd"
+    },
+    {
+      "path": "workbench-review/research/banks/charts/银行盈利机制_2026H1.png",
+      "bytes": 268474,
+      "sha256": "e82ab0dc515ac5851b498a6c1e80a2478cbc362aa85a9772f9d1e206cd73f386",
+      "git_blob_sha1": "7ebbf8acfc3eb01db2f55ca4b3f1a236b2d9a832"
+    },
+    {
+      "path": "workbench-review/research/baiyunfollowup/figures/q2_profit_bridge.png",
+      "bytes": 194088,
+      "sha256": "402a567bf5f1858ef42904d78d2419671a4e471320745a0a5ec086402abdf0ae",
+      "git_blob_sha1": "13af3fc851a5dc6ef8fc2d06506b640c796dbe63"
     }
   ],
-  "validation_limits": "Static/CPU tests and offline font metrics do not verify browser DOM layout or glyphs, WebGL materials, visual composition, touch devices or GPU performance. No browser, device or owner visual acceptance is claimed."
+  "validation_limits": "Static/CPU tests and offline font metrics do not verify browser DOM layout or glyphs, WebGL materials, visual composition, touch devices or GPU performance. No browser, device or owner visual acceptance is claimed. Research-context repair checks are focused Node/in-memory DOM fixtures, not browser acceptance. Browser download persistence and strict simultaneous multi-tab writes are unverified; localStorage writes are not atomic. Research-context repair is a public review candidate; real-browser acceptance was pending at publication."
 }

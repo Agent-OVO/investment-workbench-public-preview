@@ -1,3 +1,4 @@
+import {candidateHref} from '../research-history-data.js';
 import {loadLocalDraft} from '/investment-workbench-public-preview/workbench-review/content-adapter.js';
 import {resolveReport,REPORT_BASE} from '/investment-workbench-public-preview/workbench-review/route-model.js';
 import {bindPassages} from '/investment-workbench-public-preview/workbench-review/continuity/c02-passages.js?v=0.1.0-preview.2';
@@ -26,7 +27,7 @@ export async function mountC02Content({doc=document,api,host,signal,loadDraft=lo
  host.querySelector('.c02-reading')?.remove();
  const manifest=resolveReport('sinoseal'),section=doc.createElement('section');
  section.className='c02-reading';section.setAttribute('aria-label','中密控股：同一研究的五个阅读视角');
- section.innerHTML='<header class="c02-reading-heading"><p>RESEARCH IN CONTEXT · C02</p><h2>让判断，回到证据。</h2><span data-c02-source>正在核验中密控股公开研究快照…</span><nav class="c02-reading-nav" aria-label="独立研究页面"><a href="/investment-workbench-public-preview/workbench-review/research/sinoseal/">阅读完整研究 ↗</a><a href="/investment-workbench-public-preview/workbench-review/evidence/#sinoseal">来源与下载 ↗</a><a href="/investment-workbench-public-preview/workbench-review/history/?report=sinoseal">版本记录 ↗</a><a href="/investment-workbench-public-preview/workbench-review/review/?report=sinoseal">复盘 ↗</a></nav></header><div class="c02-cards"></div><p class="c02-scope">同一份研究 · 五个阅读视角<br>连线组织阅读，不表示跨研究引用或已证实因果</p>';
+ section.innerHTML='<header class="c02-reading-heading"><p>RESEARCH IN CONTEXT · C02</p><h2>让判断，回到证据。</h2><span data-c02-source>正在核验中密控股公开研究快照…</span><nav class="c02-reading-nav" aria-label="独立研究页面"><a href="/investment-workbench-public-preview/candidates/c02-spatial-v2-20261021/reader/?report=sinoseal">阅读完整研究 ↗</a><a href="/investment-workbench-public-preview/workbench-review/evidence/#sinoseal">来源与下载 ↗</a><a href="/investment-workbench-public-preview/candidates/c02-spatial-v2-20261021/history/?report=sinoseal">版本记录 ↗</a><a href="/investment-workbench-public-preview/candidates/c02-spatial-v2-20261021/review/?report=sinoseal">复盘 ↗</a></nav></header><div class="c02-cards"></div><p class="c02-scope">同一份研究 · 五个阅读视角<br>连线组织阅读，不表示跨研究引用或已证实因果</p>';
  host.append(section);
  const overview=doc.createElement('section');overview.className='c02-spatial-overview';overview.setAttribute('aria-label','空间 V2：五个真实阅读视角，可选中文字；拖动请用空白或视角手柄');overview.hidden=true;host.querySelector('#stage').append(overview);
  let disposed=false,layout;const request=new AbortController(),disposeDiagnostics=bindC02PublicDiagnostics({host,api,env});
@@ -39,9 +40,9 @@ export async function mountC02Content({doc=document,api,host,signal,loadDraft=lo
  try{
   const {raw}=await loadDraft({manifest,baseURL:REPORT_BASE.href,includeBytes:true,signal:request.signal});
   if(disposed)return handle;
-  const cards=bindPassages(raw,manifest),visuals=deriveC02Visuals(raw),container=section.querySelector('.c02-cards');
+  const cards=bindPassages(raw,manifest).map(item=>({...item,href:candidateHref('reader','sinoseal',{anchor:item.href.split('#')[1]||''})})),visuals=deriveC02Visuals(raw),container=section.querySelector('.c02-cards');
   Object.assign(handle,{cards,visuals});
-  const sectionHref=line=>{const lines=raw.split(/\r?\n/);let i=line-1;while(i>=0&&!/^#{1,6}\s/.test(lines[i]))i--;if(i<0)throw Error('C02_MISSING_SECTION');return BASE+'research/sinoseal/#'+manifest.anchorPrefix+'-line-'+(i+1);};
+  const sectionHref=line=>{const lines=raw.split(/\r?\n/);let i=line-1;while(i>=0&&!/^#{1,6}\s/.test(lines[i]))i--;if(i<0)throw Error('C02_MISSING_SECTION');return candidateHref('reader','sinoseal',{anchor:manifest.anchorPrefix+'-line-'+(i+1)});};
   const source=id=>visuals.excerpts.find(x=>x.id===id);
   const thumb=id=>{const e=source(id);return `<div class="c02-source-item"><a class="c02-source-tile" href="${sectionHref(e.line)}" data-source-line="${e.line}"><img src="${ASSET}source-${id}.svg" alt="已校验原稿第${e.line}行的重新排印节选：${esc(e.title)}，不是公告原页" width="640" height="360"><strong>${esc(e.label)}</strong><span class="c02-source-detail">${esc(e.detail)}</span><span class="c02-source-citation">${esc(e.source)}</span></a><a class="c02-image-link" href="${ASSET}source-${id}.svg">查看完整资料图 ↗</a></div>`;};
   const chart=(id,title,caption)=>{const d=visuals.tables[id];return `<figure class="c02-data-figure"><a href="${sectionHref(d.line)}" data-source-line="${d.line}"><img src="${ASSET}${id==='concentration'?'contribution':id}.svg" alt="${esc(title)}。单位：${esc(d.unit)}。${esc(d.values.map((v,i)=>d.labels[i]+' '+v).join('；'))}。${esc(d.scope)}" width="640" height="360"></a><figcaption>${esc(caption)} · 原稿 L${d.line}<a class="c02-image-link" href="${ASSET}${id==='concentration'?'contribution':id}.svg">查看完整图表 ↗</a></figcaption></figure>`;};
@@ -54,7 +55,7 @@ export async function mountC02Content({doc=document,api,host,signal,loadDraft=lo
    if(item.id==='evidence')content=`<div class="c02-card-title"><span>03 / SHARED EVIDENCE</span><h3>共享证据</h3></div><p class="c02-card-deck">同一原稿中的数据，保留期间与口径</p><div class="c02-chart-pair">${chart('repairs','修复收入年度与半年分组','年度 / 半年分开，不能直连同比')}${chart('concentration','修复业务收入和毛利占比','2026H1 · 两个分母不同')}</div><div class="c02-evidence-footnote"><span>原稿表格重绘</span><span>已核验 SHA-256</span><span>固定快照</span></div>`;
    if(item.id==='questions')content=`<div class="c02-card-title"><span>04 / NEXT QUESTIONS</span><h3>后续问题</h3></div><p class="c02-card-deck">下一次阅读，带着可核验的问题回来</p><ol class="c02-question-list"><li><b>01</b><span>同批新装机的累计售后净现金，何时覆盖初始让利？</span></li><li><b>02</b><span>扣除关闭装置、维修替代后，还剩多少真实存量？</span></li><li><b>03</b><span>服务成本、应收与资本投入，对售后净现金有何影响？</span></li></ol><small class="c02-question-boundary">根据原稿 L${source('cash').line} 拆解的问题 · 尚未获证</small>`;
    const firstLink=item.id==='focus'?'<span>进入全文</span>':'<span>'+esc(item.action)+'</span>';
-   card.innerHTML=content+`<footer class="c02-card-footer"><a class="c02-primary-link" href="${item.href}">${firstLink}<span aria-hidden="true">↗</span></a>${item.id==='evidence'?`<a class="c02-secondary-link" href="${BASE}evidence/#sinoseal">来源与下载 ↗</a>`:item.id==='questions'?`<a class="c02-secondary-link" href="${BASE}review/?report=sinoseal">写复盘 ↗</a>`:''}</footer>`;
+   card.innerHTML=content+`<footer class="c02-card-footer"><a class="c02-primary-link" href="${item.href}">${firstLink}<span aria-hidden="true">↗</span></a>${item.id==='evidence'?`<a class="c02-secondary-link" href="${BASE}evidence/#sinoseal">来源与下载 ↗</a>`:item.id==='questions'?`<a class="c02-secondary-link" href="${candidateHref('review','sinoseal')}">写复盘 ↗</a>`:''}</footer>`;
    container.append(card);
   }
   const paper=html=>`<div class="c02-reading-block">${html}</div>`;

@@ -1,6 +1,6 @@
 {
   "candidate": "c02-spatial-v2-20261021",
-  "status": "public review candidate; independent static/CPU review completed; owner and browser/GPU visual acceptance pending",
+  "status": "public V2 review candidate with isolated research-context repair; owner and browser/GPU acceptance pending",
   "prepared_date_utc": "2026-10-21",
   "shared_public_baseline_commit": "3d4fd3eba1256cb0801ea006ce3892eb0ad2f3f3",
   "entry": "/investment-workbench-public-preview/candidates/c02-spatial-v2-20261021/?visual=c02-spatial-v2",
@@ -72,5 +72,22 @@
     "known_cloud_browser_limit": "Existing cloud browser reported WebGL Disabled. No browser/GPU security setting was changed and denied URLs were not retried.",
     "independent_review": "Static/CPU source, scope, input/lifecycle and projection review completed; not browser visual or GPU acceptance.",
     "diagnostic_failure_fix": "Public diagnostics belong to the readable-page lifecycle, including WebGL initialization failure; null camera and renderer values are explicit. Clipboard write is attempted only if permission is already granted."
+  },
+  "research_context_repair": {
+    "prepared_date_utc": "2026-10-21",
+    "publication_state": "public-review-candidate; real-browser acceptance pending at publication",
+    "scope": "Only this V2 candidate namespace. Added history/review/reader wrappers and isolated local review storage; existing shared pages, default entry, V1 and 3D assets unchanged.",
+    "current_public_reports": 11,
+    "retained_public_archives": 1,
+    "selection": "Explicit 11-report whitelist; missing ID requires selection; empty, unknown, repeated or conflicting IDs rejected. Fixed V2 return URL.",
+    "reader": "Existing public Markdown and verified original-image modules, same frozen source bytes; no copied private research. Macro archive is labelled withdrawn and current review remains explicitly current-source bound.",
+    "storage_prefix": "c02-spatial-v2-20261021:review:v1:",
+    "storage_scope": "Candidate-only browser localStorage. No formal-draft read, automatic migration, upload or source/GitHub write. Old macro source records remain read-only in backup directory.",
+    "concurrency_limit": "Single-tab editing/restoring recommended. Stale-record checks are not atomic; strict simultaneous multi-tab writes are not guaranteed safe.",
+    "validation": "Passed focused Node model/public-byte checks and in-memory DOM/event lifecycle fixtures. Independent read-only audit found and verified fixes for initial review TDZ and failed-save duplicate mount data loss.",
+    "browser_acceptance": false,
+    "browser_download_persistence_accepted": false,
+    "multi_tab_concurrent_writes_accepted": false,
+    "unverified": "Real browser layout/navigation/download persistence, mobile, live multi-tab concurrency and GPU. No denied browser route retried or security setting changed."
   }
 }
