@@ -1,0 +1,24 @@
+C02 network-space concept art: per-component rights notice
+
+1. CC0 1.0 Universal (CC0-1.0)
+To the extent possible under law, the creator waives copyright and related rights in the original geometry, three procedural material texture images (warm limestone, grey mineral, rock micro-normal), and Python source newly created for this package.
+License reference: https://creativecommons.org/publicdomain/zero/1.0/
+The reused C02 assembly dependency retains its CC0 license in dependencies/LICENSE_assembly.txt.
+
+2. Generated fictional landscape image: separate notice
+textures/C02_shared_generated_fictional_alpine_vista.png is original AI-generated project artwork, shared from the C04 work, used under applicable image-generation platform terms. It is not a CC0 stock photograph and is excluded from the CC0 dedication above. No independent assurance of copyright exclusivity or third-party rights is asserted. Its exact SHA256, dimensions, generation tool/time, non-verbatim prompt summary, and use restrictions are recorded in licenses/shared_generated_far_vista_origin.json. The source image was not altered for this package; it is UV-mapped only to a distant environment shell.
+
+No reference-image pixels, third-party model downloads, HDRIs or fonts are included. This notice does not relicense the user's concept reference, Blender software, or its glTF tools.
+Provided as-is without warranty. All landscape elements are fictional art, not geographic evidence. No actual research content, business relationships, factual maps, or functioning navigation is supplied.
+
+
+2026-10-16 stage-edge refinement: the new parametric edge cross-section and accompanying original scripts are also dedicated under CC0-1.0. All inherited asset and generated-vista notices remain applicable.
+
+2026-10-16 carrier joinery refinement: new support, foot, corner geometry and original audit/build scripts are dedicated under CC0-1.0. Inherited notices remain applicable.
+
+
+2026-10-16 architectural limestone experiment: The three original C02_arch_honed_limestone_*_1024 texture images and their 512-pixel derivatives, their original procedural authoring material, and newly authored build/audit/report scripts are dedicated under CC0-1.0. These are deterministic intrinsic PBR material fields, not photographs or derivatives of reference-image pixels. No external texture, HDRI, scanned model, or font was acquired. All inherited component notices above remain applicable. The user-provided concept reference remains excluded from any new license grant.
+
+
+Public candidate path mapping (2026-10-21; original component grants above remain unchanged):
+The inherited dependencies/LICENSE_assembly.txt reference resolves here to C02-assembly-CC0.txt. The historical shared_generated_far_vista_origin.json is not redistributed; C02_SOURCE_PROVENANCE.public.json is an explicitly redacted summary, not the original record. Read C02_SOURCE_DISCLOSURE.txt for the generated-landscape exclusions and evidence limits. These mappings do not enlarge any licence.

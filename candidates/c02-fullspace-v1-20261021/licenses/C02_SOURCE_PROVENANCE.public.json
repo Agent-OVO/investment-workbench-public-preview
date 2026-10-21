@@ -1,0 +1,73 @@
+{
+  "schema": "c02-source-provenance-public-summary-v1",
+  "status": "source disclosure for isolated public candidate; not visual acceptance or blanket rights clearance",
+  "prepared_date_utc": "2026-10-21",
+  "record_type": "new redacted summary; not a copy or replacement of the original origin JSON",
+  "landscape": {
+    "description": "project AI-generated fictional artwork, as described by the recovered project record",
+    "generation_tool_as_recorded": "image_gen.imagegen",
+    "generation_date_utc_as_recorded": "2026-10-16",
+    "original_generation_event_independently_revalidated": false,
+    "exact_generation_prompt_retained_in_original_record": false,
+    "source_image_sha256": "58e8c95df0b9f4c8e1dee269a2d2ba9b5abe97d10f6d1e79d6d77fc0009885f2",
+    "source_image_bytes": 2655410,
+    "source_image_dimensions": [
+      1774,
+      887
+    ],
+    "c02_embedded_image_index": 4,
+    "c02_model_sha256": "8f22f3fe4bc865f53cb63b6d60c735c7802a532c477198a30a3aaf7c50fb140d",
+    "verified_current_embedded_pixels_match_original_record": true,
+    "license_scope": "Excluded from CC0 and unrelated component MIT dedications; subject to applicable generation-platform terms and relevant owner authorization.",
+    "rights_limits": [
+      "No independent copyright exclusivity or third-party rights assurance.",
+      "No dated platform-terms copy or account-specific entitlement receipt independently validated.",
+      "Not geographical observation, research evidence or financial/business data.",
+      "The original record states no concept-reference pixels were copied; this is a record assertion, not a newly independently proved event.",
+      "These limits must be disclosed accurately. They do not demand unlimited proof of third-party rights or automatically prohibit use of project artwork within the existing authorization merely because the original generation event cannot be independently revalidated."
+    ]
+  },
+  "original_record_fingerprints": [
+    {
+      "record": "original_generated_landscape_record",
+      "sha256": "23a2f6d20b95d43df3752299a55b974713f67cc1306f092f65f385297679f13a",
+      "git_blob_sha1": "097614ae0ef16e4eec155da1c73e29562ebee911",
+      "bytes": 1711,
+      "original_included": false
+    },
+    {
+      "record": "original_assembly_component_notice",
+      "sha256": "c4a0d16cc3498320d1f5436acc0e23ed1d2611b04e6bd1c5af883aad61ed2785",
+      "git_blob_sha1": "22f70e6149adbce7c0c6e9d23885185e53464e6b",
+      "bytes": 551,
+      "original_included": false
+    },
+    {
+      "record": "original_c02_component_notice",
+      "sha256": "debc931350ffc930fe66a1c9f71ec920a29f32ad1008e15be019b5036deef14f",
+      "git_blob_sha1": "c3e1d0416ce404a4d91bbac1802ee030b9bd3ebd",
+      "bytes": 1570,
+      "original_included": false
+    },
+    {
+      "record": "original_c02_landscape_adaptation_record",
+      "sha256": "ac5218af199c5055aeb3427774fc4d1f581c1252897b980a1d0d3b41baa6b725",
+      "git_blob_sha1": "68cd8f14e5b52f8c1d67aa8a24cd51efefebf3c5",
+      "bytes": 764,
+      "original_included": false
+    },
+    {
+      "record": "original_component_delivery_manifest",
+      "sha256": "c216a378d74b90e8e9e86b7590a163ecdfff551eb3fe8f27412492e0801e856c",
+      "git_blob_sha1": "7c246de9666cdc0e804723ed4af0339100c71040",
+      "bytes": 18822,
+      "original_included": false
+    }
+  ],
+  "redaction_scope": [
+    "No personal filesystem paths or email addresses.",
+    "No private repository location or internal handoff content.",
+    "No raw origin JSON, source archives or concept-reference images."
+  ],
+  "fingerprint_limits": "Hashes identify original record bytes; they do not by themselves prove the generation event, rights clearance, or public availability of the original records."
+}

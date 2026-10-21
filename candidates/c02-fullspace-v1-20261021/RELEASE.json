@@ -1,0 +1,17 @@
+{
+  "candidate": "c02-fullspace-v1-20261021",
+  "status": "isolated public implementation candidate, not visual acceptance",
+  "prepared_date_utc": "2026-10-21",
+  "shared_public_baseline_commit": "3d4fd3eba1256cb0801ea006ce3892eb0ad2f3f3",
+  "entry": "/investment-workbench-public-preview/candidates/c02-fullspace-v1-20261021/?visual=c02-complete-v1",
+  "scope": "Add candidate namespace only; no existing preview.2 path or default entry changes.",
+  "source_snapshot_sha256": "36ede2208d9edcb82f28f4f0947a44f73e0875a2908058d3288e806855585a6c",
+  "c02_model_sha256": "8f22f3fe4bc865f53cb63b6d60c735c7802a532c477198a30a3aaf7c50fb140d",
+  "validation": {
+    "static_and_cpu_checks": "See CANDIDATE_MANIFEST.json for packaged hashes; structural checks do not certify browser rendering.",
+    "browser_3d_visual_accepted": false,
+    "gpu_performance_accepted": false,
+    "mobile_accepted": false,
+    "known_cloud_browser_limit": "Public baseline loaded on 2026-10-21, but WebGL context creation reported GL_VENDOR and GL_RENDERER Disabled. No settings were changed."
+  }
+}
