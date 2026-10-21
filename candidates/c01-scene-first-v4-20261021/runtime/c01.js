@@ -1,0 +1,28 @@
+import {REPORTS,candidateHref} from '../research-history-data.js';
+import {GROUPS,categoryFor,searchReports,spaceHref,initialSelection} from './multispace-data.js';
+import {loadSnapshot} from './reader.js';
+import {deriveC02Visuals} from '/investment-workbench-public-preview/workbench-review/continuity/c02-research-visuals.js';
+import {renderC01} from './c01-content.js';
+import {mountC01Model} from './c01-model.js';
+const esc=s=>String(s).replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;');
+export function mountC01(doc=document,win=window,{load=loadSnapshot,model=mountC01Model}={}){
+  const q=s=>doc.querySelector(s),composition=q('[data-composition]'),status=q('[data-load-status]');
+  let seq=0,request=null,timer=null,activeReport=null,modelHandle=null,query='',group='all',disposed=false;
+  function paintCatalog(){const rows=searchReports(query,group);q('[data-catalog-list]').innerHTML=rows.map(r=>`<article class="catalog-entry"><small>${esc(GROUPS.find(x=>x[0]===categoryFor(r.slug))[1])} · ${esc(r.researchAsOf.slice(0,10))}</small><h3>${esc(r.company)}</h3><p>${esc(r.title.replace(/^.*?[:：]/,''))}</p><nav><a href="${spaceHref('overview',r.slug)}" data-select-report="${r.slug}">选择这份研究 ↗</a><a href="${candidateHref('reader',r.slug)}">全文</a><a href="${candidateHref('history',r.slug)}">版本</a></nav></article>`).join('')||'<p class="empty-state">没有匹配的公开研究。</p>';q('[data-search-status]').textContent=`显示 ${rows.length} / ${REPORTS.length} 份固定公开样本；不是全市场覆盖。`;}
+  function setLinks(report){for(const a of doc.querySelectorAll('[data-space-link]')){const page=a.dataset.spaceLink;a.href=['overview','study'].includes(page)?spaceHref(page,report?.slug||''):candidateHref(page,report?.slug||'');if(page==='overview')a.setAttribute('aria-current','page');}q('[data-selected-name]').textContent=report?.company||'选择有效研究';}
+  async function render(){const token=++seq;request?.abort();win.clearTimeout(timer);request=new AbortController();const pending=request;modelHandle?.clearContent?.();const result=initialSelection(win.location.search);if(result.isDefault)win.history.replaceState(win.history.state,'',spaceHref('overview',result.report.slug));activeReport=result.report;setLinks(activeReport);composition.replaceChildren();delete composition.dataset.report;delete composition.dataset.sourceSha256;
+    if(!activeReport){status.setAttribute('role','alert');status.textContent=result.message;composition.innerHTML='<div class="empty-state">未显示替代研究。请从下方目录重新选择。</div>';return false;}
+    status.setAttribute('role','status');status.textContent='正在核对 '+activeReport.company+' 的原稿身份与完整性…';composition.innerHTML='<p class="empty-state">正在校验公开研究，不以替代数据填充面板。</p>';timer=win.setTimeout(()=>pending.abort(),20000);
+    try{const loaded=await load({report:activeReport,baseURL:win.location.href,signal:pending.signal});if(disposed||token!==seq||pending.signal.aborted)return false;const visuals=activeReport.slug==='sinoseal'?deriveC02Visuals(loaded.raw):null;composition.innerHTML=renderC01({report:activeReport,raw:loaded.raw,visuals});composition.dataset.report=activeReport.slug;composition.dataset.sourceSha256=loaded.sha256;status.textContent=`${activeReport.company} · 研究截点 ${activeReport.researchAsOf} · SHA-256 核验通过，未重新核验事实。`;modelHandle?.refresh?.();return true;
+    }catch(e){if(disposed||token!==seq)return false;composition.innerHTML='<div class="empty-state">对应原稿载入或校验失败，未显示替代图表。请重载，或通过下方目录进入同一研究全文。</div>';status.setAttribute('role','alert');status.textContent=pending.signal.aborted?'原稿载入已取消或超时。':'原稿未通过载入或完整性校验。';return false;}finally{if(token===seq)win.clearTimeout(timer);}
+  }
+  q('[data-filters]').innerHTML=GROUPS.map(([id,title])=>`<button type="button" data-group="${id}" aria-pressed="${id==='all'}">${title}</button>`).join('');paintCatalog();
+  const click=e=>{const a=e.target.closest?.('[data-select-report]');if(a){e.preventDefault();win.history.pushState(null,'',spaceHref('overview',a.dataset.selectReport));void render();q('#main').scrollIntoView?.({block:'start',behavior:'auto'});}const b=e.target.closest?.('[data-group]');if(b){group=b.dataset.group;for(const el of q('[data-filters]').children)el.setAttribute('aria-pressed',String(el.dataset.group===group));paintCatalog();}};
+  const search=e=>{query=e.target.value;paintCatalog();};const open=()=>{q('#catalog').scrollIntoView({block:'start',behavior:'auto'});q('[data-search]').focus({preventScroll:true});};
+  doc.addEventListener('click',click);q('[data-search]').addEventListener('input',search);q('[data-open-catalog]').addEventListener('click',open);win.addEventListener('popstate',render);void render();
+  Promise.resolve(model({doc,win,field:q('.c01-field')})).then(handle=>{if(disposed)handle?.dispose?.();else{modelHandle=handle;handle?.refresh?.();}}).catch(()=>{q('[data-model-status]').textContent='3D 未能启动；完整原生阅读保留，不代表空间视觉验收。';});
+  const handle={render,getState:()=>({report:activeReport?.slug||null,seq,disposed,model:modelHandle?.getState?.()}),dispose(){if(disposed)return;disposed=true;seq++;request?.abort();win.clearTimeout(timer);modelHandle?.dispose?.();doc.removeEventListener('click',click);q('[data-search]').removeEventListener('input',search);q('[data-open-catalog]').removeEventListener('click',open);win.removeEventListener('popstate',render);}};
+  win.addEventListener('pagehide',e=>{if(!e.persisted)handle.dispose();});return handle;
+}
+if(globalThis.document?.body?.dataset.spacePage==='c01')mountC01();
+if(globalThis.document?.fonts)document.fonts.ready.then(()=>{document.body.dataset.fontsState=document.fonts.check('18px "Atelier Sans"','研究来源')&&document.fonts.check('28px "Atelier Serif"','研究总览')?'loaded':'fallback';});

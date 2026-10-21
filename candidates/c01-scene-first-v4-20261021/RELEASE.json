@@ -1,0 +1,29 @@
+{
+  "candidate": "c01-scene-first-v4-20261021",
+  "status": "isolated implementation candidate; browser DOM and GPU acceptance pending",
+  "baseCandidate": "spatial-multispace-v3-20261021",
+  "basePublicCommit": "e21817cacbb5e676cec03e796de8e754ad153b0f",
+  "newScene": "C01 overview only",
+  "retainedViews": ["V3 study", "V3 history", "V3 reader", "V3 isolated local review"],
+  "noReplacement": ["default", "V1", "V2", "V3", "shared runtime", "research engine", "public snapshots"],
+  "worldUnits": "metres",
+  "geometrySource": "Original Blender 4.3.2 geometry and existing separately licensed procedural stone texture",
+  "readingPlanes": "fixed world dimensions; native DOM four-corner planar homography using the same camera",
+  "depthBoundary": "No arbitrary per-pixel WebGL/DOM depth compositing. Finite camera and non-crossing content-plane layout; real GPU overlap validation remains pending.",
+  "projectionTests": "108 camera/viewport cases, 324 plane projections. Internal numerical consistency only, not GPU or independent coordinate proof.",
+  "validation": {
+    "sourceIdentity": "passed local fixtures for all 11 public snapshots",
+    "asyncLifecycle": "passed local event fixtures",
+    "cameraRecovery": "passed fake-renderer lifecycle fixtures, including clipped-view reset and true context loss",
+    "inheritedFunctionModels": "passed retained V3 model/event tests",
+    "browserDOM": "not run on this candidate; local preview connection failed",
+    "gpuVisual": "not accepted",
+    "fontLayoutOverflow": "browser measurement pending; overflow restores full native reading",
+    "mobileTouch": "not accepted",
+    "performance": "not benchmarked"
+  },
+  "storage": "c01-scene-first-v4-20261021 only, research ID and SHA partitioned; no V3/formal review reads",
+  "network": "same-origin public dependencies; explicit external links only; no analytics or account access",
+  "researchStatus": "fixed public historical snapshots, not live market data and not facts independently reverified for this frontend",
+  "publication": "candidate files only; no remote submission performed by this build"
+}

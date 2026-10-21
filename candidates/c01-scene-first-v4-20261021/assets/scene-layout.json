@@ -1,0 +1,104 @@
+{
+  "units": "metres",
+  "authoredGeometry": "c01-atelier.glb",
+  "contentMapping": "complete planar homography from the same Three camera; not DOM-derived geometry",
+  "camera": {
+    "position": [
+      0,
+      1.95,
+      4.95
+    ],
+    "target": [
+      0,
+      1.43,
+      0
+    ],
+    "fov": 37
+  },
+  "panels": [
+    {
+      "id": "evidence",
+      "position": [
+        -1.65,
+        1.64,
+        0.08
+      ],
+      "width": 1.34,
+      "height": 1.64,
+      "yaw": 0.12217304763960307,
+      "pixels": [
+        374,
+        458
+      ],
+      "face": "green",
+      "contentPosition": [
+        -1.6450033569203888,
+        1.64,
+        0.12069439221729421
+      ]
+    },
+    {
+      "id": "focus",
+      "position": [
+        0,
+        1.93,
+        -0.12
+      ],
+      "width": 1.56,
+      "height": 1.14,
+      "yaw": 0,
+      "pixels": [
+        456,
+        333
+      ],
+      "face": "ceramic",
+      "contentPosition": [
+        0.0,
+        1.93,
+        -0.07899999999999999
+      ]
+    },
+    {
+      "id": "records",
+      "position": [
+        1.65,
+        1.64,
+        0.08
+      ],
+      "width": 1.34,
+      "height": 1.64,
+      "yaw": -0.12217304763960307,
+      "pixels": [
+        374,
+        458
+      ],
+      "face": "smoke",
+      "contentPosition": [
+        1.6450033569203888,
+        1.64,
+        0.12069439221729421
+      ]
+    }
+  ],
+  "limits": {
+    "yawDegrees": 3,
+    "pitchDegrees": 1.5,
+    "zoom": [
+      0.98,
+      1.08
+    ]
+  },
+  "light": {
+    "position": [
+      -3.6,
+      6,
+      3
+    ],
+    "target": [
+      0,
+      1,
+      0
+    ]
+  },
+  "decorativeGeometryIsEvidence": false
+}

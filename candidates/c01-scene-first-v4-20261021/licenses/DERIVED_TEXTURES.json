@@ -1,0 +1,18 @@
+{
+  "sourceAssetSha256": "8f22f3fe4bc865f53cb63b6d60c735c7802a532c477198a30a3aaf7c50fb140d",
+  "scope": "Exact embedded textures from the existing C02 project asset. Mountain image is fictional generated project art, not geographic or investment evidence. Stone images inherit the existing procedural-material notices. No concept pixels redistributed.",
+  "files": [
+    {
+      "path": "assets/fictional-alpine-vista.png",
+      "sourceImageName": "C02_shared_generated_fictional_alpine_vista",
+      "bytes": 2655410,
+      "sha256": "58e8c95df0b9f4c8e1dee269a2d2ba9b5abe97d10f6d1e79d6d77fc0009885f2"
+    },
+    {
+      "path": "assets/grey-mineral.png",
+      "sourceImageName": "C02_original_grey_mineral_basecolor_1024",
+      "bytes": 1434619,
+      "sha256": "37df6a480979603ca7e1c9fd33825ddcbcda8b1b56d7ab0d2548ea8a4b37ddb7"
+    }
+  ]
+}
