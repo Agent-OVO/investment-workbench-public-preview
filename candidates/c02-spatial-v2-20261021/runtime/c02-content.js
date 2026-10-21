@@ -6,6 +6,21 @@ import {createC02Layout} from './c02-layout.js?v=c02-spatial-v2-20261021';
 const activeMounts=new WeakMap();
 const BASE='/investment-workbench-public-preview/workbench-review/',ASSET=BASE+'continuity/c02-assets/';
 const esc=x=>String(x).replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;');
+// The readable page owns this binding, not the disposable WebGL renderer.
+export function bindC02PublicDiagnostics({host,api,env=globalThis}){
+ const button=host.querySelector('[data-copy-diagnostics]'),out=host.querySelector('[data-public-diagnostics]');
+ if(!button||!out)return ()=>{};
+ let disposed=false;
+ const copy=async()=>{
+  const stage=host.querySelector('#stage');
+  const diagnostics=api.getPublicDiagnostics?.()||{candidate:'c02-spatial-v2-20261021',state:api.getDiagnostics?.().status||'failed',textMode:host.querySelector('[data-text-mode]')?.value||'flat',webgl:{status:'not-initialized',available:false},initializationFailed:true,camera:null,viewport:{width:stage?.clientWidth||0,height:stage?.clientHeight||0,devicePixelRatio:env.devicePixelRatio||1,rendererPixelRatio:null},visualAccepted:false,GPUAccepted:false};
+  const text=JSON.stringify(diagnostics,null,2);out.textContent=text;button.textContent='请复制下方诊断';
+  // Never request a new clipboard permission: readable output works without it.
+  try{const permission=await env.navigator?.permissions?.query({name:'clipboard-write'});if(!disposed&&permission?.state==='granted'&&env.navigator?.clipboard?.writeText){await env.navigator.clipboard.writeText(text);if(!disposed)button.textContent='诊断已复制';}}catch{}
+ };
+ button.addEventListener('click',copy);
+ return ()=>{disposed=true;button.removeEventListener('click',copy);};
+}
 export async function mountC02Content({doc=document,api,host,signal,loadDraft=loadLocalDraft,env=globalThis}) {
  activeMounts.get(host)?.dispose();
  host.querySelector('.c02-reading')?.remove();
@@ -14,9 +29,9 @@ export async function mountC02Content({doc=document,api,host,signal,loadDraft=lo
  section.innerHTML='<header class="c02-reading-heading"><p>RESEARCH IN CONTEXT · C02</p><h2>让判断，回到证据。</h2><span data-c02-source>正在核验中密控股公开研究快照…</span><nav class="c02-reading-nav" aria-label="独立研究页面"><a href="/investment-workbench-public-preview/workbench-review/research/sinoseal/">阅读完整研究 ↗</a><a href="/investment-workbench-public-preview/workbench-review/evidence/#sinoseal">来源与下载 ↗</a><a href="/investment-workbench-public-preview/workbench-review/history/?report=sinoseal">版本记录 ↗</a><a href="/investment-workbench-public-preview/workbench-review/review/?report=sinoseal">复盘 ↗</a></nav></header><div class="c02-cards"></div><p class="c02-scope">同一份研究 · 五个阅读视角<br>连线组织阅读，不表示跨研究引用或已证实因果</p>';
  host.append(section);
  const overview=doc.createElement('section');overview.className='c02-spatial-overview';overview.setAttribute('aria-label','空间 V2：五个真实阅读视角，可选中文字；拖动请用空白或视角手柄');overview.hidden=true;host.querySelector('#stage').append(overview);
- let disposed=false,layout;const request=new AbortController();
+ let disposed=false,layout;const request=new AbortController(),disposeDiagnostics=bindC02PublicDiagnostics({host,api,env});
  const handle={manifest,update(){if(handle.error){const status=host.querySelector('#status');status.textContent='研究原稿载入或校验失败 · 未显示替代数据，请返回工作台核对原稿';status.setAttribute('role','alert');}else layout?.update();},dispose(){
-  if(disposed)return;disposed=true;request.abort();signal?.removeEventListener('abort',handle.dispose);layout?.dispose();section.remove();overview.remove();
+  if(disposed)return;disposed=true;disposeDiagnostics();request.abort();signal?.removeEventListener('abort',handle.dispose);layout?.dispose();section.remove();overview.remove();
   if(activeMounts.get(host)===handle){activeMounts.delete(host);doc.body.classList.remove('c02-flow');}
  }};
  activeMounts.set(host,handle);signal?.addEventListener('abort',handle.dispose,{once:true});

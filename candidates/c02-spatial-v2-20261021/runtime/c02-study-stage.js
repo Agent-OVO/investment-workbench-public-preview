@@ -15,7 +15,7 @@ const status=host.querySelector('#status'),buttons=host.querySelector('#variants
 const motionReset=host.querySelector('#motion-reset'),details=host.querySelector('.diagnostics');
 const state={status:'loading',requestedVariant:variant,currentVariant:null,contentMode,
   renderReady:false,visualAccepted:false,businessBound:contentMode==='syntheticDemo',performanceAccepted:false,textMode:'flat',disposed:false,contextLost:false,
-  renderCount:0,switchCount:0,errors:[],animationPlaying:false,reducedMotion:matchMedia('(prefers-reduced-motion: reduce)').matches};
+  renderCount:0,switchCount:0,webglStatus:'not-initialized',errors:[],animationPlaying:false,reducedMotion:matchMedia('(prefers-reduced-motion: reduce)').matches};
 let manifest,sceneManifest,definitions,group,groupId,renderer,scene,world,camera,controller,lighting,active,pending,observer,inputs;
 let generation=0,raf=0,lastTime=null,rendererName=null,calls=0,triangles=0,cpuRenderMs=0,lastDetails=0,pageSuspended=false;
 const removers=[];
@@ -169,7 +169,7 @@ function inspectProtectedVisibility(){
 }
 function dispose(){if(state.disposed)return;state.disposed=true;state.status='disposed';state.renderReady=false;state.animationPlaying=false;generation++;setupAbort.abort();pending?.controller.abort();if(raf)cancelAnimationFrame(raf);raf=0;
   observer?.disconnect();removers.splice(0).forEach(fn=>fn());inputs?.dispose();controller?.dispose();if(active){world.remove(active.root);release(active);active=null;}lighting?.dispose();renderer?.dispose();publish();}
-const api={setTextMode(mode){if(['flat','affine','perspective'].includes(mode))state.textMode=mode;},getPublicDiagnostics(){return {candidate:'c02-spatial-v2-20261021',state:state.status,textMode:state.textMode,camera:controller?.get(),viewport:{width:stage.clientWidth,height:stage.clientHeight,devicePixelRatio:globalThis.devicePixelRatio||1,rendererPixelRatio:renderer?.getPixelRatio()},visualAccepted:false,GPUAccepted:false};},focusZone(id){controller?.focus(id);inputs?.update();schedule();},activateContent(contract){active?.refinement?.activateContent(contract);if(active){state.businessBound=true;state.contentSourceHash=contract.sourceHash;}schedule();},getDiagnostics:snapshot,inspectProtectedVisibility,selectVariant,getContentAnchors,suspend(value){pageSuspended=!!value;state.animationPlaying=false;if(raf)cancelAnimationFrame(raf);raf=0;if(!value)schedule();},restorePose(pose){if(pose)setView(pose.presentation?.yawDegrees||0,pose.presentation?.pitchDegrees||0);},setView,reset:()=>{controller?.reset();inputs?.update();},setAnimationPlaying,setAnimationTime,renderOnce:()=>{if(raf)cancelAnimationFrame(raf);render();return snapshot();},dispose};
+const api={setTextMode(mode){if(['flat','affine','perspective'].includes(mode))state.textMode=mode;},getPublicDiagnostics(){return {candidate:'c02-spatial-v2-20261021',state:state.status,textMode:state.textMode,webgl:{status:state.webglStatus,available:!!renderer&&!state.contextLost&&!state.disposed},initializationFailed:state.errors.some(e=>e.phase==='setup'),camera:controller?.get()||null,viewport:{width:stage.clientWidth,height:stage.clientHeight,devicePixelRatio:globalThis.devicePixelRatio||1,rendererPixelRatio:renderer?.getPixelRatio()??null},visualAccepted:false,GPUAccepted:false};},focusZone(id){controller?.focus(id);inputs?.update();schedule();},activateContent(contract){active?.refinement?.activateContent(contract);if(active){state.businessBound=true;state.contentSourceHash=contract.sourceHash;}schedule();},getDiagnostics:snapshot,inspectProtectedVisibility,selectVariant,getContentAnchors,suspend(value){pageSuspended=!!value;state.animationPlaying=false;if(raf)cancelAnimationFrame(raf);raf=0;if(!value)schedule();},restorePose(pose){if(pose)setView(pose.presentation?.yawDegrees||0,pose.presentation?.pitchDegrees||0);},setView,reset:()=>{controller?.reset();inputs?.update();},setAnimationPlaying,setAnimationTime,renderOnce:()=>{if(raf)cancelAnimationFrame(raf);render();return snapshot();},dispose};
 
 // Optional caller cancellation can reach the existing disposal path before initialization resolves.
 if(signal?.aborted){dispose();return api;}
@@ -184,8 +184,8 @@ try{
   definitions=manifest.viewerVariants||Object.fromEntries(Object.entries(manifest.assets).filter(([,a])=>a.group).map(([id,a])=>[id,{...a,assetId:id}]));
   const initial=definitions[state.requestedVariant];if(!initial)throw new Error(`Unknown variant: ${state.requestedVariant}`);
   groupId=initial.group;group=manifest.groups[groupId];
-  T.ColorManagement.legacyMode=false;renderer=new T.WebGLRenderer({canvas,antialias:true,preserveDrawingBuffer:true});
-  renderer.outputEncoding=T.sRGBEncoding;renderer.toneMapping=T.ACESFilmicToneMapping;renderer.toneMappingExposure=FINISH.exposure;renderer.physicallyCorrectLights=true;
+  T.ColorManagement.legacyMode=false;state.webglStatus='initializing';renderer=new T.WebGLRenderer({canvas,antialias:true,preserveDrawingBuffer:true});
+  state.webglStatus='available';renderer.outputEncoding=T.sRGBEncoding;renderer.toneMapping=T.ACESFilmicToneMapping;renderer.toneMappingExposure=FINISH.exposure;renderer.physicallyCorrectLights=true;
   renderer.shadowMap.enabled=true;renderer.shadowMap.type=T.PCFSoftShadowMap;renderer.info.autoReset=false;
   const gl=renderer.getContext(),ext=gl.getExtension('WEBGL_debug_renderer_info');rendererName=ext?gl.getParameter(ext.UNMASKED_RENDERER_WEBGL):gl.getParameter(gl.RENDERER);
   scene=new T.Scene();world=new T.Group();scene.add(world);scene.background=new T.Color('#becdd3');scene.fog=null;
@@ -195,15 +195,13 @@ try{
   lighting=createFinishLighting(T,renderer,scene);
   listen(host.querySelector('#reset'),'click',()=>{controller.reset();inputs?.update();});listen(host.querySelector('#retry'),'click',()=>state.contextLost?location.reload():selectVariant(state.requestedVariant));
   listen(motion,'click',()=>setAnimationPlaying(!state.animationPlaying));listen(motionReset,'click',()=>setAnimationTime(0));listen(details,'toggle',()=>{lastDetails=0;publish();});
-  listen(canvas,'webglcontextlost',event=>{event.preventDefault();state.contextLost=true;state.status='failed';state.renderReady=false;state.animationPlaying=false;if(raf)cancelAnimationFrame(raf);raf=0;show('图形上下文已丢失；点击重新加载以重建完整渲染资源。',true);publish();});
-  const copyButton=host.querySelector('[data-copy-diagnostics]');
-  if(copyButton)listen(copyButton,'click',async()=>{const text=JSON.stringify(api.getPublicDiagnostics(),null,2),out=host.querySelector('[data-public-diagnostics]');if(out)out.textContent=text;try{await navigator.clipboard.writeText(text);copyButton.textContent='诊断已复制';}catch{copyButton.textContent='请复制下方诊断';}});
+  listen(canvas,'webglcontextlost',event=>{event.preventDefault();state.contextLost=true;state.webglStatus='context-lost';state.status='failed';state.renderReady=false;state.animationPlaying=false;if(raf)cancelAnimationFrame(raf);raf=0;show('图形上下文已丢失；点击重新加载以重建完整渲染资源。',true);publish();});
   const reducedMotion=matchMedia('(prefers-reduced-motion: reduce)');listen(reducedMotion,'change',event=>{state.reducedMotion=event.matches;if(event.matches)setAnimationPlaying(false);});
   listen(document,'visibilitychange' ,()=>{lastTime=null;if(document.hidden){if(raf)cancelAnimationFrame(raf);raf=0;}else schedule();});
   listen(window,'pagehide',event=>{if(event.persisted){pageSuspended=true;if(raf)cancelAnimationFrame(raf);raf=0;lastTime=null;}else dispose();});
   listen(window,'pageshow',event=>{if(event.persisted){pageSuspended=false;lastTime=null;schedule();}});
   observer=new ResizeObserver(resize);observer.observe(stage);resize();await selectVariant(state.requestedVariant);
-}catch(error){if(!state.disposed){state.status='failed';state.errors.push({phase:'setup',message:String(error)});show(`试装未启动：${error.message}。旧入口仍可使用。`,true);publish();}}
+}catch(error){if(!state.disposed){if(state.webglStatus==='initializing')state.webglStatus='initialization-failed';state.status='failed';state.errors.push({phase:'setup',message:String(error)});show(`试装未启动：${error.message}。旧入口仍可使用。`,true);publish();}}
 
 
 return api;

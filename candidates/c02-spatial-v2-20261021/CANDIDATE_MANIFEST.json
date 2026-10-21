@@ -10,13 +10,13 @@
   "files": [
     {
       "path": "README.md",
-      "bytes": 3792,
-      "sha256": "47c8213e51c5034b7ff0945526463110a68e051c0f64e945e5291b048cc1c63d"
+      "bytes": 3946,
+      "sha256": "9a7294791a174164596d1489b5561229e01ecdd01ea48c704b67551cf851e755"
     },
     {
       "path": "RELEASE.json",
-      "bytes": 2780,
-      "sha256": "db880d9bc096b450c01ec3aedaeb842370c9ce50cb4e0e69e1ee4d364af70049"
+      "bytes": 3025,
+      "sha256": "a18eab48a13321b96158544686eb459fc11d03db2f2784eaf8eb30a46cf781c6"
     },
     {
       "path": "THIRD_PARTY_NOTICES.md",
@@ -65,8 +65,8 @@
     },
     {
       "path": "runtime/c02-content.js",
-      "bytes": 15278,
-      "sha256": "573283f79b4a6f73576d78c323d0636be50e69f4c56da916922a569a03bccd6b"
+      "bytes": 16783,
+      "sha256": "1eb597fd15cca4fc2edd5f13e7aa0ce3953c873fed2b664044828fce2a16e0f2"
     },
     {
       "path": "runtime/c02-controls.js",
@@ -90,8 +90,8 @@
     },
     {
       "path": "runtime/c02-study-stage.js",
-      "bytes": 23845,
-      "sha256": "7184ebb60251ed61d603096115507349ce8d3c48229d305b900fef1d08a9cc6d"
+      "bytes": 23810,
+      "sha256": "c74c2216148878a30ce01b89eaea4de6000f69abde9638f371b2eb4330e604bc"
     },
     {
       "path": "runtime/c02-study.js",

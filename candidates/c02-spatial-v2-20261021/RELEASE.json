@@ -70,6 +70,7 @@
     "gpu_performance_accepted": false,
     "mobile_accepted": false,
     "known_cloud_browser_limit": "Existing cloud browser reported WebGL Disabled. No browser/GPU security setting was changed and denied URLs were not retried.",
-    "independent_review": "Static/CPU source, scope, input/lifecycle and projection review completed; not browser visual or GPU acceptance."
+    "independent_review": "Static/CPU source, scope, input/lifecycle and projection review completed; not browser visual or GPU acceptance.",
+    "diagnostic_failure_fix": "Public diagnostics belong to the readable-page lifecycle, including WebGL initialization failure; null camera and renderer values are explicit. Clipboard write is attempted only if permission is already granted."
   }
 }
