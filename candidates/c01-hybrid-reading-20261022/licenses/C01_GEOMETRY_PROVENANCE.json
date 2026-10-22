@@ -1,0 +1,17 @@
+{
+  "file": "assets/c01-atelier.glb",
+  "sha256": "8d2c1f2f53b18ba877f9bc13b0b518dc72b07480eeb9a3ecfa9207d2c4169dbf",
+  "bytes": 3853704,
+  "meshes": 131,
+  "triangles": 40608,
+  "externalUris": [],
+  "materialExtensions": [
+    "KHR_materials_transmission",
+    "KHR_materials_emissive_strength",
+    "KHR_materials_ior",
+    "KHR_materials_volume"
+  ],
+  "geometryAuthoring": "Original Blender 4.3.2 implementation",
+  "texture": "Existing grey-mineral.png, component notices retained",
+  "validationBoundary": "Numeric/asset inspection only; browser and GPU pending"
+}
