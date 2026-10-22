@@ -1,11 +1,19 @@
 {
   "candidate": "c01-hybrid-reading-20261022",
-  "status": "local-unpublished-reading-integration",
-  "base": "audited V4 business/runtime contracts; not V5",
-  "scope": "Optional stable native DOM reading host, exact public snapshot identity, preserved five-page navigation",
-  "scene": "B scene and world-projected short labels not connected; central mountain unresolved; no substitute static render",
-  "browserValidation": "not performed for this build",
-  "gpuValidation": "not performed",
-  "priorEvidence": "Earlier V4 browser observations apply only to V4",
-  "remotePublication": "not performed or authorized by this receipt"
+  "status": "local-unpublished-conclusion-excerpt-correction",
+  "basePublicCommit": "d4b1d8aef3f5bcdc8b9742c95937af13136c1c89",
+  "baseFrozenManifestSha256": "ab37afbd1ad6fbdd53ca5f0a6d8ac98408887f5dbae01bb3ce8ec8de365d1b4a",
+  "scope": "Ten non-Sinoseal conclusion excerpts from exact existing public source spans; no new research or scene changes",
+  "scene": "B scene/world labels unconnected; central mountain unresolved; no substitute static render",
+  "browserValidation": "Predecessor commit inspected at 1180x757; new excerpt patch not browser-validated",
+  "unverified": [
+    "narrow/mobile layout",
+    "screen readers",
+    "reduced-motion=true in browser",
+    "browser HTTP failures",
+    "post-patch DOM",
+    "GPU",
+    "performance"
+  ],
+  "remotePublication": "This patch is not published; no publication authority is granted by this receipt"
 }

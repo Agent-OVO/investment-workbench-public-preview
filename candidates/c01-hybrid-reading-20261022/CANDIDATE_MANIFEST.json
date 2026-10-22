@@ -1,39 +1,40 @@
 {
   "candidate": "c01-hybrid-reading-20261022",
-  "status": "local-unpublished-reading-integration; browser and GPU not verified",
+  "status": "local-unpublished-conclusion-excerpt-correction; post-patch browser/GPU not verified",
   "algorithm": "sha256",
-  "basePublicCommit": "5b3e48fc8c88aa34543164610447e510b77eba1e",
-  "scope": "Stable native reading host only. New B scene and world-projected short labels are not connected; mountain unresolved. No substitute scene image.",
+  "basePublicCommit": "d4b1d8aef3f5bcdc8b9742c95937af13136c1c89",
+  "baseFrozenManifestSha256": "ab37afbd1ad6fbdd53ca5f0a6d8ac98408887f5dbae01bb3ce8ec8de365d1b4a",
+  "scope": "Ten non-Sinoseal conclusion excerpts from exact existing public source spans; no new research or scene changes",
   "files": [
     {
       "path": "README.md",
-      "bytes": 4614,
-      "sha256": "05dddba2a8046909de079c9d0eb68d87ea8b64baa2d64c235cad8aa63e509382",
+      "bytes": 6354,
+      "sha256": "c1024c2c22eefa094a01460c02c644bafbc5c9127fec64e435eeb6841728171a",
       "change": "modified"
     },
     {
       "path": "RELEASE.json",
-      "bytes": 638,
-      "sha256": "a97cac6dc821cea0b470e4fff3b2b57411744740d9a55b1eb94a02dd1a6f11ef",
+      "bytes": 912,
+      "sha256": "5addfeaa058d5cab2e021bead2119cada37c9618c595f629559ea90af9451cc1",
       "change": "modified"
     },
     {
       "path": "THIRD_PARTY_NOTICES.md",
       "bytes": 2904,
       "sha256": "d7445bdc0206b85b9a1570d9fb46607324085b983de83d9ac1b45d8d4c9f1d74",
-      "change": "modified"
+      "change": "unchanged"
     },
     {
       "path": "assets/atelier-sans.woff2",
       "bytes": 459284,
       "sha256": "0bcf7756e2e8c5c5057d1d7d30f8892f33011bb0575e563127abd7a9563b0c18",
-      "change": "modified"
+      "change": "unchanged"
     },
     {
       "path": "assets/atelier-serif.woff2",
       "bytes": 630976,
       "sha256": "a9bd8856c70bd05d3d40615cd252290f95a68f3e09df729daf6bbe2efd3c270c",
-      "change": "modified"
+      "change": "unchanged"
     },
     {
       "path": "assets/c01-atelier.glb",
@@ -69,7 +70,7 @@
       "path": "index.html",
       "bytes": 5365,
       "sha256": "34039e6e5bd815997d1bd3e1fc9550eae42c2f17c482d9886109c00d23703806",
-      "change": "modified"
+      "change": "unchanged"
     },
     {
       "path": "licenses/C01_GEOMETRY_PROVENANCE.json",
@@ -105,7 +106,7 @@
       "path": "licenses/FONT_DERIVATION.json",
       "bytes": 1163,
       "sha256": "c07042d73f3a92a671e083b3ed7751144e28dfc2b9b490cadbfb9d07931838d4",
-      "change": "modified"
+      "change": "unchanged"
     },
     {
       "path": "licenses/Noto-CJK-copyright.txt",
@@ -135,7 +136,7 @@
       "path": "research-history-data.js",
       "bytes": 11411,
       "sha256": "545be1397a8ba8623136d689d10c89c2f20a767f0679f2f5fc2c21a88d0b4159",
-      "change": "namespace-only"
+      "change": "unchanged"
     },
     {
       "path": "review/index.html",
@@ -147,19 +148,19 @@
       "path": "runtime/apply-authored-surfaces.js",
       "bytes": 1833,
       "sha256": "67fda1504bf2fa8efe986a2bd1c139270175db000257aa527b00e4973be938b3",
-      "change": "new"
+      "change": "unchanged"
     },
     {
       "path": "runtime/c01-content.js",
       "bytes": 5218,
       "sha256": "1a2efeef5594856641356480deb6b3d3c3490fe9608197dfc50015206fc63c87",
-      "change": "modified"
+      "change": "unchanged"
     },
     {
       "path": "runtime/c01-model.js",
       "bytes": 12275,
       "sha256": "b08eafaced0d732aa719099f21fa7c96b3e8edb3f8a8545bbd03de09862f4c88",
-      "change": "namespace-only"
+      "change": "unchanged"
     },
     {
       "path": "runtime/c01-projection.js",
@@ -177,13 +178,19 @@
       "path": "runtime/c01.js",
       "bytes": 7287,
       "sha256": "35a86c52d88be0692f069b9f5358a2e582a6358cfec8605f4703b6bf6ed6d93c",
-      "change": "modified"
+      "change": "unchanged"
     },
     {
       "path": "runtime/charts.js",
       "bytes": 1570,
       "sha256": "dcaff45951c0422dfc7c303c4110543ed2be07dfb3296f9490b05f1b6a6a1e64",
       "change": "unchanged"
+    },
+    {
+      "path": "runtime/conclusion-excerpts.js",
+      "bytes": 9101,
+      "sha256": "0f63121e7be4de55f02c9dfc0c5150e4fd5991c64084984328ad9f6d6175ad60",
+      "change": "new"
     },
     {
       "path": "runtime/document-space.css",
@@ -211,21 +218,21 @@
     },
     {
       "path": "runtime/hybrid-content.js",
-      "bytes": 1334,
-      "sha256": "bf95af2b845a6f7814927d37b41113edaf853f8e9189b6b4cc32139677afe159",
-      "change": "new"
+      "bytes": 2472,
+      "sha256": "78fd10f4f1b8b53319e831a8a32cc98a0e06456f68b289fe3d81131915d18906",
+      "change": "modified"
     },
     {
       "path": "runtime/hybrid-reading-host.js",
       "bytes": 17366,
       "sha256": "8c2a75f116080645f1013d2afb7412f0e1ad6a2922fbf9c629e4eb029615ef64",
-      "change": "new"
+      "change": "unchanged"
     },
     {
       "path": "runtime/hybrid-reading.css",
       "bytes": 7081,
       "sha256": "f7670332e9036ab7e55f9405c93e58adf0480cab458d770fcb1a483cf802c78e",
-      "change": "new"
+      "change": "unchanged"
     },
     {
       "path": "runtime/multispace-data.js",
@@ -243,7 +250,7 @@
       "path": "runtime/reader.js",
       "bytes": 9232,
       "sha256": "e42aa2f438acb66ed591d2e687ab56b8609713f325806f9a7d964ee409bc1dbd",
-      "change": "namespace-only"
+      "change": "unchanged"
     },
     {
       "path": "runtime/research-context.js",
@@ -261,13 +268,13 @@
       "path": "runtime/review-backup.js",
       "bytes": 7776,
       "sha256": "33a024159b970042db223b5d86bcf4cbf78d863dce87a9583f727c178132e66d",
-      "change": "namespace-only"
+      "change": "unchanged"
     },
     {
       "path": "runtime/review-storage.js",
       "bytes": 4152,
       "sha256": "1abc96d4e1bcd99ef211f0dda38e3265c826752e71be3c53409c188852abdb1a",
-      "change": "namespace-only"
+      "change": "unchanged"
     },
     {
       "path": "runtime/review.js",
@@ -279,7 +286,7 @@
       "path": "runtime/scene-motion-state.js",
       "bytes": 17795,
       "sha256": "09bf86df0d07f3c337e211b25b8a5d5892386fae6e6aa14d48a8148f0b4a6ada",
-      "change": "new"
+      "change": "unchanged"
     },
     {
       "path": "runtime/space.css",
@@ -297,7 +304,7 @@
       "path": "runtime/spatial-model.js",
       "bytes": 19401,
       "sha256": "f81473b4cb8ffda2c9119818554cd7f69379702b2b7e5b50d7df156de285f8d4",
-      "change": "namespace-only"
+      "change": "unchanged"
     },
     {
       "path": "runtime/spatial-projection.js",
@@ -309,7 +316,7 @@
       "path": "runtime/spatial-view-memory.js",
       "bytes": 1041,
       "sha256": "ece62fa2c56ef0cfc1eaa48de5f45be0b9496112abe90770f91cab375226fa03",
-      "change": "namespace-only"
+      "change": "unchanged"
     },
     {
       "path": "study/index.html",
@@ -681,5 +688,5 @@
     }
   ],
   "sharedBaseline": [],
-  "validationBoundary": "Local logic/source/byte tests only. No new browser rendering, selection, clipboard, accessibility, GPU or performance acceptance."
+  "validationBoundary": "Local exact-source excerpt and failure-boundary tests only for this patch. Published predecessor DOM checks do not establish post-patch rendering, narrow layout or GPU acceptance."
 }
