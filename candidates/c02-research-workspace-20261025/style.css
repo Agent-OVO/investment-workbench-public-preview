@@ -5,3 +5,9 @@
 
 /* Keep the zero tick separate from +500 at narrow widths. */
 .space-header{flex-wrap:wrap}.space-header>div{flex:1 1 240px}.render-indicator{max-width:none;text-align:left;padding-top:0}
+
+/* Selection semantics remain front-facing, outside the rotating geometry. */
+.scene-selection-caption{margin:10px 22px 0;padding:10px 12px;min-height:64px;border-left:2px solid #90aa9a;background:#193430;color:#dce7dc;font-size:13px;line-height:1.65;overflow-wrap:anywhere}
+@media(max-width:1119px){.scene-selection-caption{margin-left:16px;margin-right:16px}}
+@media(max-width:899px){.scene-selection-caption{margin-left:24px;margin-right:24px}}
+@media(max-width:639px){.scene-selection-caption{margin-left:16px;margin-right:16px;min-height:86px}}
