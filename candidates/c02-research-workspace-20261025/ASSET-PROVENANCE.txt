@@ -1,0 +1,9 @@
+C02 asset and data provenance
+
+Original implementation: HTML, CSS, native JavaScript, semantic charts, state/recovery code and procedural research-board geometry, authored for this project in this candidate. No third-party runtime libraries, CDN, remote fonts, copied UI screenshots, textures or model assets.
+The geometry is a research interface, not a Sinoseal product model or financial evidence. Parametric source is scene-geometry.js; scene-geometry.json is a deterministic editable export of the same vertices/faces/material assignments.
+No claim is made that historical C01 mechanical/Blender source has been restored.
+System fonts only. No redistributed font binaries.
+Public numeric inputs: H125/H126 issuer reports at the URLs and SHA256 identities embedded in data.js. H125 is hosted on SZSE; H126 is a third-party Sina mirror of the issuer report.
+One short issuer excerpt: IR0908 Q2, physical pages 1–2, excerpt on page 2. Remaining explanatory wording is research summary, labeled accordingly. The source PDF is linked, not republished.
+The candidate code remains project-owned. No blanket license is imposed on the underlying issuer documents or the pre-existing private project. Existing source material is not relicensed by this notice.
