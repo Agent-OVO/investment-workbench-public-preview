@@ -2,3 +2,6 @@
 /* Acceptance revision: controls and research qualifiers remain legible. */
 .space-toolbar button{font-size:12px;color:#e0e9df;min-height:36px}.object-list button{font-size:12px;color:#d1dfd3;min-height:32px}.space-note{font-size:11px;color:#b9cfc1;line-height:1.65}.render-indicator{font-size:10px;color:#b9cfc1}.subtle,.scope{font-size:12px;color:#667b68}.unit,.group-context>div>span{font-size:11px;color:#667b68}.chart-scale,.chart-scale span:nth-child(2){font-size:10px;color:#657764}.small-note{color:#667b68!important}.source-location{font-size:12px;color:#667b68}.source-actions button{font-size:13px}.section-number,.mini-eyebrow{color:#687e6b}.spatial-panel .section-number{color:#adc7b9}
 @media(max-width:639px){.space-toolbar{flex-wrap:wrap;justify-content:space-between}.space-toolbar button{font-size:12px;min-height:40px}.camera-controls{order:3;flex-basis:100%;justify-content:center}.camera-controls button{padding:4px 12px}.object-list button{font-size:12px}.space-note{font-size:11px}.render-indicator{font-size:10px}}
+
+/* Keep the zero tick separate from +500 at narrow widths. */
+.space-header{flex-wrap:wrap}.space-header>div{flex:1 1 240px}.render-indicator{max-width:none;text-align:left;padding-top:0}
