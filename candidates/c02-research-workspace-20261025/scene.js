@@ -1,3 +1,4 @@
+import {shadeSurface,cameraEye,SHADING_GLSL} from './scene-shading.js';
 import {buildSceneGeometry, geometryStatistics, OBJECT_IDS, rotateVector} from './scene-geometry.js';
 
 const presets={default:{yaw:-.22,pitch:.29},left:{yaw:-.62,pitch:.26},right:{yaw:.62,pitch:.26},top:{yaw:-.12,pitch:.72}};
@@ -6,7 +7,6 @@ const cross=(a,b)=>[a[1]*b[2]-a[2]*b[1],a[2]*b[0]-a[0]*b[2],a[0]*b[1]-a[1]*b[0]]
 const sub=(a,b)=>a.map((v,i)=>v-b[i]);
 const unit=a=>{const n=Math.hypot(...a)||1;return a.map(v=>v/n)};
 const dot=(a,b)=>a.reduce((s,v,i)=>s+v*b[i],0);
-const LIGHT=unit([-.45,.78,1]);
 const IDENTITY_CAMERA={yaw:0,pitch:0,zoom:1,mode:'spatial'};
 export function cameraPoint(p,camera=IDENTITY_CAMERA){
   return rotateVector([p[0],p[1]-.18,p[2]],[0,camera.mode==='flat'?0:camera.yaw,0]).map((v,i,arr)=>i===0?v:i===1?arr[1]*Math.cos(camera.mode==='flat'?0:camera.pitch)-arr[2]*Math.sin(camera.mode==='flat'?0:camera.pitch):arr[1]*Math.sin(camera.mode==='flat'?0:camera.pitch)+arr[2]*Math.cos(camera.mode==='flat'?0:camera.pitch));
@@ -37,18 +37,23 @@ function makeGLRenderer(scene,onLoss){
   const surface=document.createElement('canvas');
   let gl;try {gl=surface.getContext('webgl',{alpha:true,antialias:true,premultipliedAlpha:false,preserveDrawingBuffer:false});}catch{return null}
   if(!gl)return null;
-  const vs=`attribute vec3 aPosition;attribute vec3 aNormal;attribute vec3 aColor;attribute float aOwner;attribute float aAlpha;
+  const vs=`attribute vec3 aPosition;attribute vec3 aNormal;attribute vec3 aColor;attribute float aOwner;attribute float aAlpha;attribute vec2 aSurface;attribute vec3 aCenter;
   uniform float uYaw,uPitch,uDistance,uFocal,uWidth,uHeight,uSelected,uFlat,uOffsetY;
   varying vec3 vColor;varying float vAlpha;
+  ${SHADING_GLSL}
   void main(){vec3 p=aPosition;if(aOwner==uSelected)p.z+=0.055;
   float cy=cos(uYaw),sy=sin(uYaw),cp=cos(uPitch),sp=sin(uPitch);p.y-=0.18;
   vec3 q=vec3(cy*p.x+sy*p.z,p.y,-sy*p.x+cy*p.z);q=vec3(q.x,cp*q.y-sp*q.z,sp*q.y+cp*q.z);
   float d=uDistance-q.z;float den=mix(d,uDistance,uFlat);
-  gl_Position=vec4(q.x*uFocal*2.0/uWidth,q.y*uFocal*2.0/uHeight-uOffsetY*2.0/uHeight*den,(d-0.1)/12.0*den,den);
-  vec3 n=normalize(aNormal);float diffuse=max(dot(n,normalize(vec3(-0.45,0.78,1.0))),0.0);
-  float edge=max(dot(n,normalize(vec3(0.6,0.5,-0.5))),0.0);
-  float light=0.49+0.46*diffuse+0.10*edge;
-  vColor=aColor*light;if(aOwner==uSelected)vColor=mix(vColor,vec3(0.72,0.89,0.81),0.12);
+  // Standard perspective clip depth preserves the same nearest-surface order
+  // as software reciprocal-distance rasterization and mesh picking.
+  float perspectiveZ=(12.2/12.0)*d-(2.0*12.1*0.1/12.0);
+  float flatZ=((2.0*d-12.2)/12.0)*uDistance;
+  gl_Position=vec4(q.x*uFocal*2.0/uWidth,q.y*uFocal*2.0/uHeight-uOffsetY*2.0/uHeight*den,mix(perspectiveZ,flatZ,uFlat),den);
+  vec3 eye=vec3(-sy*cp*uDistance,sp*uDistance+0.18,cy*cp*uDistance);
+  vec3 center=aCenter;if(aOwner==uSelected)center.z+=0.055;
+  vColor=shadeSurface(aColor,aNormal,center,eye,aSurface.x,aSurface.y);
+  if(aOwner==uSelected)vColor=mix(vColor,vec3(0.72,0.89,0.81),0.12);
   vAlpha=aAlpha;}`;
   const fs=`precision mediump float;varying vec3 vColor;varying float vAlpha;void main(){gl_FragColor=vec4(vColor,vAlpha);}`;
   const compile=(type,src)=>{const sh=gl.createShader(type);gl.shaderSource(sh,src);gl.compileShader(sh);if(!gl.getShaderParameter(sh,gl.COMPILE_STATUS))throw new Error('Scene shader compilation failed');return sh;};
@@ -58,12 +63,12 @@ function makeGLRenderer(scene,onLoss){
   const opaque=[],transparent=[];
   for(const part of scene.parts){
     const m=scene.materials[part.material],target=m.alpha?transparent:opaque;
-    for(const t of part.triangles){const v=t.map(i=>part.vertices[i]),normal=triangleNormal(...v);for(const p of v)target.push(...p,...normal,...m.color,OBJECT_IDS.indexOf(part.objectId)+1,m.alpha||1);}
+    for(const t of part.triangles){const v=t.map(i=>part.vertices[i]),normal=triangleNormal(...v);const center=v[0].map((x,i)=>(x+v[1][i]+v[2][i])/3);for(const p of v)target.push(...p,...normal,...m.color,OBJECT_IDS.indexOf(part.objectId)+1,m.alpha||1,m.roughness??.7,m.specular??.04,...center);}
   }
   const data=new Float32Array([...opaque,...transparent]);
   gl.useProgram(program);buffer=gl.createBuffer();gl.bindBuffer(gl.ARRAY_BUFFER,buffer);gl.bufferData(gl.ARRAY_BUFFER,data,gl.STATIC_DRAW);
-  const stride=11*4;
-  for(const [name,size,offset] of [['aPosition',3,0],['aNormal',3,3],['aColor',3,6],['aOwner',1,9],['aAlpha',1,10]]){
+  const stride=16*4;
+  for(const [name,size,offset] of [['aPosition',3,0],['aNormal',3,3],['aColor',3,6],['aOwner',1,9],['aAlpha',1,10],['aSurface',2,11],['aCenter',3,13]]){
     const l=gl.getAttribLocation(program,name);gl.enableVertexAttribArray(l);gl.vertexAttribPointer(l,size,gl.FLOAT,false,stride,offset*4);
   }
   const uniforms=Object.fromEntries(['Yaw','Pitch','Distance','Focal','Width','Height','Selected','Flat','OffsetY'].map(k=>[k,gl.getUniformLocation(program,`u${k}`)]));
@@ -78,8 +83,8 @@ function makeGLRenderer(scene,onLoss){
       gl.enable(gl.DEPTH_TEST);gl.depthFunc(gl.LEQUAL);gl.enable(gl.CULL_FACE);gl.cullFace(gl.BACK);gl.disable(gl.BLEND);gl.useProgram(program);
       const values={Yaw:camera.mode==='flat'?0:camera.yaw,Pitch:camera.mode==='flat'?0:camera.pitch,Distance:6.2/camera.zoom,Focal:Math.min(height*1.70,width*1.06)*(camera.fitScale||1),Width:width,Height:height,Selected:OBJECT_IDS.indexOf(selected)+1,Flat:camera.mode==='flat'?1:0,OffsetY:camera.offsetY||0};
       for(const [k,v]of Object.entries(values))gl.uniform1f(uniforms[k],v);
-      gl.drawArrays(gl.TRIANGLES,0,opaque.length/11);
-      gl.enable(gl.BLEND);gl.blendFunc(gl.SRC_ALPHA,gl.ONE_MINUS_SRC_ALPHA);gl.depthMask(false);gl.drawArrays(gl.TRIANGLES,opaque.length/11,transparent.length/11);gl.depthMask(true);
+      gl.drawArrays(gl.TRIANGLES,0,opaque.length/16);
+      gl.enable(gl.BLEND);gl.blendFunc(gl.SRC_ALPHA,gl.ONE_MINUS_SRC_ALPHA);gl.depthMask(false);gl.drawArrays(gl.TRIANGLES,opaque.length/16,transparent.length/16);gl.depthMask(true);
       ctx.drawImage(surface,0,0,width,height);return true;
     },
     destroy(){surface.removeEventListener('webglcontextlost',loss);gl.deleteBuffer(buffer);gl.deleteProgram(program);shaders.forEach(s=>gl.deleteShader(s));const ext=gl.getExtension('WEBGL_lose_context');if(ext)ext.loseContext();surface.width=surface.height=1;},
@@ -112,7 +117,7 @@ export function createScene({canvas,labels,onSelect=()=>{},onStatus=()=>{}}={}) 
         const normal=triangleNormal(...world),normalView=triangleNormal(...view),center=view[0].map((v,i)=>(v+view[1][i]+view[2][i])/3);
         if(dot(normalView,[-center[0],-center[1],6.2/camera.zoom-center[2]])<=0)continue;
         const p=world.map(v=>projectPoint(v,camera,width,height));if(!p.every(v=>v.visible))continue;
-        triangles.push({p,normal,depth:p.reduce((s,v)=>s+v.depth,0)/3,objectId:part.objectId,material:part.material,name:part.name});
+        triangles.push({p,normal,position:world[0].map((v,i)=>(v+world[1][i]+world[2][i])/3),depth:p.reduce((s,v)=>s+v.depth,0)/3,objectId:part.objectId,material:part.material,name:part.name});
       }
     }
     return triangles.sort((a,b)=>b.depth-a.depth);
@@ -124,11 +129,10 @@ export function createScene({canvas,labels,onSelect=()=>{},onStatus=()=>{}}={}) 
     const rw=canvas.width,rh=canvas.height,image=ctx.getImageData(0,0,rw,rh),pixels=image.data;
     const depths=new Float32Array(rw*rh);depths.fill(Infinity);
     const opaque=projected.filter(t=>!scene.materials[t.material].alpha),glass=projected.filter(t=>scene.materials[t.material].alpha);
-    const rim=unit([.6,.5,-.5]);
+    const eye=cameraEye(camera);
     for(const t of [...opaque,...glass]){
       const m=scene.materials[t.material],alpha=m.alpha||1;
-      const light=.49+.46*Math.max(0,dot(t.normal,LIGHT))+.10*Math.max(0,dot(t.normal,rim));
-      let c=m.color.map(v=>v*light);if(t.objectId===selected)c=c.map((v,i)=>v*.88+[.72,.89,.81][i]*.12);
+      const c=shadeSurface(m,t.normal,t.position,eye,t.objectId===selected);
       const rgb=c.map(v=>Math.round(clamp(v,0,1)*255));
       const [a,b,c2]=t.p.map(p=>({x:p.x*dpr,y:p.y*dpr,depth:p.depth}));
       const denominator=(b.y-c2.y)*(a.x-c2.x)+(c2.x-b.x)*(a.y-c2.y);
@@ -217,6 +221,6 @@ export function createScene({canvas,labels,onSelect=()=>{},onStatus=()=>{}}={}) 
     setView(mode){camera.mode=mode==='flat'?'flat':'spatial';animation=null;status();requestDraw();},
     setCamera,resize,
     destroy(){destroyed=true;if(frame)cancelAnimationFrame(frame);observer?.disconnect();window.removeEventListener('resize',resize);listeners.forEach(([type,fn])=>canvas.removeEventListener(type,fn));glRenderer?.destroy();buttons.forEach(b=>b.remove());labels.className=originalLabelClass;canvas.classList.remove('research-scene-canvas');for(const [attr,val]of [['tabindex',originalTabindex],['role',originalRole],['aria-label',originalAria]])if(val===null)canvas.removeAttribute(attr);else canvas.setAttribute(attr,val);projected=[];},
-    stats(){return {...counts,renderer:rendererName,backend:usingSoftware?{api:'Canvas2D depth-buffered mesh projection'}:glRenderer.info(),viewport:{width,height,dpr},selected,mode:camera.mode,paused,camera:{...camera},drawCount,lastDrawMs:Number(drawMs.toFixed(2)),automaticRotation:false,softwareFallback:true};}
+    stats(){return {...counts,renderer:rendererName,backend:usingSoftware?{api:'Canvas2D depth-buffered mesh projection'}:glRenderer.info(),viewport:{width,height,dpr},selected,mode:camera.mode,paused,camera:{...camera},drawCount,lastDrawMs:Number(drawMs.toFixed(2)),automaticRotation:false,softwareFallback:true,shading:'stylized diffuse + roughness-controlled facet highlights; not PBR'};}
   };
 }

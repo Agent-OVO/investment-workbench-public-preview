@@ -5,18 +5,19 @@
  * Copyright: original project contribution; follows the repository license.
  */
 export const OBJECT_IDS = Object.freeze(['judgment', 'repair', 'pressure', 'support', 'limit']);
-export const SCENE_VERSION = 'c02-research-instrument-1.0.0';
+export const SCENE_VERSION = 'c02-research-instrument-1.1.0';
 export const MATERIALS = Object.freeze({
-  shell: { color: [0.40, 0.57, 0.58], roughness: 0.48 },
-  silver: { color: [0.64, 0.76, 0.73], roughness: 0.4 },
-  dark: { color: [0.10, 0.20, 0.23], roughness: 0.72 },
-  face: { color: [0.22, 0.39, 0.42], roughness: 0.66 },
-  inset: { color: [0.15, 0.29, 0.32], roughness: 0.68 },
-  aqua: { color: [0.45, 0.79, 0.74], roughness: 0.42 },
-  gold: { color: [0.78, 0.64, 0.40], roughness: 0.46 },
-  paper: { color: [0.73, 0.80, 0.72], roughness: 0.86 },
-  glass: { color: [0.52, 0.83, 0.81], roughness: 0.22, alpha: 0.55 },
-  ground: { color: [0.075, 0.14, 0.16], roughness: 0.85 },
+  shell: { color: [0.40, 0.57, 0.58], roughness: 0.38, specular: 0.34 },
+  silver: { color: [0.64, 0.76, 0.73], roughness: 0.28, specular: 0.48 },
+  dark: { color: [0.10, 0.20, 0.23], roughness: 0.72, specular: 0.06 },
+  face: { color: [0.22, 0.39, 0.42], roughness: 0.82, specular: 0.04 },
+  inset: { color: [0.15, 0.29, 0.32], roughness: 0.88, specular: 0.025 },
+  aqua: { color: [0.45, 0.79, 0.74], roughness: 0.42, specular: 0.16 },
+  gold: { color: [0.78, 0.64, 0.40], roughness: 0.46, specular: 0.22 },
+  paper: { color: [0.73, 0.80, 0.72], roughness: 0.86, specular: 0.02 },
+  glass: { color: [0.52, 0.83, 0.81], roughness: 0.22, specular: 0.34, alpha: 0.55 },
+  ground: { color: [0.075, 0.14, 0.16], roughness: 0.85, specular: 0.015 },
+  structure: { color: [0.24, 0.36, 0.37], roughness: 0.58, specular: 0.13 },
 });
 const TAU = Math.PI * 2;
 const add = (a,b) => a.map((v,i)=>v+b[i]);
@@ -45,6 +46,30 @@ export function bevelBox(w,h,d,b=Math.min(w,h,d)*.17) {
   }
   vertices.push([0,0,-d/2],[0,0,d/2]);
   for(let i=0;i<8;i++){triangles.push([32,(i+1)%8,i]); triangles.push([33,24+i,24+(i+1)%8]);}
+  return {vertices,triangles};
+}
+/** Closed chamfered rim with a genuine open center. The read surface sits
+ * behind its inner bevel; this is not another solid rectangle on the face. */
+export function bevelFrame(w,h,d,rail=.085,b=.024) {
+  const z=[-d/2,-d/2+b,d/2-b,d/2];
+  const vertices=[];
+  for(let ring=0;ring<4;ring++){
+    const outerInset=ring===0||ring===3?b:0;
+    const innerInset=ring===3?rail-b:rail;
+    for(const [ww,hh] of [[w-2*outerInset,h-2*outerInset],[w-2*innerInset,h-2*innerInset]])
+      vertices.push(...roundedOutline(ww,hh,.02).map(([x,y])=>[x,y,z[ring]]));
+  }
+  const triangles=[],quad=(a,b,c,d)=>triangles.push([a,b,c],[a,c,d]);
+  for(let ring=0;ring<3;ring++)for(let i=0;i<8;i++){
+    const n=(i+1)%8,a=ring*16;
+    quad(a+i,a+n,a+16+n,a+16+i);
+    quad(a+8+n,a+8+i,a+24+i,a+24+n);
+  }
+  for(let i=0;i<8;i++){
+    const n=(i+1)%8;
+    quad(i,8+i,8+n,n);
+    quad(48+i,48+n,56+n,56+i);
+  }
   return {vertices,triangles};
 }
 export function cylinder(radius,length,segments=12) {
@@ -76,14 +101,15 @@ export function buildSceneGeometry() {
   for(const o of objects) {
     const id=o.id,w=o.width,h=o.height;
     if(id==='support'||id==='limit'){
-      box(`${id}:tray-base`,id,'shell',[w,.09,.73],[0,0,0],[0,0,0],o,.025);
+      box(`${id}:tray-base`,id,'shell',[w,.12,.73],[0,-.015,0],[0,0,0],o,.026);
+      box(`${id}:tray-undercut`,id,'dark',[w-.13,.035,.61],[0,-.086,-.015],[0,0,0],o,.012);
       box(`${id}:recess`,id,'dark',[w-.15,.025,.55],[0,.057,0],[0,0,0],o,.009);
-      box(`${id}:front-lip`,id,'silver',[w,.105,.065],[0,.06,.36],[0,0,0],o,.015);
+      box(`${id}:front-lip`,id,'silver',[w,.09,.095],[0,.09,.35],[0,0,0],o,.015);
       box(`${id}:back-rail`,id,'shell',[w,.18,.065],[0,.11,-.36],[0,0,0],o,.018);
       for(const s of [-1,1]) {
         box(`${id}:side-rail:${s}`,id,'shell',[.065,.14,.71],[s*(w/2-.033),.085,0],[0,0,0],o,.018);
         box(`${id}:slot:${s}`,id,'dark',[.04,.035,.55],[s*.42,.08,0],[0,0,0],o,.008);
-        box(`${id}:foot:${s}`,id,'dark',[.21,.14,.39],[s*.53,-.10,0],[0,0,0],o,.024);
+        box(`${id}:foot:${s}`,id,'dark',[.25,.12,.39],[s*.53,-.145,0],[0,0,0],o,.024);
       }
       for(let i=0;i<3;i++){
         box(`${id}:evidence-card:${i}`,id,i===0?'paper':'face',[.42,.25,.035],[-.51+i*.51,.22,-.02+i*.018],[-.15,0,0],o,.009);
@@ -93,12 +119,13 @@ export function buildSceneGeometry() {
     } else {
       box(`${id}:rear-layer`,id,'dark',[w-.07,h-.07,.072],[0,0,-.20],[0,0,0],o,.018);
       for(const x of [-1,1])for(const y of [-1,1])cyl(`${id}:spacer:${x}:${y}`,id,'gold',.036,.14,[x*(w/2-.15),y*(h/2-.14),-.115],[0,0,0],o);
-      box(`${id}:chamfered-shell`,id,'shell',[w,h,.14],[0,0,0],[0,0,0],o,.026);
-      box(`${id}:read-face`,id,'face',[w-.115,h-.115,.023],[0,0,.081],[0,0,0],o,.009);
-      box(`${id}:inset-field`,id,'inset',[w-.23,h-.25,.012],[0,-.015,.096],[0,0,0],o,.005);
-      box(`${id}:header-inlay`,id,o.accent,[w*.31,.027,.016],[-w*.21,h*.29,.106],[0,0,0],o,.004);
-      box(`${id}:glass-edge`,id,'glass',[.05,h-.21,.029],[w/2-.10,0,.106],[0,0,0],o,.008);
-      for(const x of [-1,1])cyl(`${id}:front-fastener:${x}`,id,'silver',.019,.012,[x*(w/2-.071),h/2-.067,.078],[0,0,0],o);
+      part(bevelFrame(w,h,.22,.10,.026),`${id}:chamfered-shell`,id,'shell',[0,0,.035],[0,0,0],o);
+      box(`${id}:back-pan`,id,'structure',[w-.13,h-.13,.045],[0,0,-.072],[0,0,0],o,.012);
+      box(`${id}:read-face`,id,'face',[w-.115,h-.115,.023],[0,0,.042],[0,0,0],o,.009);
+      box(`${id}:inset-field`,id,'inset',[w-.23,h-.25,.012],[0,-.015,.061],[0,0,0],o,.005);
+      box(`${id}:header-inlay`,id,o.accent,[w*.31,.027,.016],[-w*.21,h*.29,.075],[0,0,0],o,.004);
+      box(`${id}:glass-edge`,id,'glass',[.027,h-.25,.018],[w/2-.13,0,.074],[0,0,0],o,.008);
+      for(const x of [-1,1])cyl(`${id}:front-fastener:${x}`,id,'silver',.019,.012,[x*(w/2-.071),h/2-.067,.15],[0,0,0],o);
       cyl(`${id}:connector`,id,o.accent,.048,.072,[0,-h/2-.045,.015],[Math.PI/2,0,0],o);
       box(`${id}:lower-foot`,id,'dark',[.34,.13,.14],[0,-h/2-.055,-.15],[0,0,0],o,.014);
     }
@@ -106,8 +133,8 @@ export function buildSceneGeometry() {
   }
   // A low original plinth and rails support, rather than replace, the geometry.
   box('structure:plinth',null,'ground',[4.8,.095,2.15],[0,-1.045,.05],[0,0,0],null,.035);
-  box('structure:rear-rail',null,'dark',[3.65,.08,.11],[0,-.54,-.92],[0,0,0],null,.018);
-  for(const x of [-.63,.63])box(`structure:judgment-mount:${x}`,null,'dark',[.07,1.15,.07],[x,.02,-.94],[0,0,0],null,.012);
+  box('structure:rear-rail',null,'structure',[3.65,.08,.11],[0,-.54,-.92],[0,0,0],null,.018);
+  for(const x of [-.63,.63])box(`structure:judgment-mount:${x}`,null,'structure',[.07,1.15,.07],[x,.02,-.94],[0,0,0],null,.012);
   function rod(name,owner,start,end,material,r=.014){
     const direction=norm(sub(end,start)),right=norm(cross(Math.abs(direction[1])>.9?[1,0,0]:[0,1,0],direction)),up=cross(direction,right);
     const geo=cylinder(r,Math.hypot(...sub(end,start)),8),center=mul(add(start,end),.5);

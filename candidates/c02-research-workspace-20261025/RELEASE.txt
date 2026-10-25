@@ -8,3 +8,5 @@ No third-party screenshots or PDFs are redistributed. PDF links identify the act
 Geometry: original parametric mesh research boards and evidence trays. No company product representation. Real WebGL is attempted without browser flags; unavailable GPU uses the same mesh through a software perspective renderer, not a flat screenshot. GPU/material/performance acceptance remains separate from geometry and functional acceptance.
 No fabricated parameter model or history replay. Existing financial arithmetic is active; original conditional model source remains unverified.
 All previous candidate paths and formal index remain untouched.
+
+Revision 6 geometry/material candidate: boards use an actual open chamfered rim with recessed read faces; trays expose a front lip, lower shell and undercut. Structural rails have a separate muted surface. No new business semantics or data were introduced. Roughness and specular now control restrained, view-dependent facet highlights in both implementations. This is stylized diffuse/specular shading, NOT PBR, physical metal, true glass transmission, reflections or cast shadows. Browser/GPU/device acceptance must be reported separately.

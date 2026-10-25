@@ -7,3 +7,5 @@ System fonts only. No redistributed font binaries.
 Public numeric inputs: H125/H126 issuer reports at the URLs and SHA256 identities embedded in data.js. H125 is hosted on SZSE; H126 is a third-party Sina mirror of the issuer report.
 One short issuer excerpt: IR0908 Q2, physical pages 1–2, excerpt on page 2. Remaining explanatory wording is research summary, labeled accordingly. The source PDF is linked, not republished.
 The candidate code remains project-owned. No blanket license is imposed on the underlying issuer documents or the pre-existing private project. Existing source material is not relicensed by this notice.
+
+Revision 6: bevelFrame topology, recessed board construction, tray undercut and scene-shading.js are original project code. Lighting is a small analytic stylization shared by the software and WebGL paths, not an imported material, texture, environment image or PBR library. No third-party art or screenshot added.
