@@ -1,6 +1,6 @@
 Independent wholepage disclosure-records implementation candidate
 Date: 2026-10-25
-Status: source and offline state/geometry checks only; browser, GPU, mobile-device and visual acceptance pending.
+Status: chart-clearance incremental source correction prepared; browser remeasurement of this revision is pending. The original isolated candidate had limited cloud-browser checks, not full acceptance.
 
 This is a new isolated candidate. It does not overwrite C01, C02, the official entry page or the original research snapshot. Initial state selects repair. The three selected products synchronize two disclosure records, exact HTML financial inputs, product-aware explanation, source location and front-facing comparison. Original table, calculation, evidence, assumptions, snapshot, source navigation, return restoration, pause and flat reading remain available.
 
@@ -9,3 +9,7 @@ The shared product axis intentionally uses an axial orthographic scene rather th
 Self-contained runtime files require a normal HTTP(S) static host. The original-report and C02 comparison links deliberately retain sibling paths from the existing candidates/ host tree. The PDF links are external registered sources and require network access. Those references are not bundled, and failed external reads must not be represented as successful original-document viewing.
 
 No claim of browser execution is made by the source checks or offline geometry frames. This package contains no server-side data, user financial accounts, credentials, analytics or automatic external writes.
+
+Chart-clearance revision 1 (2026-10-25): cloud-browser review of the isolated candidate found that the positive 444.18 label background obscured about 11.80px of a 22.20px bar. This revision adds 32px of desktop chart headroom and moves the full positive label above its bar with at least 8px clearance. The actual 160px/3200-wanyuan vertical scale, values, bar widths and narrow 3700-wanyuan horizontal scale are unchanged. Narrow labels remain above their horizontal bars.
+
+This is a source-level correction awaiting incremental publication and browser remeasurement. It does not constitute full browser, numeric-visual, material, GPU or mobile acceptance. Earlier source-test results did not detect the browser-visible overlap.
