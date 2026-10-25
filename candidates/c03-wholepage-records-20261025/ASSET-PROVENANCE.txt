@@ -1,0 +1,9 @@
+Wholepage disclosure records candidate, 2026-10-25
+
+Original application markup, CSS, state adapter, axial scene projection, shaders and geometry export were authored for this research interface. Existing C02 core.js/data.js are retained byte-for-byte. The original paired-record Blender geometry is evaluated with its real bevels and weighted corner normals; the public runtime model is assets/record-model.js. No stock equipment, copied website screenshot, external environment map or company product model is used. Record volume, leaf opening and depth do not encode money, evidence strength, capital flow or company causality.
+
+The responsive scene uses actual mesh projection, per-pixel depth and product/period/source bindings. WebGL is attempted without changing browser settings; software geometry is a distinct, explicitly labelled fallback. Material illumination is analytic illustrative lighting, not a full physically based renderer. WebGL initialization is not proof of hardware acceleration or visual acceptance.
+
+Research Sans Subset and Research Serif Subset are renamed, project-specific subsets of locally available Noto CJK fonts. Original copyright: 2010-2012 Google Corporation. They retain SIL Open Font License 1.1, included at assets/OFL-Noto.txt. No font endorsement is implied. Other typography uses installed fallback fonts. No external font request, runtime library, tracking, account or API key is needed.
+
+Public numeric inputs: H125/H126 issuer reports at the registered URLs and SHA256 identities in data.js. H125 is hosted by SZSE; H126 uses the prior verified Sina mirror. A short IR0908 Q2 excerpt is retained with its physical pages 1-2 location and qualification. Source PDFs are linked, not republished. All source descriptions and calculations retain the existing verification boundary; the underlying issuer material is not relicensed by this notice.

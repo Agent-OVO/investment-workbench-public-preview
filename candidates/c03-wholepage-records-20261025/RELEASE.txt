@@ -1,0 +1,11 @@
+Independent wholepage disclosure-records implementation candidate
+Date: 2026-10-25
+Status: source and offline state/geometry checks only; browser, GPU, mobile-device and visual acceptance pending.
+
+This is a new isolated candidate. It does not overwrite C01, C02, the official entry page or the original research snapshot. Initial state selects repair. The three selected products synchronize two disclosure records, exact HTML financial inputs, product-aware explanation, source location and front-facing comparison. Original table, calculation, evidence, assumptions, snapshot, source navigation, return restoration, pause and flat reading remain available.
+
+The shared product axis intentionally uses an axial orthographic scene rather than arbitrary scene orbit. Financial data remain selectable HTML; object faces are not numeric charts. Narrow scenes show the selected product's two periods, while the exact comparison becomes a common-scale horizontal chart. Full-table products without scene geometry are explicitly identified and retain their own flat records rather than showing repair.
+
+Self-contained runtime files require a normal HTTP(S) static host. The original-report and C02 comparison links deliberately retain sibling paths from the existing candidates/ host tree. The PDF links are external registered sources and require network access. Those references are not bundled, and failed external reads must not be represented as successful original-document viewing.
+
+No claim of browser execution is made by the source checks or offline geometry frames. This package contains no server-side data, user financial accounts, credentials, analytics or automatic external writes.

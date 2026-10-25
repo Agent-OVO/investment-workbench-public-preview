@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light">
+<meta name="description" content="中密控股公开研究：同一产品的两期披露记录，与正视原数、精确比较、支持和限制共同阅读。固定研究快照，不是实时行情。">
+<title>修复增长的边界 · 中密控股研究剖面</title>
+<link rel="preload" href="assets/research-serif-bold.woff" as="font" type="font/woff" crossorigin>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<a class="skip" href="#selected-records">跳到所选产品的原数</a>
+<header class="topbar">
+<a class="brand" href="./" aria-label="研究剖面首页"><span class="brand-mark" aria-hidden="true">研</span><span>投资研究</span></a>
+<span class="company">中密控股 <span class="ticker">300470</span></span>
+<nav class="page-nav" aria-label="直接阅读"><a href="#question">问题</a><a href="#selected-records">原数</a><button data-tab="evidence" data-jump-detail>证据</button></nav>
+<div class="nav-tools"><button id="pause" aria-pressed="false">暂停动效</button><button id="settings-toggle" aria-controls="settings" aria-expanded="false">显示设置</button></div>
+<span class="build-status">独立实现草案 · 待浏览器验收</span>
+</header>
+<section id="settings" class="settings" aria-label="显示设置" hidden>
+<label><input type="checkbox" id="motion-setting"> 暂停过渡动效</label><p>没有自动回放、自动旋转或实时资金流。暂停后仍能即时选择产品和阅读原数。</p>
+<p id="scene-diagnostics">正在检查可用场景渲染方式。软件几何、实时 GPU 材质和浏览器交互分别验收。</p>
+<a id="full-report" href="../c01-local-art-review-20261024/reader.html" target="_blank" rel="noopener">原研究全文 ↗</a><a href="../c02-research-workspace-20261025/" target="_blank" rel="noopener">保留的 C02 对照 ↗</a>
+</section>
+<main id="workspace">
+<section class="intro" aria-labelledby="question">
+<div class="eyebrow"><span>01 / 中密控股研究剖面</span><span>研究快照 2026.10.17 · 比较期间 2026H1 / 2025H1</span></div>
+<h1 id="question">维修增长，为什么仍不足以抵消新增项目压力？</h1>
+<p class="verdict">修复毛利增加 <strong>444.18 万元</strong>，集团毛利净减少 <strong>5,292.78 万元</strong>。先看量级，再核对来源与解释。</p>
+</section>
+<section class="reading-band" aria-label="当前产品原数与解释">
+<div id="selected-records" class="selected-records" aria-live="polite"></div>
+<div id="selected-explanation" class="selected-explanation"></div>
+</section>
+<section class="research-section" aria-labelledby="records-heading">
+<div class="section-toolbar">
+<h2 id="records-heading">两期披露 · 同一产品位置</h2>
+<nav id="product-switcher" class="product-switcher" aria-label="选择产品"></nav>
+<div class="mode-switch" aria-label="同对象显示方式"><button id="mode-spatial" aria-pressed="true">空间</button><button id="mode-flat" aria-pressed="false">平面</button></div>
+</div>
+<p id="scene-selection-caption" class="scene-selection-caption">选择产品，同时展开两期披露记录。</p>
+<div class="scene-container">
+<canvas id="scene" aria-label="两期披露记录的原创三维几何，数字在正视原数区阅读">请使用产品按钮选择同一研究记录。</canvas>
+<div id="scene-labels"></div>
+<div id="flat-view" class="flat-view" hidden></div>
+</div>
+<div class="scene-footnote"><span>研究资料实体，不是公司设备；体积不代表金额或证据强度。</span><span id="render-status" role="status">场景初始化中</span></div>
+<section class="comparison" aria-labelledby="comparison-heading">
+<div class="chart-heading"><h2 id="comparison-heading">前景精确比较</h2><span>毛利增量 / 万元</span><button id="all-products" class="text-button">查看全部产品明细 ↗</button></div>
+<div class="chart-axis" aria-hidden="true"><span class="tick zero">0</span><span class="tick middle">−1,600</span><span class="tick low">−3,200</span></div>
+<div id="chart" class="chart" aria-label="三个选定产品毛利增量，同一比例尺"></div>
+<p class="chart-boundary">仅三个选定产品，非集团完整毛利桥。所有金额保持正视，不随三维透视变化。<button id="start-repair" class="text-button">返回修复解读 ↗</button></p>
+</section>
+</section>
+<section id="detail" class="detail" aria-labelledby="detail-title">
+<div class="detail-top"><div id="selection-badge" class="selection-badge">当前 · 密封产品修复</div><div id="selection-live" class="sr-only" aria-live="polite"></div>
+<div class="detail-tabs" role="tablist" aria-label="研究层级">
+<button role="tab" data-tab="explain" id="tab-explain" aria-selected="true">解释</button>
+<button role="tab" data-tab="calculation" id="tab-calculation" aria-selected="false">计算与口径</button>
+<button role="tab" data-tab="evidence" id="tab-evidence" aria-selected="false">支持与限制</button>
+<button role="tab" data-tab="assumptions" id="tab-assumptions" aria-selected="false">假设边界</button>
+<button role="tab" data-tab="snapshot" id="tab-snapshot" aria-selected="false">快照</button>
+</div></div>
+<div id="detail-content" role="tabpanel" aria-labelledby="tab-explain"></div>
+</section>
+<footer><span>公开研究 · 非实时行情 · 不涉及交易或个人持仓</span><span>独立整页构图实施 · 2026-10-25 · 未替换 C01 / C02</span></footer>
+</main>
+<main id="reader" hidden></main>
+<noscript><p class="no-script">本地联动需要 JavaScript。修复毛利增加 444.18 万元，集团毛利下降 5,292.78 万元，均为 2026H1 对 2025H1。可直接查看 <a href="../c01-local-art-review-20261024/reader.html">原研究全文</a>。</p></noscript>
+<script type="module" src="app.js"></script>
+</body></html>
