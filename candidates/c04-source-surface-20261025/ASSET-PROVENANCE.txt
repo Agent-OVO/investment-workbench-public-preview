@@ -1,0 +1,9 @@
+Source-unfolding candidate, 2026-10-25
+
+Original HTML/CSS/state adaptation and source-surface.js authored for this research interface. The new runtime replaces six label trays with two procedural curved source-document surfaces. Their topology, normals, analytic lighting and finite motion are generated from source period/provenance identities. No downloaded model, company device drawing, third-party screenshot, reference image or generated concept background is used. Geometry and depth never encode money or evidence strength.
+
+C02/C03 core.js and data.js are retained byte-for-byte. Exact financial arithmetic uses integer cents, with unit conversion only for display. Registered source metadata and short IR0908 excerpt retain their existing verification scope; linked issuer material is not relicensed.
+
+Research Sans Subset and Research Serif Subset are renamed project-specific Noto CJK subsets. The original package notice names copyright 2010-2012 Google Corporation. The actual embedded font name tables also preserve: Research Sans Subset regular/bold © 2014-2021 Adobe (http://www.adobe.com/); Research Serif Subset bold © 2017-2024 Adobe (http://www.adobe.com/). All of these notices and the full SIL Open Font License 1.1 are retained at assets/OFL-Noto.txt; embedded names/license metadata are unchanged. No remote font/CDN/tracker/API key is needed.
+
+Old record-scene.js and record-model.js are not dependencies of this candidate and are excluded from its runtime package; originals remain unchanged in their earlier candidate directories.

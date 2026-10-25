@@ -1,0 +1,10 @@
+Independent source-unfolding candidate, 2026-10-25
+Status: source implementation + limited Node regression only; actual cloud-browser layout and interaction QA pending. Not final art approval.
+
+A new isolated candidate. C01, C02, live C03 revision 2, the formal entry and original research snapshot remain untouched. First read exact same-scale comparison, then unfold two actual source-document layers. Each layer carries three products' real financial inputs in selectable front-facing HTML. Narrow displays the selected product on the same two layers. Source links retain exact source/product/period/page identity and source-return context. All previous calculation, evidence, limitation, full-table, null-cost and snapshot contracts remain.
+
+Original procedural 3D sheet geometry, analytically lit and projected by Canvas 2D; this is a CPU illustrative path, not WebGL, PBR, high-fidelity physical paper or company equipment. Geometry expresses provenance and period, not amount or evidence weight. The shared column layout and finite 500ms unfold publish DOM coordinates from the same layout clock. Field text is delayed until its read zones are separated; no continuous ambient motion. Paused/reduced-motion states settle immediately.
+
+Financial core.js and data.js remain byte-identical to the source baseline. Data are fixed public research inputs, not realtime, trades, accounts or holdings. No private PDFs, logs, archives, credentials, analytics or external writes are in the runtime whitelist. Original PDFs are linked from registered URLs, not copied.
+
+Source checks are not browser validation. Local static-server readiness succeeded only inside one sandbox command; independent cloud browser navigation to its loopback URL was connection-refused. No network/security change or user-computer fallback was attempted. Real browser QA must use a reachable authorized preview before any visual acceptance claim.
