@@ -26,7 +26,8 @@ export function layoutFor({kind='research',width=1200,height=560,selectedProduct
  }
  if(kind==='research'){
   const a=ring('H125',W*(narrow?.22:.20),narrow?62:72,narrow?-40:-55),b=ring('H126',W*(narrow?.78:.73),narrow?62:72,narrow?-40:-55);
-  const ir=ring('IR0908',W*(narrow?.78:.91),narrow?480:175,narrow?-5:-10);
+  // Desktop unit annotation is at y155–172; keep the whole IR solid below it.
+  const ir=ring('IR0908',W*(narrow?.78:.91),narrow?480:225,narrow?-5:-10);
   if(narrow){
    const id=sceneProducts.includes(selectedProduct)?selectedProduct:null;
    if(id)branch(id,W*.5,345,a,b,18,W-18,{scale:.85});
