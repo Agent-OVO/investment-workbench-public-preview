@@ -1,0 +1,81 @@
+{
+  "schema": "public-financial-statement-sources-v1",
+  "research_date": "2026-10-18",
+  "preview_adapted": "2026-10-20",
+  "scope": "Six issuer financial-statement source references only. No source PDFs or market data are redistributed.",
+  "hash_scope": "Historical saved originals; not freshly downloaded for this preview.",
+  "sources": [
+    {
+      "code": "601128",
+      "name": "常熟银行",
+      "file": "sources/601128_2026H1.pdf",
+      "url": "https://static.cninfo.com.cn/finalpage/2026-08-27/1225511920.PDF",
+      "publication_date": "2026-08-27",
+      "retrieved_date_utc": "2026-10-18",
+      "period": "2026H1",
+      "kind": "法定披露平台",
+      "bytes": 6895501,
+      "sha256": "2ebaac9bbc6dec6c5582ea96045ebe33cc3203be54c5513a76e5c1662bf1d058"
+    },
+    {
+      "code": "601658",
+      "name": "邮储银行",
+      "file": "sources/601658_2026H1.pdf",
+      "url": "https://www.psbc.com/cn/gyyc/tzzgx/gsgg/aggg/202608/P020260828636432934868.pdf",
+      "publication_date": "2026-08-28",
+      "retrieved_date_utc": "2026-10-18",
+      "period": "2026H1",
+      "kind": "发行人官网",
+      "bytes": 26198720,
+      "sha256": "dbd073aa2a086aaa3f017e57d9a59c2872cadf06fd160423b2a7d1f8fa587014"
+    },
+    {
+      "code": "600908",
+      "name": "无锡银行",
+      "file": "sources/600908_2026H1.pdf",
+      "url": "https://static.cninfo.com.cn/finalpage/2026-08-27/1225511625.PDF",
+      "publication_date": "2026-08-27",
+      "retrieved_date_utc": "2026-10-18",
+      "period": "2026H1",
+      "kind": "法定披露平台",
+      "bytes": 1054353,
+      "sha256": "ab4bc6bca78e4798d7244b666cf83af8efff53194b675b17a689734b07a4997c"
+    },
+    {
+      "code": "601528",
+      "name": "瑞丰银行",
+      "file": "sources/601528_2026H1.pdf",
+      "url": "https://file.finance.sina.com.cn/211.154.219.97:9494/MRGG/CNSESH_STOCK/2026/2026-8/2026-08-25/12524883.PDF",
+      "publication_date": "2026-08-25",
+      "retrieved_date_utc": "2026-10-18",
+      "period": "2026H1",
+      "kind": "发行人原始PDF的新浪镜像；SSE原路径请求失败",
+      "bytes": 3308359,
+      "sha256": "a68c6ab5b9adc95ea15d70a7d0e60d2faae0ac7ad313b73e69e775046c8eac95"
+    },
+    {
+      "code": "002839",
+      "name": "张家港行",
+      "file": "sources/002839_2026H1.pdf",
+      "url": "https://file.finance.sina.com.cn/211.154.219.97:9494/MRGG/CNSESZ_STOCK/2026/2026-8/2026-08-28/12562635.PDF",
+      "publication_date": "2026-08-28",
+      "retrieved_date_utc": "2026-10-18",
+      "period": "2026H1",
+      "kind": "发行人原始PDF的新浪镜像；已核正文报告期",
+      "bytes": 1409768,
+      "sha256": "f2ccde460ef1c60c8462dbf1b9e1b26e85827edf34eb75c7ff1665502e6aa571"
+    },
+    {
+      "code": "601916",
+      "name": "浙商银行",
+      "file": "sources/601916_2026H1_official.pdf",
+      "url": "https://www.czbank.com/cn/investor/financial_info/reports_3904/2026new/2026new/202608/P020260826743565903640.pdf",
+      "publication_date": "2026-08-27",
+      "retrieved_date_utc": "2026-10-18",
+      "period": "2026H1",
+      "kind": "发行人官网；与下载镜像相同哈希",
+      "bytes": 2271468,
+      "sha256": "aec3fdbbc84f05c816c705e076dbfa298cfb0b9813abbf26d61fea174760f576"
+    }
+  ]
+}
