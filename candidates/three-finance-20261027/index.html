@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light"><meta name="description" content="真三维金融图表技术候选：同一品种下的价格、成交与研究关系。">
+  <title>空间工作台 · 金融图表演示</title>
+  <link rel="stylesheet" href="./runtime/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#workspace">跳至图表与读数</a>
+  <header class="site-header">
+    <a class="brand" href="../continuous-reading-20261027/" aria-label="返回研究工作台"><span class="brand-mark" aria-hidden="true">W</span><span>研究工作台<small>SPATIAL WORKSPACE</small></span></a>
+    <div class="header-meta"><span class="demo-badge">演示</span><button class="text-button" id="method-open">数据与方法</button></div>
+  </header>
+  <main id="workspace">
+    <section class="page-heading" aria-labelledby="page-title">
+      <div><p class="eyebrow">金融空间 / 01</p><h1 id="page-title">示例资产A<span class="asset-code">DEMO-ALPHA</span></h1><p class="lede">价格、成交与研究判断，共用一个对象。</p></div>
+      <div class="latest-price"><span>窗口末日收盘</span><strong id="latest-close"></strong><small id="latest-date"></small></div>
+    </section>
+    <section class="workspace-shell" aria-label="空间图表工作区">
+      <div class="workspace-topline">
+        <div class="view-switch" role="tablist" aria-label="工作视图">
+          <button id="tab-market" role="tab" aria-selected="true" aria-controls="visual-panel" data-view="market">行情与成交</button>
+          <button id="tab-research" role="tab" aria-selected="false" aria-controls="visual-panel" data-view="research">研究关系</button>
+        </div>
+        <button id="pause" class="quiet-button" aria-pressed="false">暂停过渡</button>
+      </div>
+      <div class="workspace-body">
+        <div class="visual-column" id="visual-panel" role="tabpanel" aria-labelledby="tab-market">
+          <div class="scene-heading"><div><h2 id="scene-title">价格路径</h2><p id="scene-subtitle"></p></div><div class="legend" id="market-legend"><span class="up">涨</span><span class="down">跌</span><span class="buy">▲ 买</span><span class="sell">▼ 卖</span></div></div>
+          <div class="stage" id="stage"><div class="render-message" id="render-message" hidden><span class="render-symbol" aria-hidden="true">◇</span><strong>此浏览器未提供 WebGL</strong><p>三维场景尚未显示。精确数字和记录联动仍可操作。</p><button class="quiet-button" id="fallback-data">查看精确数据</button></div></div>
+          <div class="camera-toolbar" aria-label="视角操作">
+            <div class="camera-buttons"><button data-camera="left" aria-label="向左旋转">↶</button><button data-camera="right" aria-label="向右旋转">↷</button><button data-camera="out" aria-label="缩小">−</button><button data-camera="in" aria-label="放大">＋</button><button data-camera="front">读数视角</button><button data-camera="reset">复位</button></div>
+            <span id="camera-hint">拖动旋转 · Ctrl + 滚轮缩放</span>
+          </div>
+          <div class="time-controls" id="time-controls">
+            <div class="time-window" role="group" aria-label="时间窗口"><button data-count="12">12 根</button><button data-count="24" aria-pressed="true">24 根</button><button data-count="48">全部 48 根</button></div>
+            <div class="time-step"><button id="window-prev" aria-label="前一时间窗">←</button><span id="window-range"></span><button id="window-next" aria-label="后一时间窗">→</button></div>
+          </div>
+          <div class="relation-index" id="relation-index" hidden aria-label="研究对象索引"></div>
+          <p class="encoding-note" id="encoding-note">横轴按交易序列等距；价格共用线性刻度，成交量独立零基。厚度只表达形状。</p>
+        </div>
+        <aside class="inspector" aria-labelledby="inspector-title">
+          <p class="eyebrow" id="selection-kind">选中日期</p><h2 id="inspector-title"></h2>
+          <div id="inspector-content"></div>
+          <div class="selection-nav" id="selection-nav"><label for="bar-select">精确选择日期</label><select id="bar-select"></select></div>
+          <button class="source-link" id="data-open">数据明细 <span aria-hidden="true">↗</span></button>
+          <span class="stable-id" id="stable-id"></span>
+        </aside>
+      </div>
+    </section>
+    <section class="linked-records" aria-labelledby="records-title">
+      <div class="section-heading"><div><p class="eyebrow">同一对象 / 联动记录</p><h2 id="records-title">成交与持仓变化</h2></div><p id="holding-summary"></p></div>
+      <div class="table-scroll" tabindex="0" aria-label="成交记录表，可横向滚动"><table><thead><tr><th>日期</th><th>方向</th><th class="number">数量 / 股</th><th class="number">成交价 / 元</th><th class="number">费用 / 元</th><th class="number">成交后 / 股</th><th>定位</th></tr></thead><tbody id="trade-rows"></tbody></table></div>
+    </section>
+    <details class="data-details" id="data-details"><summary>OHLC 与成交量明细 <span>精确值 · 可选择复制</span></summary><div class="table-scroll" tabindex="0" aria-label="行情精确数据表，可横向滚动"><table><thead><tr><th>日期</th><th class="number">开盘</th><th class="number">最高</th><th class="number">最低</th><th class="number">收盘</th><th class="number">成交量 / 股</th><th>定位</th></tr></thead><tbody id="bar-rows"></tbody></table></div><button class="text-button" id="data-return">返回选中对象 ↑</button></details>
+    <footer class="page-footer"><span>SPATIAL LAB / 01</span><span id="render-status" role="status"></span></footer>
+  </main>
+  <dialog id="method-dialog" aria-labelledby="method-title"><div class="dialog-heading"><h2 id="method-title">数据与空间映射</h2><button id="method-close" aria-label="关闭数据与方法">×</button></div><p>48 根日线、6 笔成交及研究关系均为从零编写的虚构内容，不来自真实行情或私人记录。</p><dl><dt>价格与时间</dt><dd>OHLC 使用整数分；横轴按序列等距。日期是人工生成的工作日序列，不代表交易所日历。</dd><dt>三维几何</dt><dd>蜡烛顶底对应开收盘，影线对应高低价；成交量从零起。正交相机不以远近缩放数值，金融视图只绕竖轴旋转。几何厚度没有第三财经含义。</dd><dt>研究关系</dt><dd>节点和有向边表示问题、对象、支持、反证与失效条件；空间距离、体积和高度不代表权重或统计相关性。</dd><dt>成交与持仓</dt><dd>成交价设为当日收盘；费用为编写值。170 股为六笔成交累计数量，未假设成本法或计算收益。</dd><dt>动作与无障碍</dt><dd>拖动、方向键旋转；＋/− 缩放；Home 复位。日期选择和记录按钮提供等价选中路径。暂停关闭自动视角过渡，手动操作仍可用。</dd></dl></dialog>
+  <script type="module" src="./runtime/app.js"></script>
+</body></html>
