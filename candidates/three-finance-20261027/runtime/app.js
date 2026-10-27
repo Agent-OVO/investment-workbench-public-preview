@@ -7,14 +7,18 @@ const $=id=>document.getElementById(id);
 const esc=value=>String(value).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const qty=value=>value.toLocaleString('zh-CN');
 const motion=matchMedia('(prefers-reduced-motion: reduce)');
-let state=initialState({reducedMotion:motion.matches}),stage,sourceReturnFocus=null;
+let state=initialState({reducedMotion:motion.matches}),stage;
 const barMap=new Map(demoMarket.candles.map(x=>[x.id,x]));
 const tradeMap=new Map(demoMarket.trades.map(x=>[x.id,x]));
 
 function dispatch(event){state=reduceWorkspace(state,event);render();}
 function select(selection){dispatch({type:selection.kind==='node'?'select-node':selection.kind==='trade'?'select-trade':'select-bar',id:selection.id});}
+function revealSelection(){
+  const target=matchMedia('(max-width:760px)').matches?document.querySelector('.inspector'):$('visual-panel');
+  target.scrollIntoView({block:'start',behavior:'instant'});$('inspector-title').tabIndex=-1;$('inspector-title').focus({preventScroll:true});
+}
 function openData(){
-  sourceReturnFocus=document.activeElement;$('data-details').open=true;
+  $('data-details').open=true;
   $('data-details').scrollIntoView({block:'start',behavior:'instant'});
   $('data-details').querySelector('summary').focus({preventScroll:true});
 }
@@ -61,7 +65,7 @@ function render(){
   document.querySelectorAll('[data-research-id]').forEach(b=>b.setAttribute('aria-pressed',String(state.selection.id===b.dataset.researchId)));
   document.querySelectorAll('#trade-rows tr').forEach(row=>row.classList.toggle('selected',row.dataset.id===state.tradeId));
   $('bar-rows').innerHTML=visible.map(b=>'<tr class="'+(b.id===state.barId?'selected':'')+'"><th scope="row">'+b.date+'</th>'+[b.openCents,b.highCents,b.lowCents,b.closeCents].map(value=>'<td class="number">'+formatPrice(value)+'</td>').join('')+'<td class="number">'+qty(b.volume)+'</td><td><button class="row-action" data-bar="'+b.id+'" aria-label="选中 '+b.date+'">选中</button></td></tr>').join('');
-  document.querySelectorAll('[data-bar]').forEach(b=>b.onclick=()=>dispatch({type:'select-bar',id:b.dataset.bar}));
+  document.querySelectorAll('[data-bar]').forEach(b=>b.onclick=()=>{dispatch({type:'select-bar',id:b.dataset.bar});revealSelection();});
   stage?.setData({view:state.view,candles:visible,trades:demoMarket.trades,research:demoResearch,selection:state.selection,barId:state.barId,paused:state.paused,reducedMotion:state.reducedMotion});
 }
 
@@ -71,17 +75,18 @@ $('relation-index').innerHTML=demoResearch.nodes.map(n=>'<button data-research-i
 document.querySelectorAll('[data-research-id]').forEach(b=>b.onclick=()=>dispatch({type:'select-node',id:b.dataset.researchId}));
 let runningQuantity=0;
 $('trade-rows').innerHTML=demoMarket.trades.map(t=>{runningQuantity+=(t.side==='buy'?1:-1)*t.quantity;return '<tr data-id="'+t.id+'"><th scope="row">'+t.date+'</th><td><span class="side-label '+t.side+'">'+(t.side==='buy'?'买入':'卖出')+'</span></td><td class="number">'+qty(t.quantity)+'</td><td class="number">'+formatPrice(t.priceCents)+'</td><td class="number">'+formatPrice(t.feeCents)+'</td><td class="number">'+qty(runningQuantity)+'</td><td><button class="row-action" data-trade="'+t.id+'" aria-label="定位 '+t.date+' '+(t.side==='buy'?'买入':'卖出')+'">在图中查看 ↗</button></td></tr>';}).join('');
-document.querySelectorAll('[data-trade]').forEach(b=>b.onclick=()=>{dispatch({type:'select-trade',id:b.dataset.trade});$('visual-panel').scrollIntoView({block:'start',behavior:'instant'});$('inspector-title').tabIndex=-1;$('inspector-title').focus({preventScroll:true});});
+document.querySelectorAll('[data-trade]').forEach(b=>b.onclick=()=>{dispatch({type:'select-trade',id:b.dataset.trade});revealSelection();});
 const holding=deriveHolding(demoMarket.trades);$('holding-summary').innerHTML='<strong>'+qty(holding.quantity)+'</strong> 股 · '+demoMarket.trades.length+' 笔累计';
 document.querySelectorAll('[data-view]').forEach(b=>b.onclick=()=>dispatch({type:'view',view:b.dataset.view}));
-document.querySelector('.view-switch').addEventListener('keydown',e=>{if(!['ArrowLeft','ArrowRight','Home','End'].includes(e.key))return;e.preventDefault();const view=e.key==='Home'?'market':e.key==='End'?'research':state.view==='market'?'research':'market';dispatch({type:'view',view});$('tab-'+view).focus();});
+document.querySelector('.view-switch').addEventListener('keydown',e=>{if(e.ctrlKey||e.metaKey||e.altKey||!['ArrowLeft','ArrowRight','Home','End'].includes(e.key))return;e.preventDefault();const view=e.key==='Home'?'market':e.key==='End'?'research':state.view==='market'?'research':'market';dispatch({type:'view',view});$('tab-'+view).focus();});
 document.querySelectorAll('[data-count]').forEach(b=>b.onclick=()=>dispatch({type:'window',count:Number(b.dataset.count)}));
 $('window-prev').onclick=()=>dispatch({type:'shift',direction:-1});$('window-next').onclick=()=>dispatch({type:'shift',direction:1});
 $('pause').onclick=()=>dispatch({type:'pause',paused:!state.paused});
 motion.addEventListener('change',e=>dispatch({type:'reduced-motion',value:e.matches}));
 document.querySelectorAll('[data-camera]').forEach(b=>b.onclick=()=>{const c=b.dataset.camera;if(c==='left')stage.rotate(-.15);if(c==='right')stage.rotate(.15);if(c==='in')stage.zoomBy(1.12);if(c==='out')stage.zoomBy(1/1.12);if(c==='front')stage.front();if(c==='reset')stage.reset();});
 $('data-open').onclick=openData;$('fallback-data').onclick=openData;
-$('data-return').onclick=()=>{ $('workspace').scrollIntoView({block:'start',behavior:'instant'}); if(sourceReturnFocus?.isConnected)sourceReturnFocus.focus({preventScroll:true}); else $('data-open').focus({preventScroll:true}); };
+$('data-return').onclick=revealSelection;
+$('scene-return').onclick=()=>{$('visual-panel').scrollIntoView({block:'start',behavior:'instant'});$('scene-title').tabIndex=-1;$('scene-title').focus({preventScroll:true});};
 $('method-open').onclick=()=>$('method-dialog').showModal();$('method-close').onclick=()=>$('method-dialog').close();
 stage=new SpatialStage($('stage'),{onSelect:select,onStatus:renderStatus});render();
 window.addEventListener('pagehide',event=>{if(!event.persisted)stage.dispose();});
