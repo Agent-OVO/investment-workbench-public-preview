@@ -4,3 +4,5 @@
 @media(max-width:390px){main{padding-left:14px;padding-right:14px}.site-header{padding-left:14px;padding-right:14px}.global-tools button{font-size:12px;padding:7px 9px}.data-pill{width:100%;margin-bottom:4px}.inspector .facts{grid-template-columns:1fr}.market-space{height:310px}.balance-strip dd{font-size:22px}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
 .current-question{font-size:20px;line-height:1.7;border-left:3px solid #719cad;padding:6px 20px;margin:0 0 24px}.market-axis-overlay{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}.market-tick{font-family:Plex,ResearchSC,sans-serif;font-size:12px;fill:#3f6375}.report-figures{margin:45px 0 0;border-top:1px solid var(--line);padding-top:30px}.report-figures figure{margin:25px 0 35px}.report-figures img{display:block;max-width:100%;height:auto;background:white}.report-figures figcaption{font-size:14px;line-height:1.8;color:var(--muted);margin:12px 0}.report-figures h2{font-size:22px}
+
+.market-axis-leader{stroke:#608091;stroke-width:1;fill:none}
